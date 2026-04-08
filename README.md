@@ -16,19 +16,28 @@ Each skill is a purpose-built workflow that handles the full sequence of steps f
 
 ## Install options
 
-### Option 1 — Full plugin (easiest)
+### Option 1 — Complete .zip file (easiest)
 
-Download [`numeric-mcp-toolkit.zip`](../../releases/latest) from the Releases tab and open it in Cowork or Claude Code. Installs all nine skills at once.
+1. Download [`numeric-toolkit.zip`](../../releases/latest) from the Releases tab
+2. Open [claude.ai](https://claude.ai) and click **Customize** in the left nav
+3. Go to **Plugins** and upload the zip — all nine skills will be installed
 
-### Option 2 — Claude Code CLI
+### Option 2 — Claude Code Marketplace
 
-```bash
-claude plugin install https://github.com/geoff-lew/numeric-toolkit
+Run these two commands in Claude Code:
+
+```
+/plugin marketplace add geoff-lew/numeric-toolkit
+/plugin install numeric-mcp-toolkit
 ```
 
-### Option 3 — Individual skill
+Then run `/reload-plugins` to apply.
 
-Download any `.skill` file from the [Releases tab](../../releases/latest) and open it in Cowork or Claude Code. Each `.skill` file is self-contained — no extra setup required.
+### Option 3 — Individual skill upload
+
+1. Download any `.skill` file from the [Releases tab](../../releases/latest)
+2. Open [claude.ai](https://claude.ai) and click **Customize** in the left nav
+3. Go to **Skills** and upload the `.skill` file
 
 ---
 
