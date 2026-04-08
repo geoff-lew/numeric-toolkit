@@ -18,7 +18,7 @@ Each skill is a purpose-built workflow that handles the full sequence of steps f
 
 ### Option 1 — Full plugin (easiest)
 
-Download [`numeric-mcp-toolkit.plugin`](../../releases/latest) from the Releases tab and open it in Cowork or Claude Code. Installs all nine skills at once.
+Download [`numeric-mcp-toolkit.zip`](../../releases/latest) from the Releases tab and open it in Cowork or Claude Code. Installs all nine skills at once.
 
 ### Option 2 — Claude Code CLI
 
