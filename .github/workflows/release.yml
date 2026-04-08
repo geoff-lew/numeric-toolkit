@@ -14,9 +14,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Build .plugin file
+      - name: Build .plugin and .skill files
         run: |
           cd $GITHUB_WORKSPACE
+
+          # Build .plugin (full bundle)
           zip -r numeric-toolkit.plugin . \
             -x "*.git*" \
             -x "*.DS_Store" \
@@ -24,10 +26,20 @@ jobs:
             -x "*.plugin"
           echo "Built: $(du -sh numeric-toolkit.plugin)"
 
+          # Build one .skill zip per skill directory
+          mkdir -p dist
+          for skill_dir in skills/*/; do
+            skill=$(basename "$skill_dir")
+            zip -r "dist/${skill}.skill" "$skill_dir" -x "*.DS_Store"
+            echo "Built: $(du -sh "dist/${skill}.skill")"
+          done
+
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
-          files: numeric-toolkit.plugin
+          files: |
+            numeric-toolkit.plugin
+            dist/*.skill
           generate_release_notes: true
           body: |
             ## Install
@@ -41,4 +53,4 @@ jobs:
             ```
 
             **Individual skills**
-            Browse the `skills/` directory and copy any `SKILL.md` directly.
+            Download any `.skill` file below and open it in Cowork or Claude Code.
