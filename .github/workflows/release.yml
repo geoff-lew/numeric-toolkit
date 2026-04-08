@@ -19,12 +19,12 @@ jobs:
           cd $GITHUB_WORKSPACE
 
           # Build .plugin (full bundle)
-          zip -r numeric-toolkit.plugin . \
+          zip -r numeric-toolkit.zip . \
             -x "*.git*" \
             -x "*.DS_Store" \
             -x ".github/*" \
-            -x "*.plugin"
-          echo "Built: $(du -sh numeric-toolkit.plugin)"
+            -x "*.zip"
+          echo "Built: $(du -sh numeric-toolkit.zip)"
 
           # Build one .skill zip per skill directory
           mkdir -p dist
@@ -38,14 +38,14 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           files: |
-            numeric-toolkit.plugin
+            numeric-toolkit.zip
             dist/*.skill
           generate_release_notes: true
           body: |
             ## Install
 
             **As a plugin (recommended)**
-            Download `numeric-toolkit.plugin` below and open it in Cowork or Claude Code.
+            Download `numeric-toolkit.zip` below and open it in Cowork or Claude Code.
 
             **Via Claude Code CLI**
             ```
