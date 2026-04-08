@@ -1,0 +1,44 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build .plugin file
+        run: |
+          cd $GITHUB_WORKSPACE
+          zip -r numeric-toolkit.plugin . \
+            -x "*.git*" \
+            -x "*.DS_Store" \
+            -x ".github/*" \
+            -x "*.plugin"
+          echo "Built: $(du -sh numeric-toolkit.plugin)"
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: numeric-toolkit.plugin
+          generate_release_notes: true
+          body: |
+            ## Install
+
+            **As a plugin (recommended)**
+            Download `numeric-toolkit.plugin` below and open it in Cowork or Claude Code.
+
+            **Via Claude Code CLI**
+            ```
+            claude plugin install https://github.com/${{ github.repository }}
+            ```
+
+            **Individual skills**
+            Browse the `skills/` directory and copy any `SKILL.md` directly.
