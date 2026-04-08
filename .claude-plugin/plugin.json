@@ -3,8 +3,8 @@
   "version": "0.3.0",
   "description": "Nine AI skills for the Numeric MCP — rec workbooks, department anomaly scanning, cross-workspace dashboards, audit evidence exports, close pulse, consolidated flux, financial metrics (IS + BS inline), clean report exports, and executive/board-ready reports.",
   "author": {
-    "name": "Geoff",
-    "email": "geoff@numeric.io"
+    "name": "Numeric",
+    "email": "support@numeric.io"
   },
   "keywords": ["numeric", "financial-close", "accounting", "reconciliation", "flux", "audit", "board-report", "executive-report"],
   "homepage": "https://numeric.io",

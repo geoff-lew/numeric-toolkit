@@ -1,8 +1,8 @@
 {
   "name": "numeric-mcp-toolkit",
   "owner": {
-    "name": "Geoff",
-    "email": "geoff@numeric.io"
+    "name": "Numeric",
+    "email": "support@numeric.io"
   },
   "metadata": {
     "description": "Nine AI skills for the Numeric MCP — purpose-built workflows for accounting teams using the Numeric financial close platform.",
@@ -18,8 +18,8 @@
       "description": "Nine AI skills for the Numeric MCP — rec workbooks, anomaly scanning, close dashboards, audit evidence, flux consolidation, financial metrics, and executive reports.",
       "version": "0.3.0",
       "author": {
-        "name": "Geoff",
-        "email": "geoff@numeric.io"
+        "name": "Numeric",
+        "email": "support@numeric.io"
       },
       "homepage": "https://numeric.io",
       "repository": "https://github.com/geoff-lew/numeric-toolkit",
