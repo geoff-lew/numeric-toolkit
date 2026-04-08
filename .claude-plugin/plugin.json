@@ -1,11 +1,13 @@
 {
-  "name": "numeric-toolkit",
+  "name": "numeric-mcp-toolkit",
   "version": "0.3.0",
-  "description": "Nine Numeric workflow skills for the financial close — rec workbooks, department anomaly scanning, cross-workspace dashboards, audit evidence exports, close pulse, consolidated flux, financial metrics (IS + BS inline), clean report exports, and executive/board-ready reports.",
+  "description": "Nine AI skills for the Numeric MCP — rec workbooks, department anomaly scanning, cross-workspace dashboards, audit evidence exports, close pulse, consolidated flux, financial metrics (IS + BS inline), clean report exports, and executive/board-ready reports.",
   "author": {
     "name": "Geoff",
     "email": "geoff@numeric.io"
   },
   "keywords": ["numeric", "financial-close", "accounting", "reconciliation", "flux", "audit", "board-report", "executive-report"],
-  "homepage": "https://numeric.io"
+  "homepage": "https://numeric.io",
+  "repository": "https://github.com/geoff-lew/numeric-toolkit",
+  "license": "MIT"
 }
