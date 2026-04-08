@@ -30,18 +30,6 @@ claude plugin install https://github.com/geoff-lew/numeric-toolkit
 
 Download any `.skill` file from the [Releases tab](../../releases/latest) and open it in Cowork or Claude Code. Each `.skill` file is self-contained — no extra setup required.
 
-| Skill | Download |
-|---|---|
-| numeric-rec-workbook | [numeric-rec-workbook.skill](../../releases/latest) |
-| dept-anomaly-scan | [dept-anomaly-scan.skill](../../releases/latest) |
-| cross-workspace-dashboard | [cross-workspace-dashboard.skill](../../releases/latest) |
-| audit-evidence-export | [audit-evidence-export.skill](../../releases/latest) |
-| close-pulse | [close-pulse.skill](../../releases/latest) |
-| consolidated-flux | [consolidated-flux.skill](../../releases/latest) |
-| financial-metrics | [financial-metrics.skill](../../releases/latest) |
-| clean-report-export | [clean-report-export.skill](../../releases/latest) |
-| executive-report | [executive-report.skill](../../releases/latest) |
-
 ---
 
 ## Requirements
