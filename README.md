@@ -12,7 +12,7 @@
 
 <br />
 
-<a href="https://github.com/geoff-lew/numeric-toolkit/releases/latest">
+<a href="https://github.com/geoff-lew/numeric-toolkit/releases/latest/download/numeric-mcp-toolkit.zip">
   <img src="https://img.shields.io/badge/⬇%20Download%20Full%20Plugin-numeric--mcp--toolkit.zip-7036FF?style=for-the-badge&logoColor=white" alt="Download Full Plugin" />
 </a>
 &nbsp;
