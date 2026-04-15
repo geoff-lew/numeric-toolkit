@@ -303,11 +303,13 @@ Packages the complete activity history of any Numeric close period into a struct
 
 ### Use your close checklist to drive automations
 
-Your Numeric close checklist is more than a task list — it's the control plane for your entire close workflow. Skills read task status, due dates, assignees, and descriptions directly from the checklist, which means your existing tasks can drive automations without any separate scripts or scheduling infrastructure.
+Your Numeric close checklist is more than a task list — it's the control plane for your close workflow. Skills read task status, due dates, assignees, and descriptions directly from the checklist, which means your existing tasks can help to drive your workflows by instructing your AI to take specific actions.
 
-For example: instead of building a separate script to run your accruals, create an *Accruals* task in Numeric with a due date of day 3. The accrual skill reads that task, knows what's expected, runs the workflow, and marks it complete — all triggered by a single instruction. The checklist *is* the automation schedule.
+For example: create an *Accruals* task in Numeric with a due date of day 3. The accrual skill reads the list of tasks, knows what's expected and if any need to be handled, runs the workflow, and marks it complete — all triggered by a single instruction.
 
-You can also store workflow preferences directly in the task description, and the skill will read them on every run:
+### Use task descriptions to carry preferences and instructions forward
+
+You can store workflow preferences and specific instructions directly in a task description, and the skill will read them on every run. Use this to note any changes you want applied going forward — no need to re-specify them each time.
 
 ```
 ## Skill preferences
@@ -318,19 +320,7 @@ You can also store workflow preferences directly in the task description, and th
 
 ### Let skills self-track via comments
 
-Several skills automatically log a comment on the relevant Numeric task after they run — recording what was done, when, and what the outcome was. This creates a native audit trail inside Numeric and lets skills make smart decisions on subsequent runs. For example, the overdue nudge skill checks the comment history before sending a reminder, so it won't re-notify someone if they were already nudged in the last 48 hours.
-
-### Reference your existing Numeric configuration
-
-Skills work best when pointed at the specific workspaces, reports, and tasks you've already set up in Numeric — rather than describing things from scratch each time. Claude can look these up via the MCP, but being explicit gets faster, more precise results.
-
-For example:
-- *"Run the close pulse for the **US Entity** workspace"*
-- *"Pull the task called **Export CFO Monthly Report** assigned to me and process it"*
-- *"Process all outstanding JE tasks in the current period"*
-- *"What tasks are due in the next 2 days?"*
-
-You can bake these specifics directly into a skill or task description so they're applied automatically on every run — no need to specify them each time.
+Skills can automatically log a comment on the relevant Numeric task after they run — recording what was done, when, and what the outcome was. This creates a native audit trail inside Numeric and lets skills make smart decisions on subsequent runs. For example, the overdue nudge skill will check the comment history before sending a reminder, so it won't re-notify someone if they were already nudged in the last 48 hours.
 
 ### Customize a skill to fit your workflow
 
@@ -338,7 +328,7 @@ Once installed, any skill can be refined to match your team's specific process. 
 
 > *"Update the close-pulse skill so that it always groups overdue tasks by assignee first, skips tasks tagged 'on hold', and posts the summary to #accounting-close in Slack instead of responding in chat."*
 
-Claude will modify the skill in place. Your customized version becomes the default for future runs — no coding required.
+Claude will modify the skill in place. Your customized version becomes the default for future runs — no coding required. Combine with task descriptions to give Claude a 'working memory'.
 
 ---
 
