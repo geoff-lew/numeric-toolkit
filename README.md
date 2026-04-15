@@ -332,7 +332,7 @@ Claude will modify the skill in place. Your customized version becomes the defau
 
 ---
 
-## ⚡ Get Started
+## ⚡ Get Started (Skills are only available for Claude)
 
 ### 1. Connect the Numeric MCP
 
