@@ -16,8 +16,12 @@
   <img src="https://img.shields.io/badge/⬇%20Download%20Full%20Plugin-numeric--mcp--toolkit.zip-7036FF?style=for-the-badge&logoColor=white" alt="Download Full Plugin" />
 </a>
 &nbsp;
+<a href="https://github.com/geoff-lew/numeric-toolkit/releases/latest">
+  <img src="https://img.shields.io/badge/View%20Releases-555555?style=for-the-badge" alt="View Releases" />
+</a>
+&nbsp;
 <a href="#-community-skills">
-  <img src="https://img.shields.io/badge/Browse%20Individual%20Skills-↓-1F0045?style=for-the-badge" alt="Browse Individual Skills" />
+  <img src="https://img.shields.io/badge/Browse%20Skills-↓-1F0045?style=for-the-badge" alt="Browse Individual Skills" />
 </a>
 
 <br />
