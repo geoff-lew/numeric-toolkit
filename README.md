@@ -79,7 +79,7 @@ Skills are pre-built AI playbooks for automating specific accounting workflows. 
 
 Instead of describing a multi-step workflow from scratch, you just describe what you need in plain language and the right skill activates automatically. Think of them as the difference between having an AI assistant and having an AI assistant that already knows how to do your job.
 
-The 14 skills in this toolkit span six workflow areas — journals and transactions, close management, reporting and analysis, reconciliation, audit, and data quality. Each one is available individually as a `.skill` file or bundled together in the full plugin.
+Skills in this toolkit span six workflow areas — journals and transactions, close management, flux and variance, reporting and analysis, reconciliation, and audit. Each one is available individually as a `.skill` file or bundled together in the full plugin.
 
 <br/>
 
@@ -369,7 +369,7 @@ See the [Numeric MCP setup guide](https://help.numeric.io/articles/7292808089-nu
 <tr>
 <td width="50%" valign="top">
 
-**Full plugin** — all 14 skills at once
+**Full plugin** — all skills at once
 
 Download [`numeric-mcp-toolkit.zip`](https://github.com/geoff-lew/numeric-toolkit/releases/latest) and open it in Cowork or Claude Code.
 
