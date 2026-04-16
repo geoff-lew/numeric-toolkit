@@ -2,7 +2,7 @@
 
 <br />
 
-<img src="Numeric logo.png" width="200" alt="Numeric" />
+<img src="assets/NumericLogo-Black-2025.png" width="200" alt="Numeric" />
 
 <h1>Community Skills for the Numeric MCP</h1>
 
@@ -85,7 +85,7 @@ The 14 skills in this toolkit span six workflow areas — journals and transacti
 
 <div align="center">
 
-![Skill Map](Tools.png)
+![Skill Map](assets/Tools.png)
 
 </div>
 
@@ -195,6 +195,36 @@ Managing multiple workspaces? This skill rolls up close progress across all your
 
 ---
 
+### 📊 Flux & Variance
+
+<details open>
+<summary>🟣 <strong>Auto-Draft Flux Explanations — Batch Variance Drafting</strong></summary>
+<br/>
+
+Loops through every flux task assigned to the current user in Numeric where an explanation has been requested, pulls six months of transaction line history per account, and posts concise first-pass drafts directly back to Numeric — ready for the preparer to review and submit. Appends below any existing content rather than overwriting. Run it once at the start of close and your flux queue is handled.
+
+[⬇ Download automatically-draft-flux-explanations.skill](https://github.com/geoff-lew/numeric-toolkit/releases/latest/download/automatically-draft-flux-explanations.skill)
+
+**Ask things like:** *"Write my flux explanations" · "Draft all my fluxes for this month" · "Run the flux analysis for close"*
+
+</details>
+
+<br/>
+
+<details>
+<summary>🟣 <strong>Consolidated Flux — Variance Commentary Rollup</strong></summary>
+<br/>
+
+Pulls flux commentary from across entities, reports, and periods and stitches it into a single unified narrative — rolling child account explanations up to group level, trending commentary across months. Essential for multi-entity teams who need one coherent story across the books.
+
+[⬇ Download consolidated-flux.skill](https://github.com/geoff-lew/numeric-toolkit/releases/latest/download/consolidated-flux.skill)
+
+**Ask things like:** *"Consolidate flux across entities" · "Roll up variance commentary" · "Unified variance view"*
+
+</details>
+
+---
+
 ### 📄 Reporting & Analysis
 
 <details open>
@@ -220,20 +250,6 @@ Standard financial ratios computed directly onto your Numeric report. Covers pro
 [⬇ Download financial-metrics.skill](https://github.com/geoff-lew/numeric-toolkit/releases/latest/download/financial-metrics.skill)
 
 **Ask things like:** *"Add financial ratios to this report" · "What's our gross margin?" · "Check covenant compliance"*
-
-</details>
-
-<br/>
-
-<details>
-<summary>🟣 <strong>Consolidated Flux — Variance Commentary Rollup</strong></summary>
-<br/>
-
-Pulls flux commentary from across entities, reports, and periods and stitches it into a single unified narrative — rolling child account explanations up to group level, trending commentary across months. Essential for multi-entity teams who need one coherent story across the books.
-
-[⬇ Download consolidated-flux.skill](https://github.com/geoff-lew/numeric-toolkit/releases/latest/download/consolidated-flux.skill)
-
-**Ask things like:** *"Consolidate flux across entities" · "Roll up variance commentary" · "Unified variance view"*
 
 </details>
 
@@ -322,6 +338,16 @@ You can store workflow preferences and specific instructions directly in a task 
 
 Skills can automatically log a comment on the relevant Numeric task after they run — recording what was done, when, and what the outcome was. This creates a native audit trail inside Numeric and lets skills make smart decisions on subsequent runs. For example, the overdue nudge skill will check the comment history before sending a reminder, so it won't re-notify someone if they were already nudged in the last 48 hours.
 
+### Reference your existing Numeric configuration
+
+Skills work best when pointed at the specific workspaces, reports, and tasks you've already set up in Numeric — rather than describing things from scratch each time. Claude can look these up via the MCP, but being explicit gets faster, more precise results.
+
+For example:
+- *"Run the close pulse for the **US Entity** workspace"*
+- *"Pull the task called **Export CFO Monthly Report** assigned to me and process it"*
+- *"Process all outstanding JE tasks in the current period"*
+- *"What tasks are due in the next 2 days?"*
+
 ### Customize a skill to fit your workflow
 
 Once installed, any skill can be refined to match your team's specific process. Open a conversation and ask Claude:
@@ -332,7 +358,7 @@ Claude will modify the skill in place. Your customized version becomes the defau
 
 ---
 
-## ⚡ Get Started (Skills are only available for Claude)
+## ⚡ Get Started
 
 ### 1. Connect the Numeric MCP
 
