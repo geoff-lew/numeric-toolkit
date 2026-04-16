@@ -338,15 +338,14 @@ You can store workflow preferences and specific instructions directly in a task 
 
 Skills can automatically log a comment on the relevant Numeric task after they run — recording what was done, when, and what the outcome was. This creates a native audit trail inside Numeric and lets skills make smart decisions on subsequent runs. For example, the overdue nudge skill will check the comment history before sending a reminder, so it won't re-notify someone if they were already nudged in the last 48 hours.
 
-### Reference your existing Numeric configuration
+### If a skill doesn't trigger automatically, be explicit
 
-Skills work best when pointed at the specific workspaces, reports, and tasks you've already set up in Numeric — rather than describing things from scratch each time. Claude can look these up via the MCP, but being explicit gets faster, more precise results.
+Skills activate based on how you phrase your request. If Claude responds without using the right skill, just tell it directly which one to use:
 
-For example:
-- *"Run the close pulse for the **US Entity** workspace"*
-- *"Pull the task called **Export CFO Monthly Report** assigned to me and process it"*
-- *"Process all outstanding JE tasks in the current period"*
-- *"What tasks are due in the next 2 days?"*
+> *"Use the close-pulse skill to show me where the close stands."*
+> *"Run the automatically-draft-flux-explanations skill for this period."*
+
+You can also ask Claude which skills are available: *"What skills do you have installed?"*
 
 ### Customize a skill to fit your workflow
 
