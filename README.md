@@ -32,7 +32,7 @@
 
 ---
 
-## 🔓 What is Unlocked with the Numeric MCP
+## What is Unlocked with the Numeric MCP
 
 The [Numeric MCP](https://help.numeric.io/articles/7292808089-numeric-mcp-server) is an open protocol connection that gives your AI assistant direct, authenticated access to your Numeric workspace — live data, real actions, no copy-paste.
 
@@ -71,7 +71,21 @@ Pull any saved report, build ad-hoc financials on the fly, trend period-over-per
 
 ---
 
-## 🧠 Community Skills
+## How Numeric and the Numeric MCP Fit Together
+
+**Numeric is the operating system for your accounting team.** Like any OS, it manages state — who owns what, what's been done, what the rules are, what happened last period. Your team runs on top of it. Your processes are encoded in it. Your institutional knowledge accumulates inside it.
+
+Use task descriptions to store how a workflow should run. Reference prior period commentary to understand recurring patterns. Record preferences, exceptions, and policies directly in Numeric so they carry forward automatically — not locked in someone's head or buried in a spreadsheet.
+
+**The Numeric MCP is what lets your AI run on that operating system.** It exposes Numeric's full state to Claude — live tasks, financial data, team structure, history, commentary — and it's bidirectional. The AI doesn't just read; it writes results back, updates tasks, posts comments, and keeps the record current. An AI connected via the MCP isn't answering generic questions; it's operating with full awareness of your team and where things stand right now.
+
+**Together, the MCP supercharges what Numeric can do natively.** Numeric tracks the work — the MCP executes it. Draft flux explanations across every assigned account in one run. Identify accrual candidates from transaction history and post the journal entries. Send targeted Slack reminders based on who's behind and what preferences you've set. Everything that would otherwise require manual steps, a separate script, or a tool outside Numeric can now happen directly from a conversation — with results written back into Numeric where they belong.
+
+Skills in this toolkit are built on that model.
+
+---
+
+## Community Skills
 
 ### What are skills?
 
@@ -93,10 +107,10 @@ Skills in this toolkit span six workflow areas — journals and transactions, cl
 
 ---
 
-### 🧾 Journals & Transactions
+### Journals & Transactions
 
 <details open>
-<summary>🟣 <strong>Accrual Identification & Journal Entry — Close-Driven Accruals</strong></summary>
+<summary>&nbsp;<img src="https://img.shields.io/badge/Automation-2563EB?style=flat&logoColor=white" alt="Automation" />&nbsp;<strong>Accrual Identification & Journal Entry — Close-Driven Accruals</strong></summary>
 <br/>
 
 Pulls accrual-related tasks from your Numeric close checklist, analyzes the underlying GL data to identify potential accruals that need to be booked, and builds the full supporting workbook as evidence — then generates the corresponding journal entries ready for NetSuite posting. The entire accrual workflow in one conversation: identify, document, and post.
@@ -110,7 +124,7 @@ Pulls accrual-related tasks from your Numeric close checklist, analyzes the unde
 <br/>
 
 <details>
-<summary>🟣 <strong>Journal Entry Posting — Support-to-NetSuite</strong></summary>
+<summary>&nbsp;<img src="https://img.shields.io/badge/Automation-2563EB?style=flat&logoColor=white" alt="Automation" />&nbsp;<strong>Journal Entry Posting — Support-to-NetSuite</strong></summary>
 <br/>
 
 Pulls outstanding journal entry tasks from your Numeric close checklist, reads the supporting workbook or documentation provided, generates the balanced journal entries, marks the task complete in Numeric, and posts directly to NetSuite via the NetSuite MCP. From checklist task to posted entry — no manual steps in between.
@@ -124,7 +138,7 @@ Pulls outstanding journal entry tasks from your Numeric close checklist, reads t
 <br/>
 
 <details>
-<summary>🟣 <strong>Department Anomaly Scan — GL Miscoding Cleanup</strong></summary>
+<summary>&nbsp;<img src="https://img.shields.io/badge/Insights-0891B2?style=flat&logoColor=white" alt="Insights" />&nbsp;<strong>Department Anomaly Scan — GL Miscoding Cleanup</strong></summary>
 <br/>
 
 Scans your workspace for GL-to-department coding anomalies — expenses hitting the wrong cost center, vendors consistently miscoded, accounts landing in unexpected departments. Surfaces patterns and generates the NetSuite reclass journal entry CSV to fix them.
@@ -137,10 +151,10 @@ Scans your workspace for GL-to-department coding anomalies — expenses hitting 
 
 ---
 
-### 📊 Close Management
+### Close Management
 
 <details open>
-<summary>🟣 <strong>Close Pulse — Live Close Dashboard</strong></summary>
+<summary>&nbsp;<img src="https://img.shields.io/badge/Insights-0891B2?style=flat&logoColor=white" alt="Insights" />&nbsp;<strong>Close Pulse — Live Close Dashboard</strong></summary>
 <br/>
 
 You shouldn't have to open Numeric to know where your close stands. Close Pulse pulls task completion rates, surfaces overdue items flagged by materiality, maps blocking dependencies, and tells you whether you're ahead or behind pace — all in a single conversation. Built for controllers and close managers who need a fast, honest read on close health.
@@ -154,7 +168,7 @@ You shouldn't have to open Numeric to know where your close stands. Close Pulse 
 <br/>
 
 <details>
-<summary>🟣 <strong>Close Retrospective — Post-Close Analysis</strong></summary>
+<summary>&nbsp;<img src="https://img.shields.io/badge/Insights-0891B2?style=flat&logoColor=white" alt="Insights" />&nbsp;<strong>Close Retrospective — Post-Close Analysis</strong></summary>
 <br/>
 
 Every close has a story. Close Retro reads it for you. After each period, it analyzes task completion timelines, review cycle counts, late submissions, assignee workload, and pace versus prior periods — then surfaces the patterns that matter. Which tasks consistently run late? Which reviewers are bottlenecks? Outputs as a Slack digest or structured summary.
@@ -168,7 +182,7 @@ Every close has a story. Close Retro reads it for you. After each period, it ana
 <br/>
 
 <details>
-<summary>🟣 <strong>Overdue Task Nudges — Automated Assignee Reminders</strong></summary>
+<summary>&nbsp;<img src="https://img.shields.io/badge/Automation-2563EB?style=flat&logoColor=white" alt="Automation" />&nbsp;<strong>Overdue Task Nudges — Automated Assignee Reminders</strong></summary>
 <br/>
 
 Chasing people down during close is a full-time job. This skill handles it. It identifies tasks that are overdue or due soon and sends targeted Slack DMs to assignees with contextual messages — not generic notifications. Reads reminder preferences from each task, logs every nudge as a comment to prevent duplicates, and can run on a daily schedule during close week.
@@ -182,7 +196,7 @@ Chasing people down during close is a full-time job. This skill handles it. It i
 <br/>
 
 <details>
-<summary>🟣 <strong>Cross-Workspace Dashboard — Portfolio Close View</strong></summary>
+<summary>&nbsp;<img src="https://img.shields.io/badge/Insights-0891B2?style=flat&logoColor=white" alt="Insights" />&nbsp;<strong>Cross-Workspace Dashboard — Portfolio Close View</strong></summary>
 <br/>
 
 Managing multiple workspaces? This skill rolls up close progress across all your Numeric workspaces into a single portfolio-level view — completion rates, overdue counts, pace comparisons, and workload distribution side by side. Outputs as an HTML dashboard and companion Excel workbook.
@@ -195,10 +209,10 @@ Managing multiple workspaces? This skill rolls up close progress across all your
 
 ---
 
-### 📊 Flux & Variance
+### Flux & Variance
 
 <details open>
-<summary>🟣 <strong>Auto-Draft Flux Explanations — Batch Variance Drafting</strong></summary>
+<summary>&nbsp;<img src="https://img.shields.io/badge/Automation-2563EB?style=flat&logoColor=white" alt="Automation" />&nbsp;<strong>Auto-Draft Flux Explanations — Batch Variance Drafting</strong></summary>
 <br/>
 
 Loops through every flux task assigned to the current user in Numeric where an explanation has been requested, pulls six months of transaction line history per account, and posts concise first-pass drafts directly back to Numeric — ready for the preparer to review and submit. Appends below any existing content rather than overwriting. Run it once at the start of close and your flux queue is handled.
@@ -212,7 +226,7 @@ Loops through every flux task assigned to the current user in Numeric where an e
 <br/>
 
 <details>
-<summary>🟣 <strong>Consolidated Flux — Variance Commentary Rollup</strong></summary>
+<summary>&nbsp;<img src="https://img.shields.io/badge/Insights-0891B2?style=flat&logoColor=white" alt="Insights" />&nbsp;<strong>Consolidated Flux — Variance Commentary Rollup</strong></summary>
 <br/>
 
 Pulls flux commentary from across entities, reports, and periods and stitches it into a single unified narrative — rolling child account explanations up to group level, trending commentary across months. Essential for multi-entity teams who need one coherent story across the books.
@@ -225,10 +239,10 @@ Pulls flux commentary from across entities, reports, and periods and stitches it
 
 ---
 
-### 📄 Reporting & Analysis
+### Reporting & Analysis
 
 <details open>
-<summary>🟣 <strong>Executive Report — Board-Ready Financial Statements</strong></summary>
+<summary>&nbsp;<img src="https://img.shields.io/badge/Efficiency-EA580C?style=flat&logoColor=white" alt="Efficiency" />&nbsp;<strong>Executive Report — Board-Ready Financial Statements</strong></summary>
 <br/>
 
 Takes your Numeric report and produces a polished, presentation-ready financial statement — collapsing child account detail into executive summary groups, rolling up flux commentary into one-line narratives, and applying professional formatting. Output as a styled Excel workbook or PDF. Built for CFO decks, board packages, and investor reporting.
@@ -242,7 +256,7 @@ Takes your Numeric report and produces a polished, presentation-ready financial 
 <br/>
 
 <details>
-<summary>🟣 <strong>Financial Metrics — Ratios & Analytics Inline</strong></summary>
+<summary>&nbsp;<img src="https://img.shields.io/badge/Insights-0891B2?style=flat&logoColor=white" alt="Insights" />&nbsp;<strong>Financial Metrics — Ratios & Analytics Inline</strong></summary>
 <br/>
 
 Standard financial ratios computed directly onto your Numeric report. Covers profitability, liquidity, solvency, and working capital metrics — placed inline on both income statements and balance sheets. Useful for covenant reporting, investor updates, and management analysis.
@@ -256,7 +270,7 @@ Standard financial ratios computed directly onto your Numeric report. Covers pro
 <br/>
 
 <details>
-<summary>🟣 <strong>Report + Transaction Detail — Financials with Full GL Backup</strong></summary>
+<summary>&nbsp;<img src="https://img.shields.io/badge/Efficiency-EA580C?style=flat&logoColor=white" alt="Efficiency" />&nbsp;<strong>Report + Transaction Detail — Financials with Full GL Backup</strong></summary>
 <br/>
 
 Pulls any Numeric report alongside every underlying GL transaction line — in a single Excel workbook with two tabs. The financial statement on one side, every journal entry behind each number on the other. Built for controllers who need to explain variances or provide detail to auditors without a separate export.
@@ -270,7 +284,7 @@ Pulls any Numeric report alongside every underlying GL transaction line — in a
 <br/>
 
 <details>
-<summary>🟣 <strong>Clean Report Export — Analysis-Ready Data Extract</strong></summary>
+<summary>&nbsp;<img src="https://img.shields.io/badge/Efficiency-EA580C?style=flat&logoColor=white" alt="Efficiency" />&nbsp;<strong>Clean Report Export — Analysis-Ready Data Extract</strong></summary>
 <br/>
 
 Exports any Numeric financial statement as a clean CSV or TSV — no summary rows, no formatting artifacts, no manual cleanup. Drop it straight into Excel, pandas, or any BI tool. Supports multiple reports in a single run.
@@ -283,10 +297,10 @@ Exports any Numeric financial statement as a clean CSV or TSV — no summary row
 
 ---
 
-### 🗂 Reconciliation
+### Reconciliation
 
 <details>
-<summary>🟣 <strong>Numeric Rec Workbook — Leadsheet Builder</strong></summary>
+<summary>&nbsp;<img src="https://img.shields.io/badge/Efficiency-EA580C?style=flat&logoColor=white" alt="Efficiency" />&nbsp;<strong>Numeric Rec Workbook — Leadsheet Builder</strong></summary>
 <br/>
 
 Builds a polished Numeric Leadsheet workbook for any GL account — four periods of live balance data, EOMONTH date formulas, and a rollforward tab. One row per account × entity. Also supports adding a Numeric tab to an existing workbook without touching your other sheets.
@@ -299,10 +313,10 @@ Builds a polished Numeric Leadsheet workbook for any GL account — four periods
 
 ---
 
-### 🔍 Audit & Compliance
+### Audit & Compliance
 
 <details>
-<summary>🟣 <strong>Audit Evidence Export — Close Activity Workbook</strong></summary>
+<summary>&nbsp;<img src="https://img.shields.io/badge/Compliance-16A34A?style=flat&logoColor=white" alt="Compliance" />&nbsp;<strong>Audit Evidence Export — Close Activity Workbook</strong></summary>
 <br/>
 
 Packages the complete activity history of any Numeric close period into a structured five-sheet Excel workbook — reconciliation submissions and approvals, checklist completions, review notes, and a full timeline of who did what and when. Hand it to your auditors and move on.
@@ -315,7 +329,7 @@ Packages the complete activity history of any Numeric close period into a struct
 
 ---
 
-## 💡 Tips
+## Tips
 
 ### Use your close checklist to drive automations
 
@@ -357,7 +371,7 @@ Claude will modify the skill in place. Your customized version becomes the defau
 
 ---
 
-## ⚡ Get Started
+## Get Started
 
 ### 1. Connect the Numeric MCP
 
@@ -398,7 +412,7 @@ Just describe what you need. The right skill activates automatically based on wh
 
 ---
 
-## 🤝 Community & Contributing
+## Community & Contributing
 
 These skills are built and maintained by the Numeric community. We welcome new skills — if you've built a workflow that saves your team time, share it and let others benefit too.
 
