@@ -173,7 +173,7 @@ You shouldn't have to open Numeric to know where your close stands. Close Pulse 
 
 Every close has a story. Close Retro reads it for you. After each period, it analyzes task completion timelines, review cycle counts, late submissions, assignee workload, and pace versus prior periods — then surfaces the patterns that matter. Which tasks consistently run late? Which reviewers are bottlenecks? Outputs as a Slack digest or structured summary.
 
-[⬇ Download close-retro.skill](https://github.com/geoff-lew/numeric-toolkit/releases/latest/download/close-retro.skill)
+[⬇ Download close-retro.zip](https://github.com/geoff-lew/numeric-toolkit/releases/download/v1.0.1/close-retro-skill.zip)]
 
 **Ask things like:** *"How did the close go?" · "What took longest?" · "Compare this close to last quarter"*
 
