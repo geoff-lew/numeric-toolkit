@@ -83,6 +83,12 @@ Use task descriptions to store how a workflow should run. Reference prior period
 
 Skills in this toolkit are built on that model.
 
+<div align="center">
+<br/>
+<img src="assets/Numeric MCP stack.png" width="100%" alt="Numeric MCP Stack" />
+<br/>
+</div>
+
 ---
 
 ## Community Skills
