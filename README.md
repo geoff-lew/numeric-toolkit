@@ -117,6 +117,8 @@ Pulls accrual-related tasks from your Numeric close checklist, analyzes the unde
 
 [⬇ Download complete-accruals-task.skill](https://github.com/geoff-lew/numeric-toolkit/releases/latest/download/complete-accruals-task.skill)
 
+[→ Full documentation](https://app.usepylon.com/kb/aed64866-e399-42dc-be2c-29bd99d1dcb2/articles/470f997f-2571-489f-8345-535bef9274dd)
+
 **Ask things like:** *"Run the accruals for this period" · "What accruals do we need to book?" · "Identify and create the month-end accrual entries"*
 
 </details>
@@ -131,6 +133,8 @@ Pulls outstanding journal entry tasks from your Numeric close checklist, reads t
 
 [⬇ Download journal-entry-generator.zip](https://github.com/geoff-lew/numeric-toolkit/releases/latest/download/journal-entry-generator.zip)
 
+[→ Full documentation](https://app.usepylon.com/kb/aed64866-e399-42dc-be2c-29bd99d1dcb2/articles/d10a0880-4a75-4e7c-bc6f-e0c579cd1032)
+
 **Ask things like:** *"Post the outstanding journal entries" · "Process the JE tasks from the checklist" · "Complete and post the JEs with this support"*
 
 </details>
@@ -144,6 +148,8 @@ Pulls outstanding journal entry tasks from your Numeric close checklist, reads t
 Scans your workspace for GL-to-department coding anomalies — expenses hitting the wrong cost center, vendors consistently miscoded, accounts landing in unexpected departments. Surfaces patterns and generates the NetSuite reclass journal entry CSV to fix them.
 
 [⬇ Download dept-anomaly-scan.skill](https://github.com/geoff-lew/numeric-toolkit/releases/latest/download/dept-anomaly-scan.skill)
+
+[→ Full documentation](https://app.usepylon.com/kb/aed64866-e399-42dc-be2c-29bd99d1dcb2/articles/6ebebb87-836e-4678-943f-3839a5f87210)
 
 **Ask things like:** *"Scan for department anomalies" · "Find GL miscodings" · "Anything miscoded this period?"*
 
@@ -161,6 +167,8 @@ You shouldn't have to open Numeric to know where your close stands. Close Pulse 
 
 [⬇ Download close-pulse.skill](https://github.com/geoff-lew/numeric-toolkit/releases/latest/download/close-pulse.skill)
 
+[→ Full documentation](https://app.usepylon.com/kb/aed64866-e399-42dc-be2c-29bd99d1dcb2/articles/4a87d25e-f5bc-4157-a858-2130afdd5135)
+
 **Ask things like:** *"How's the close going?" · "What's overdue?" · "Are we on track?" · "Who's behind?"*
 
 </details>
@@ -173,7 +181,9 @@ You shouldn't have to open Numeric to know where your close stands. Close Pulse 
 
 Every close has a story. Close Retro reads it for you. After each period, it analyzes task completion timelines, review cycle counts, late submissions, assignee workload, and pace versus prior periods — then surfaces the patterns that matter. Which tasks consistently run late? Which reviewers are bottlenecks? Outputs as a Slack digest or structured summary.
 
-[⬇ Download close-retro.zip](https://github.com/geoff-lew/numeric-toolkit/releases/download/v1.0.1/close-retro-skill.zip)]
+[⬇ Download close-retro.zip](https://github.com/geoff-lew/numeric-toolkit/releases/download/v1.0.1/close-retro-skill.zip)
+
+[→ Full documentation](https://app.usepylon.com/kb/aed64866-e399-42dc-be2c-29bd99d1dcb2/articles/5613d9ac-6172-40c4-acd0-8b110bde36c6)
 
 **Ask things like:** *"How did the close go?" · "What took longest?" · "Compare this close to last quarter"*
 
@@ -189,6 +199,8 @@ Chasing people down during close is a full-time job. This skill handles it. It i
 
 [⬇ Download overdue-task-nudge.skill](https://github.com/geoff-lew/numeric-toolkit/releases/latest/download/overdue-task-nudge.skill)
 
+[→ Full documentation](https://app.usepylon.com/kb/aed64866-e399-42dc-be2c-29bd99d1dcb2/articles/6d73c457-d714-462a-a5a1-fa1abe4ff826)
+
 **Ask things like:** *"Remind assignees about overdue tasks" · "Send close reminders" · "Nudge people on late recs"*
 
 </details>
@@ -202,6 +214,8 @@ Chasing people down during close is a full-time job. This skill handles it. It i
 Managing multiple workspaces? This skill rolls up close progress across all your Numeric workspaces into a single portfolio-level view — completion rates, overdue counts, pace comparisons, and workload distribution side by side. Outputs as an HTML dashboard and companion Excel workbook.
 
 [⬇ Download cross-workspace-dashboard.skill](https://github.com/geoff-lew/numeric-toolkit/releases/latest/download/cross-workspace-dashboard.skill)
+
+[→ Full documentation](https://app.usepylon.com/kb/aed64866-e399-42dc-be2c-29bd99d1dcb2/articles/a300b889-3fd4-4718-a0d3-495b8c720bc4)
 
 **Ask things like:** *"Close status across all entities" · "Which workspaces are behind?" · "Portfolio close view"*
 
@@ -219,6 +233,8 @@ Loops through every flux task assigned to the current user in Numeric where an e
 
 [⬇ Download automatically-draft-flux-explanations.skill](https://github.com/geoff-lew/numeric-toolkit/releases/latest/download/automatically-draft-flux-explanations.skill)
 
+[→ Full documentation](https://app.usepylon.com/kb/aed64866-e399-42dc-be2c-29bd99d1dcb2/articles/c0a4483e-a8ca-4e23-98f7-169ded458820)
+
 **Ask things like:** *"Write my flux explanations" · "Draft all my fluxes for this month" · "Run the flux analysis for close"*
 
 </details>
@@ -232,6 +248,8 @@ Loops through every flux task assigned to the current user in Numeric where an e
 Pulls flux commentary from across entities, reports, and periods and stitches it into a single unified narrative — rolling child account explanations up to group level, trending commentary across months. Essential for multi-entity teams who need one coherent story across the books.
 
 [⬇ Download consolidated-flux.skill](https://github.com/geoff-lew/numeric-toolkit/releases/latest/download/consolidated-flux.skill)
+
+[→ Full documentation](https://app.usepylon.com/kb/aed64866-e399-42dc-be2c-29bd99d1dcb2/articles/8d0defb5-24f6-41c3-be2d-58215545dc31)
 
 **Ask things like:** *"Consolidate flux across entities" · "Roll up variance commentary" · "Unified variance view"*
 
@@ -249,6 +267,8 @@ Takes your Numeric report and produces a polished, presentation-ready financial 
 
 [⬇ Download executive-report.skill](https://github.com/geoff-lew/numeric-toolkit/releases/latest/download/executive-report.skill)
 
+[→ Full documentation](https://app.usepylon.com/kb/aed64866-e399-42dc-be2c-29bd99d1dcb2/articles/bc930ef4-d582-4db0-aeb0-49f2241d3390)
+
 **Ask things like:** *"Build the board report" · "CFO-ready income statement" · "Collapse the P&L into summary groups"*
 
 </details>
@@ -262,6 +282,8 @@ Takes your Numeric report and produces a polished, presentation-ready financial 
 Standard financial ratios computed directly onto your Numeric report. Covers profitability, liquidity, solvency, and working capital metrics — placed inline on both income statements and balance sheets. Useful for covenant reporting, investor updates, and management analysis.
 
 [⬇ Download financial-metrics.skill](https://github.com/geoff-lew/numeric-toolkit/releases/latest/download/financial-metrics.skill)
+
+[→ Full documentation](https://app.usepylon.com/kb/aed64866-e399-42dc-be2c-29bd99d1dcb2/articles/4321c0cc-c506-4902-b8f5-9ffe4bdb691a)
 
 **Ask things like:** *"Add financial ratios to this report" · "What's our gross margin?" · "Check covenant compliance"*
 
@@ -277,6 +299,8 @@ Pulls any Numeric report alongside every underlying GL transaction line — in a
 
 [⬇ Download report-txn-detail.skill](https://github.com/geoff-lew/numeric-toolkit/releases/latest/download/report-txn-detail.skill)
 
+[→ Full documentation](https://app.usepylon.com/kb/aed64866-e399-42dc-be2c-29bd99d1dcb2/articles/b5b8158c-da47-4454-a1af-623174a3c94d)
+
 **Ask things like:** *"Report with transaction detail" · "Income statement with journal entries" · "Show me what makes up each line"*
 
 </details>
@@ -290,6 +314,8 @@ Pulls any Numeric report alongside every underlying GL transaction line — in a
 Exports any Numeric financial statement as a clean CSV or TSV — no summary rows, no formatting artifacts, no manual cleanup. Drop it straight into Excel, pandas, or any BI tool. Supports multiple reports in a single run.
 
 [⬇ Download clean-report-export.skill](https://github.com/geoff-lew/numeric-toolkit/releases/latest/download/clean-report-export.skill)
+
+[→ Full documentation](https://app.usepylon.com/kb/aed64866-e399-42dc-be2c-29bd99d1dcb2/articles/ed50e59a-b142-451c-a308-2a5b913aad12)
 
 **Ask things like:** *"Export the income statement" · "Get me a clean CSV" · "Pull the report data for analysis"*
 
@@ -307,6 +333,8 @@ Builds a polished Numeric Leadsheet workbook for any GL account — four periods
 
 [⬇ Download numeric-rec-workbook.skill](https://github.com/geoff-lew/numeric-toolkit/releases/latest/download/numeric-rec-workbook.skill)
 
+[→ Full documentation](https://app.usepylon.com/kb/aed64866-e399-42dc-be2c-29bd99d1dcb2/articles/23cbbfc8-89e8-4ea8-8c46-bf8c833663de)
+
 **Ask things like:** *"Build rec support for Prepaid" · "Make me the leadsheet for this account"*
 
 </details>
@@ -322,6 +350,8 @@ Builds a polished Numeric Leadsheet workbook for any GL account — four periods
 Packages the complete activity history of any Numeric close period into a structured five-sheet Excel workbook — reconciliation submissions and approvals, checklist completions, review notes, and a full timeline of who did what and when. Hand it to your auditors and move on.
 
 [⬇ Download audit-evidence-export.skill](https://github.com/geoff-lew/numeric-toolkit/releases/latest/download/audit-evidence-export.skill)
+
+[→ Full documentation](https://app.usepylon.com/kb/aed64866-e399-42dc-be2c-29bd99d1dcb2/articles/d323cc8f-9f19-4195-8a33-7d01f65756fb)
 
 **Ask things like:** *"Audit evidence for December close" · "SOX evidence package" · "Reconciliation sign-off history"*
 
