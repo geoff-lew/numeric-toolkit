@@ -28,6 +28,12 @@
 
 <br />
 
+<a href="https://www.loom.com/share/cff9383995204a2690745ec05ddbf5bf">
+  <img src="https://cdn.loom.com/sessions/thumbnails/cff9383995204a2690745ec05ddbf5bf-with-play.gif" width="600" alt="Watch demo" />
+</a>
+
+<br />
+
 </div>
 
 ---
@@ -110,6 +116,22 @@ Skills in this toolkit span six workflow areas — journals and transactions, cl
 </div>
 
 <br/>
+
+---
+
+### Setup & Migration
+
+<details>
+<summary>&nbsp;<img src="https://img.shields.io/badge/Efficiency-EA580C?style=flat&logoColor=white" alt="Efficiency" />&nbsp;<strong>Checklist Importer — Spreadsheet to Numeric</strong></summary>
+<br/>
+
+Converts any close checklist spreadsheet into a Numeric-ready import workbook. Auto-detects column mappings from any xlsx or csv format. Clean, validated tasks land on the import tab; anything that needs review is flagged separately with the issue called out.
+
+[⬇ Download checklist-to-numeric.skill](https://github.com/geoff-lew/numeric-toolkit/releases/latest/download/checklist-to-numeric.skill)
+
+**Ask things like:** *"Import my close checklist into Numeric" · "Convert this spreadsheet into Numeric tasks" · "Migrate my checklist to Numeric"*
+
+</details>
 
 ---
 
@@ -324,6 +346,20 @@ Exports any Numeric financial statement as a clean CSV or TSV — no summary row
 [→ Full documentation](https://app.usepylon.com/kb/aed64866-e399-42dc-be2c-29bd99d1dcb2/articles/ed50e59a-b142-451c-a308-2a5b913aad12)
 
 **Ask things like:** *"Export the income statement" · "Get me a clean CSV" · "Pull the report data for analysis"*
+
+</details>
+
+<br/>
+
+<details>
+<summary>&nbsp;<img src="https://img.shields.io/badge/Insights-0891B2?style=flat&logoColor=white" alt="Insights" />&nbsp;<strong>AR / AP Aging — Aging Schedule from Numeric</strong></summary>
+<br/>
+
+Pulls transaction lines from Numeric, FIFO-matches reductions against open items, buckets balances into Current / 1–30 / 31–60 / 61–90 / 90+ day bands, and produces a two-sheet Excel workbook with a GL reconciliation row. Works for both AR and AP in the same skill.
+
+[⬇ Download ar-ap-aging.skill](https://github.com/geoff-lew/numeric-toolkit/releases/latest/download/ar-ap-aging.skill)
+
+**Ask things like:** *"Build me an AR aging" · "AP aging as of March 31" · "Who owes us money?" · "What vendors are past due?"*
 
 </details>
 
