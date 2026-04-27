@@ -465,7 +465,7 @@ See the [Numeric MCP setup guide](https://help.numeric.io/articles/7292808089-nu
 
 **Full plugin** — all skills at once
 
-Download [`numeric-mcp-toolkit.zip`](https://github.com/geoff-lew/numeric-toolkit/releases/latest) and open it in Cowork or Claude Code.
+Download [`numeric-mcp-toolkit.zip`](https://github.com/geoff-lew/numeric-toolkit/releases/latest/download/numeric-mcp-toolkit.zip) and open it in Cowork or Claude Code.
 
 Or via CLI:
 ```
