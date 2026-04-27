@@ -116,7 +116,7 @@ Skills in this toolkit span six workflow areas — journals and transactions, cl
 ### Setup & Migration
 
 <details>
-<summary>&nbsp;<img src="https://img.shields.io/badge/Efficiency-F79009?style=flat&logoColor=white" alt="Efficiency" />&nbsp;<strong>Checklist Importer — Spreadsheet to Numeric</strong></summary>
+<summary>&nbsp;<img src="https://img.shields.io/badge/Workflows-F79009?style=flat&logoColor=white" alt="Workflows" />&nbsp;<strong>Checklist Importer — Spreadsheet to Numeric</strong></summary>
 <br/>
 
 Converts any close checklist spreadsheet into a Numeric-ready import workbook. Auto-detects column mappings from any xlsx or csv format. Clean, validated tasks land on the import tab; anything that needs review is flagged separately with the issue called out.
@@ -127,12 +127,26 @@ Converts any close checklist spreadsheet into a Numeric-ready import workbook. A
 
 </details>
 
+<br/>
+
+<details>
+<summary>&nbsp;<img src="https://img.shields.io/badge/Workflows-F79009?style=flat&logoColor=white" alt="Workflows" />&nbsp;<strong>Rec Assignment Importer — Spreadsheet to Numeric</strong></summary>
+<br/>
+
+Converts an existing balance sheet reconciliation assignments workbook into a Numeric-ready import file. Pulls the live chart of accounts from Numeric, maps preparers and reviewers to emails, handles entity ID lookups and legacy account name aliases, and outputs a clean 3-tab Excel workbook — ready to upload directly to Numeric's Recon assignment template. Accounts that can't be matched to the current COA are flagged on a separate tab for review before import.
+
+[⬇ Download rec-to-numeric.skill](https://github.com/geoff-lew/numeric-toolkit/releases/latest/download/rec-to-numeric.skill)
+
+**Ask things like:** *"Build the rec import file" · "Convert our BS rec assignments to Numeric" · "Import balance sheet recs into Numeric" · "Turn this spreadsheet into a Numeric rec import"*
+
+</details>
+
 ---
 
 ### Journals & Transactions
 
 <details open>
-<summary>&nbsp;<img src="https://img.shields.io/badge/Automation-4D72F7?style=flat&logoColor=white" alt="Automation" />&nbsp;<strong>Accrual Identification & Journal Entry — Close-Driven Accruals</strong></summary>
+<summary>&nbsp;<img src="https://img.shields.io/badge/Automation-6B5DC6?style=flat&logoColor=white" alt="Automation" />&nbsp;<strong>Accrual Identification & Journal Entry — Close-Driven Accruals</strong></summary>
 <br/>
 
 Pulls accrual-related tasks from your Numeric close checklist, analyzes the underlying GL data to identify potential accruals that need to be booked, and builds the full supporting workbook as evidence — then generates the corresponding journal entries ready for NetSuite posting. The entire accrual workflow in one conversation: identify, document, and post.
@@ -148,7 +162,7 @@ Pulls accrual-related tasks from your Numeric close checklist, analyzes the unde
 <br/>
 
 <details>
-<summary>&nbsp;<img src="https://img.shields.io/badge/Automation-4D72F7?style=flat&logoColor=white" alt="Automation" />&nbsp;<strong>Journal Entry Posting — Support-to-NetSuite</strong></summary>
+<summary>&nbsp;<img src="https://img.shields.io/badge/Automation-6B5DC6?style=flat&logoColor=white" alt="Automation" />&nbsp;<strong>Journal Entry Posting — Support-to-NetSuite</strong></summary>
 <br/>
 
 Pulls outstanding journal entry tasks from your Numeric close checklist, reads the supporting workbook or documentation provided, generates the balanced journal entries, marks the task complete in Numeric, and posts directly to NetSuite via the NetSuite MCP. From checklist task to posted entry — no manual steps in between.
@@ -164,7 +178,7 @@ Pulls outstanding journal entry tasks from your Numeric close checklist, reads t
 <br/>
 
 <details>
-<summary>&nbsp;<img src="https://img.shields.io/badge/Insights-6B5DC6?style=flat&logoColor=white" alt="Insights" />&nbsp;<strong>Department Anomaly Scan — GL Miscoding Cleanup</strong></summary>
+<summary>&nbsp;<img src="https://img.shields.io/badge/Insights-17B26A?style=flat&logoColor=white" alt="Insights" />&nbsp;<strong>Department Anomaly Scan — GL Miscoding Cleanup</strong></summary>
 <br/>
 
 Scans your workspace for GL-to-department coding anomalies — expenses hitting the wrong cost center, vendors consistently miscoded, accounts landing in unexpected departments. Surfaces patterns and generates the NetSuite reclass journal entry CSV to fix them.
@@ -182,7 +196,7 @@ Scans your workspace for GL-to-department coding anomalies — expenses hitting 
 ### Close Management
 
 <details open>
-<summary>&nbsp;<img src="https://img.shields.io/badge/Insights-6B5DC6?style=flat&logoColor=white" alt="Insights" />&nbsp;<strong>Close Pulse — Live Close Dashboard</strong></summary>
+<summary>&nbsp;<img src="https://img.shields.io/badge/Insights-17B26A?style=flat&logoColor=white" alt="Insights" />&nbsp;<strong>Close Pulse — Live Close Dashboard</strong></summary>
 <br/>
 
 You shouldn't have to open Numeric to know where your close stands. Close Pulse pulls task completion rates, surfaces overdue items flagged by materiality, maps blocking dependencies, and tells you whether you're ahead or behind pace — all in a single conversation. Built for controllers and close managers who need a fast, honest read on close health.
@@ -198,7 +212,7 @@ You shouldn't have to open Numeric to know where your close stands. Close Pulse 
 <br/>
 
 <details>
-<summary>&nbsp;<img src="https://img.shields.io/badge/Insights-6B5DC6?style=flat&logoColor=white" alt="Insights" />&nbsp;<strong>Close Retrospective — Post-Close Analysis</strong></summary>
+<summary>&nbsp;<img src="https://img.shields.io/badge/Insights-17B26A?style=flat&logoColor=white" alt="Insights" />&nbsp;<strong>Close Retrospective — Post-Close Analysis</strong></summary>
 <br/>
 
 Every close has a story. Close Retro reads it for you. After each period, it analyzes task completion timelines, review cycle counts, late submissions, assignee workload, and pace versus prior periods — then surfaces the patterns that matter. Which tasks consistently run late? Which reviewers are bottlenecks? Outputs as a Slack digest or structured summary.
@@ -214,7 +228,7 @@ Every close has a story. Close Retro reads it for you. After each period, it ana
 <br/>
 
 <details>
-<summary>&nbsp;<img src="https://img.shields.io/badge/Automation-4D72F7?style=flat&logoColor=white" alt="Automation" />&nbsp;<strong>Overdue Task Nudges — Automated Assignee Reminders</strong></summary>
+<summary>&nbsp;<img src="https://img.shields.io/badge/Automation-6B5DC6?style=flat&logoColor=white" alt="Automation" />&nbsp;<strong>Overdue Task Nudges — Automated Assignee Reminders</strong></summary>
 <br/>
 
 Chasing people down during close is a full-time job. This skill handles it. It identifies tasks that are overdue or due soon and sends targeted Slack DMs to assignees with contextual messages — not generic notifications. Reads reminder preferences from each task, logs every nudge as a comment to prevent duplicates, and can run on a daily schedule during close week.
@@ -230,7 +244,7 @@ Chasing people down during close is a full-time job. This skill handles it. It i
 <br/>
 
 <details>
-<summary>&nbsp;<img src="https://img.shields.io/badge/Insights-6B5DC6?style=flat&logoColor=white" alt="Insights" />&nbsp;<strong>Cross-Workspace Dashboard — Portfolio Close View</strong></summary>
+<summary>&nbsp;<img src="https://img.shields.io/badge/Insights-17B26A?style=flat&logoColor=white" alt="Insights" />&nbsp;<strong>Cross-Workspace Dashboard — Portfolio Close View</strong></summary>
 <br/>
 
 Managing multiple workspaces? This skill rolls up close progress across all your Numeric workspaces into a single portfolio-level view — completion rates, overdue counts, pace comparisons, and workload distribution side by side. Outputs as an HTML dashboard and companion Excel workbook.
@@ -248,7 +262,7 @@ Managing multiple workspaces? This skill rolls up close progress across all your
 ### Flux & Variance
 
 <details open>
-<summary>&nbsp;<img src="https://img.shields.io/badge/Automation-4D72F7?style=flat&logoColor=white" alt="Automation" />&nbsp;<strong>Auto-Draft Flux Explanations — Batch Variance Drafting</strong></summary>
+<summary>&nbsp;<img src="https://img.shields.io/badge/Automation-6B5DC6?style=flat&logoColor=white" alt="Automation" />&nbsp;<strong>Auto-Draft Flux Explanations — Batch Variance Drafting</strong></summary>
 <br/>
 
 Loops through every flux task assigned to the current user in Numeric where an explanation has been requested, pulls six months of transaction line history per account, and posts concise first-pass drafts directly back to Numeric — ready for the preparer to review and submit. Appends below any existing content rather than overwriting. Run it once at the start of close and your flux queue is handled.
@@ -264,7 +278,7 @@ Loops through every flux task assigned to the current user in Numeric where an e
 <br/>
 
 <details>
-<summary>&nbsp;<img src="https://img.shields.io/badge/Insights-6B5DC6?style=flat&logoColor=white" alt="Insights" />&nbsp;<strong>Consolidated Flux — Variance Commentary Rollup</strong></summary>
+<summary>&nbsp;<img src="https://img.shields.io/badge/Workflows-F79009?style=flat&logoColor=white" alt="Workflows" />&nbsp;<strong>Consolidated Flux — Variance Commentary Rollup</strong></summary>
 <br/>
 
 Pulls flux commentary from across entities, reports, and periods and stitches it into a single unified narrative — rolling child account explanations up to group level, trending commentary across months. Essential for multi-entity teams who need one coherent story across the books.
@@ -282,7 +296,7 @@ Pulls flux commentary from across entities, reports, and periods and stitches it
 ### Reporting & Analysis
 
 <details open>
-<summary>&nbsp;<img src="https://img.shields.io/badge/Efficiency-F79009?style=flat&logoColor=white" alt="Efficiency" />&nbsp;<strong>Executive Report — Board-Ready Financial Statements</strong></summary>
+<summary>&nbsp;<img src="https://img.shields.io/badge/Workflows-F79009?style=flat&logoColor=white" alt="Workflows" />&nbsp;<strong>Executive Report — Board-Ready Financial Statements</strong></summary>
 <br/>
 
 Takes your Numeric report and produces a polished, presentation-ready financial statement — collapsing child account detail into executive summary groups, rolling up flux commentary into one-line narratives, and applying professional formatting. Output as a styled Excel workbook or PDF. Built for CFO decks, board packages, and investor reporting.
@@ -298,7 +312,7 @@ Takes your Numeric report and produces a polished, presentation-ready financial 
 <br/>
 
 <details>
-<summary>&nbsp;<img src="https://img.shields.io/badge/Insights-6B5DC6?style=flat&logoColor=white" alt="Insights" />&nbsp;<strong>Financial Metrics — Ratios & Analytics Inline</strong></summary>
+<summary>&nbsp;<img src="https://img.shields.io/badge/Insights-17B26A?style=flat&logoColor=white" alt="Insights" />&nbsp;<strong>Financial Metrics — Ratios & Analytics Inline</strong></summary>
 <br/>
 
 Standard financial ratios computed directly onto your Numeric report. Covers profitability, liquidity, solvency, and working capital metrics — placed inline on both income statements and balance sheets. Useful for covenant reporting, investor updates, and management analysis.
@@ -314,7 +328,7 @@ Standard financial ratios computed directly onto your Numeric report. Covers pro
 <br/>
 
 <details>
-<summary>&nbsp;<img src="https://img.shields.io/badge/Efficiency-F79009?style=flat&logoColor=white" alt="Efficiency" />&nbsp;<strong>Report + Transaction Detail — Financials with Full GL Backup</strong></summary>
+<summary>&nbsp;<img src="https://img.shields.io/badge/Workflows-F79009?style=flat&logoColor=white" alt="Workflows" />&nbsp;<strong>Report + Transaction Detail — Financials with Full GL Backup</strong></summary>
 <br/>
 
 Pulls any Numeric report alongside every underlying GL transaction line — in a single Excel workbook with two tabs. The financial statement on one side, every journal entry behind each number on the other. Built for controllers who need to explain variances or provide detail to auditors without a separate export.
@@ -330,7 +344,7 @@ Pulls any Numeric report alongside every underlying GL transaction line — in a
 <br/>
 
 <details>
-<summary>&nbsp;<img src="https://img.shields.io/badge/Efficiency-F79009?style=flat&logoColor=white" alt="Efficiency" />&nbsp;<strong>Clean Report Export — Analysis-Ready Data Extract</strong></summary>
+<summary>&nbsp;<img src="https://img.shields.io/badge/Workflows-F79009?style=flat&logoColor=white" alt="Workflows" />&nbsp;<strong>Clean Report Export — Analysis-Ready Data Extract</strong></summary>
 <br/>
 
 Exports any Numeric financial statement as a clean CSV or TSV — no summary rows, no formatting artifacts, no manual cleanup. Drop it straight into Excel, pandas, or any BI tool. Supports multiple reports in a single run.
@@ -346,7 +360,7 @@ Exports any Numeric financial statement as a clean CSV or TSV — no summary row
 <br/>
 
 <details>
-<summary>&nbsp;<img src="https://img.shields.io/badge/Insights-6B5DC6?style=flat&logoColor=white" alt="Insights" />&nbsp;<strong>AR / AP Aging — Aging Schedule from Numeric</strong></summary>
+<summary>&nbsp;<img src="https://img.shields.io/badge/Workflows-F79009?style=flat&logoColor=white" alt="Workflows" />&nbsp;<strong>AR / AP Aging — Aging Schedule from Numeric</strong></summary>
 <br/>
 
 Pulls transaction lines from Numeric, FIFO-matches reductions against open items, buckets balances into Current / 1–30 / 31–60 / 61–90 / 90+ day bands, and produces a two-sheet Excel workbook with a GL reconciliation row. Works for both AR and AP in the same skill.
@@ -362,7 +376,7 @@ Pulls transaction lines from Numeric, FIFO-matches reductions against open items
 ### Reconciliation
 
 <details>
-<summary>&nbsp;<img src="https://img.shields.io/badge/Efficiency-F79009?style=flat&logoColor=white" alt="Efficiency" />&nbsp;<strong>Numeric Rec Workbook — Leadsheet Builder</strong></summary>
+<summary>&nbsp;<img src="https://img.shields.io/badge/Workflows-F79009?style=flat&logoColor=white" alt="Workflows" />&nbsp;<strong>Numeric Rec Workbook — Leadsheet Builder</strong></summary>
 <br/>
 
 Builds a polished Numeric Leadsheet workbook for any GL account — four periods of live balance data, EOMONTH date formulas, and a rollforward tab. One row per account × entity. Also supports adding a Numeric tab to an existing workbook without touching your other sheets.
@@ -380,7 +394,7 @@ Builds a polished Numeric Leadsheet workbook for any GL account — four periods
 ### Audit & Compliance
 
 <details>
-<summary>&nbsp;<img src="https://img.shields.io/badge/Compliance-17B26A?style=flat&logoColor=white" alt="Compliance" />&nbsp;<strong>Audit Evidence Export — Close Activity Workbook</strong></summary>
+<summary>&nbsp;<img src="https://img.shields.io/badge/Workflows-F79009?style=flat&logoColor=white" alt="Workflows" />&nbsp;<strong>Audit Evidence Export — Close Activity Workbook</strong></summary>
 <br/>
 
 Packages the complete activity history of any Numeric close period into a structured five-sheet Excel workbook — reconciliation submissions and approvals, checklist completions, review notes, and a full timeline of who did what and when. Hand it to your auditors and move on.
