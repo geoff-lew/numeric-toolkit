@@ -1,0 +1,56 @@
+<svg width="1200" height="936" viewBox="0 0 1200 936" xmlns="http://www.w3.org/2000/svg">
+<defs><style>text{font-family:"Inter","Inter var",ui-sans-serif,system-ui,sans-serif;}</style>
+<filter id="sh" x="-4%" y="-4%" width="108%" height="116%"><feDropShadow dx="0" dy="2" stdDeviation="6" flood-color="#000" flood-opacity="0.07"/></filter></defs>
+<rect width="1200" height="936" fill="#f8f8fa"/>
+<text x="600" y="86" font-size="28" font-weight="700" fill="#181d27" text-anchor="middle" letter-spacing="-0.3">How Does Numeric &amp; the MCP Fit Together?</text>
+<text x="600" y="114" font-size="14" fill="#757582" text-anchor="middle">Numeric is the foundation your accounting team &#x2014; and your AI &#x2014; run on.</text>
+
+<!-- LAYER 3: AI / CLAUDE -->
+<rect x="48" y="156" width="1104" height="170" rx="12" fill="#ffffff" stroke="#e0e0e5" stroke-width="1" filter="url(#sh)"/>
+<text x="80" y="186" font-size="10" font-weight="600" fill="#9999a4" letter-spacing="1.5">THE EXECUTION BRAIN</text>
+<text x="80" y="224" font-size="26" font-weight="700" fill="#181d27">AI / Claude</text>
+<text x="80" y="256" font-size="13.5" fill="#363644">Apply Judgement &#xB7; Collaborate across systems &#xB7; Operate in plain language</text>
+<text x="80" y="282" font-size="13" fill="#757582" font-style="italic">Only as good as the context it operates on &#x2014; which Numeric provides.</text>
+
+<!-- LAYER 2: NUMERIC MCP -->
+<rect x="48" y="346" width="1104" height="164" rx="12" fill="#f7f7fd" stroke="#aba1ec" stroke-width="1" filter="url(#sh)"/>
+<text x="80" y="376" font-size="10" font-weight="600" fill="#6b5dc6" letter-spacing="1.5">THE INTERFACE</text>
+<text x="80" y="414" font-size="26" font-weight="700" fill="#181d27">Numeric MCP</text>
+<text x="80" y="446" font-size="13.5" fill="#363644">Exposes Numeric&#x27;s live state to AI and writes results back to Numeric as the source of truth</text>
+<text x="80" y="472" font-size="13" fill="#6b5dc6" font-style="italic">The AI doesn&#x27;t answer generic questions. It operates with full awareness of your team.</text>
+
+<!-- LAYER 1: NUMERIC -->
+<rect x="48" y="530" width="1104" height="358" rx="12" fill="#3e3a7a" stroke="#5346aa" stroke-width="1" filter="url(#sh)"/>
+<text x="80" y="560" font-size="10" font-weight="600" fill="#aba1ec" letter-spacing="1.5">THE OPERATING SYSTEM</text>
+<text x="80" y="600" font-size="28" font-weight="700" fill="#ffffff">Numeric</text>
+<text x="80" y="632" font-size="13.5" fill="#e4e1f9">Your team runs on top of it. Your processes are encoded in it.</text>
+<text x="80" y="652" font-size="13.5" fill="#e4e1f9">Your institutional knowledge accumulates inside it &#x2014; and compounds every close.</text>
+
+<!-- Sub-card: Ownership -->
+<rect x="80" y="688" width="249" height="174" rx="12" fill="#4a4490" stroke="#5a54a0" stroke-width="1"/>
+<text x="98" y="718" font-size="13" font-weight="600" fill="#ffffff">Ownership</text>
+<text x="98" y="742" font-size="12" fill="#e4e1f9">Who owns what.</text>
+<text x="98" y="761" font-size="12" fill="#e4e1f9">Assignees, reviewers,</text>
+<text x="98" y="780" font-size="12" fill="#e4e1f9">due dates.</text>
+
+<!-- Sub-card: Rules -->
+<rect x="343" y="688" width="249" height="174" rx="12" fill="#4a4490" stroke="#5a54a0" stroke-width="1"/>
+<text x="361" y="718" font-size="13" font-weight="600" fill="#ffffff">Rules</text>
+<text x="361" y="742" font-size="12" fill="#e4e1f9">How the work runs.</text>
+<text x="361" y="761" font-size="12" fill="#e4e1f9">Preferences and policies,</text>
+<text x="361" y="780" font-size="12" fill="#e4e1f9">not trapped in heads.</text>
+
+<!-- Sub-card: History -->
+<rect x="606" y="688" width="249" height="174" rx="12" fill="#4a4490" stroke="#5a54a0" stroke-width="1"/>
+<text x="624" y="718" font-size="13" font-weight="600" fill="#ffffff">History</text>
+<text x="624" y="742" font-size="12" fill="#e4e1f9">What happened last period.</text>
+<text x="624" y="761" font-size="12" fill="#e4e1f9">Commentary, patterns,</text>
+<text x="624" y="780" font-size="12" fill="#e4e1f9">precedent.</text>
+
+<!-- Sub-card: Financial Data -->
+<rect x="869" y="688" width="249" height="174" rx="12" fill="#4a4490" stroke="#5a54a0" stroke-width="1"/>
+<text x="887" y="718" font-size="13" font-weight="600" fill="#ffffff">Financial Data</text>
+<text x="887" y="742" font-size="12" fill="#e4e1f9">The source of truth.</text>
+<text x="887" y="761" font-size="12" fill="#e4e1f9">Balances, transactions,</text>
+<text x="887" y="780" font-size="12" fill="#e4e1f9">reports, account data.</text>
+</svg>

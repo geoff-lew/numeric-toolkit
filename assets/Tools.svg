@@ -1,0 +1,136 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+  <defs><style>text{font-family:"Inter","Inter var",ui-sans-serif,system-ui,sans-serif;}</style></defs>
+  <rect width="1200" height="800" fill="#f8f8fa"/>
+  <rect x="24" y="24" width="568" height="138" rx="6" fill="#ffffff" stroke="#e0e0e5" stroke-width="1"/>
+  <rect x="24" y="24" width="568" height="34" rx="6" fill="#f3f3f8"/>
+  <rect x="24" y="52" width="568" height="6" fill="#f3f3f8"/>
+  <rect x="24" y="58" width="568" height="1" fill="#e0e0e5"/>
+  <rect x="24" y="24" width="3" height="34" fill="#3e3a7a"/>
+  <rect x="24" y="52" width="3" height="6" fill="#3e3a7a"/>
+  <text x="40" y="46" font-size="12" font-weight="600" fill="#181d27">Setup &amp; Migration</text>
+  <rect x="38" y="68" width="72" height="17" rx="8" fill="#FFF7ED" stroke="#FDBA74" stroke-width="1"/>
+  <text x="74" y="79" font-size="10" font-weight="500" fill="#C2410C" text-anchor="middle">Workflows</text>
+  <text x="130" y="80" font-size="12" font-weight="600" fill="#181d27">Checklist Importer</text>
+  <text x="130" y="94" font-size="11" fill="#757582">Converts any close checklist spreadsheet into a Numeric import workbook</text>
+  <line x1="25" y1="110" x2="591" y2="110" stroke="#e7e7ee" stroke-width="1"/>
+  <rect x="38" y="120" width="72" height="17" rx="8" fill="#FFF7ED" stroke="#FDBA74" stroke-width="1"/>
+  <text x="74" y="131" font-size="10" font-weight="500" fill="#C2410C" text-anchor="middle">Workflows</text>
+  <text x="130" y="132" font-size="12" font-weight="600" fill="#181d27">Rec Assignment Importer</text>
+  <text x="130" y="146" font-size="11" fill="#757582">Converts BS rec assignments spreadsheet into Numeric-ready import file</text>
+  <rect x="24" y="174" width="568" height="190" rx="6" fill="#ffffff" stroke="#e0e0e5" stroke-width="1"/>
+  <rect x="24" y="174" width="568" height="34" rx="6" fill="#f3f3f8"/>
+  <rect x="24" y="202" width="568" height="6" fill="#f3f3f8"/>
+  <rect x="24" y="208" width="568" height="1" fill="#e0e0e5"/>
+  <rect x="24" y="174" width="3" height="34" fill="#3e3a7a"/>
+  <rect x="24" y="202" width="3" height="6" fill="#3e3a7a"/>
+  <text x="40" y="196" font-size="12" font-weight="600" fill="#181d27">Journals &amp; Transactions</text>
+  <rect x="38" y="218" width="74" height="17" rx="8" fill="#f0effd" stroke="#aba1ec" stroke-width="1"/>
+  <text x="75" y="229" font-size="10" font-weight="500" fill="#3e3a7a" text-anchor="middle">Automation</text>
+  <text x="130" y="230" font-size="12" font-weight="600" fill="#181d27">Accrual Identification &amp; JE</text>
+  <text x="130" y="244" font-size="11" fill="#757582">Analyzes vendor spend, identifies accrual candidates, generates workpaper and JEs</text>
+  <line x1="25" y1="260" x2="591" y2="260" stroke="#e7e7ee" stroke-width="1"/>
+  <rect x="38" y="270" width="74" height="17" rx="8" fill="#f0effd" stroke="#aba1ec" stroke-width="1"/>
+  <text x="75" y="281" font-size="10" font-weight="500" fill="#3e3a7a" text-anchor="middle">Automation</text>
+  <text x="130" y="282" font-size="12" font-weight="600" fill="#181d27">Journal Entry Posting</text>
+  <text x="130" y="296" font-size="11" fill="#757582">Parses source docs, validates DR=CR balance, outputs NetSuite-ready CSV</text>
+  <line x1="25" y1="312" x2="591" y2="312" stroke="#e7e7ee" stroke-width="1"/>
+  <rect x="38" y="322" width="64" height="17" rx="8" fill="#F0FDF4" stroke="#86EFAC" stroke-width="1"/>
+  <text x="70" y="333" font-size="10" font-weight="500" fill="#166534" text-anchor="middle">Insights</text>
+  <text x="130" y="334" font-size="12" font-weight="600" fill="#181d27">Department Anomaly Scan</text>
+  <text x="130" y="348" font-size="11" fill="#757582">Scans GL for coding anomalies and generates reclass journal entries</text>
+  <rect x="24" y="376" width="568" height="242" rx="6" fill="#ffffff" stroke="#e0e0e5" stroke-width="1"/>
+  <rect x="24" y="376" width="568" height="34" rx="6" fill="#f3f3f8"/>
+  <rect x="24" y="404" width="568" height="6" fill="#f3f3f8"/>
+  <rect x="24" y="410" width="568" height="1" fill="#e0e0e5"/>
+  <rect x="24" y="376" width="3" height="34" fill="#3e3a7a"/>
+  <rect x="24" y="404" width="3" height="6" fill="#3e3a7a"/>
+  <text x="40" y="398" font-size="12" font-weight="600" fill="#181d27">Close Management</text>
+  <rect x="38" y="420" width="64" height="17" rx="8" fill="#F0FDF4" stroke="#86EFAC" stroke-width="1"/>
+  <text x="70" y="431" font-size="10" font-weight="500" fill="#166534" text-anchor="middle">Insights</text>
+  <text x="130" y="432" font-size="12" font-weight="600" fill="#181d27">Close Pulse</text>
+  <text x="130" y="446" font-size="11" fill="#757582">Live close dashboard across checklist, rec, and flux — 5 diagnostic lenses</text>
+  <line x1="25" y1="462" x2="591" y2="462" stroke="#e7e7ee" stroke-width="1"/>
+  <rect x="38" y="472" width="64" height="17" rx="8" fill="#F0FDF4" stroke="#86EFAC" stroke-width="1"/>
+  <text x="70" y="483" font-size="10" font-weight="500" fill="#166534" text-anchor="middle">Insights</text>
+  <text x="130" y="484" font-size="12" font-weight="600" fill="#181d27">Close Retrospective</text>
+  <text x="130" y="498" font-size="11" fill="#757582">Post-close analysis of pace, review cycles, workload, and bottlenecks</text>
+  <line x1="25" y1="514" x2="591" y2="514" stroke="#e7e7ee" stroke-width="1"/>
+  <rect x="38" y="524" width="74" height="17" rx="8" fill="#f0effd" stroke="#aba1ec" stroke-width="1"/>
+  <text x="75" y="535" font-size="10" font-weight="500" fill="#3e3a7a" text-anchor="middle">Automation</text>
+  <text x="130" y="536" font-size="12" font-weight="600" fill="#181d27">Overdue Task Nudges</text>
+  <text x="130" y="550" font-size="11" fill="#757582">Sends Slack reminders for overdue or upcoming-due tasks; logs to task</text>
+  <line x1="25" y1="566" x2="591" y2="566" stroke="#e7e7ee" stroke-width="1"/>
+  <rect x="38" y="576" width="64" height="17" rx="8" fill="#F0FDF4" stroke="#86EFAC" stroke-width="1"/>
+  <text x="70" y="587" font-size="10" font-weight="500" fill="#166534" text-anchor="middle">Insights</text>
+  <text x="130" y="588" font-size="12" font-weight="600" fill="#181d27">Cross-Workspace Dashboard</text>
+  <text x="130" y="602" font-size="11" fill="#757582">Portfolio close status rolled up across all entities</text>
+  <rect x="24" y="630" width="568" height="138" rx="6" fill="#ffffff" stroke="#e0e0e5" stroke-width="1"/>
+  <rect x="24" y="630" width="568" height="34" rx="6" fill="#f3f3f8"/>
+  <rect x="24" y="658" width="568" height="6" fill="#f3f3f8"/>
+  <rect x="24" y="664" width="568" height="1" fill="#e0e0e5"/>
+  <rect x="24" y="630" width="3" height="34" fill="#3e3a7a"/>
+  <rect x="24" y="658" width="3" height="6" fill="#3e3a7a"/>
+  <text x="40" y="652" font-size="12" font-weight="600" fill="#181d27">Flux &amp; Variance</text>
+  <rect x="38" y="674" width="74" height="17" rx="8" fill="#f0effd" stroke="#aba1ec" stroke-width="1"/>
+  <text x="75" y="685" font-size="10" font-weight="500" fill="#3e3a7a" text-anchor="middle">Automation</text>
+  <text x="130" y="686" font-size="12" font-weight="600" fill="#181d27">Auto-Draft Flux Explanations</text>
+  <text x="130" y="700" font-size="11" fill="#757582">Batch-drafts variance commentary for all assigned flux tasks</text>
+  <line x1="25" y1="716" x2="591" y2="716" stroke="#e7e7ee" stroke-width="1"/>
+  <rect x="38" y="726" width="72" height="17" rx="8" fill="#FFF7ED" stroke="#FDBA74" stroke-width="1"/>
+  <text x="74" y="737" font-size="10" font-weight="500" fill="#C2410C" text-anchor="middle">Workflows</text>
+  <text x="130" y="738" font-size="12" font-weight="600" fill="#181d27">Consolidated Flux</text>
+  <text x="130" y="752" font-size="11" fill="#757582">Rolls up child commentary into group narratives across entities and periods</text>
+  <rect x="608" y="24" width="568" height="294" rx="6" fill="#ffffff" stroke="#e0e0e5" stroke-width="1"/>
+  <rect x="608" y="24" width="568" height="34" rx="6" fill="#f3f3f8"/>
+  <rect x="608" y="52" width="568" height="6" fill="#f3f3f8"/>
+  <rect x="608" y="58" width="568" height="1" fill="#e0e0e5"/>
+  <rect x="608" y="24" width="3" height="34" fill="#3e3a7a"/>
+  <rect x="608" y="52" width="3" height="6" fill="#3e3a7a"/>
+  <text x="624" y="46" font-size="12" font-weight="600" fill="#181d27">Reporting &amp; Analysis</text>
+  <rect x="622" y="68" width="72" height="17" rx="8" fill="#FFF7ED" stroke="#FDBA74" stroke-width="1"/>
+  <text x="658" y="79" font-size="10" font-weight="500" fill="#C2410C" text-anchor="middle">Workflows</text>
+  <text x="714" y="80" font-size="12" font-weight="600" fill="#181d27">Executive Report</text>
+  <text x="714" y="94" font-size="11" fill="#757582">Collapses GL detail into executive groups; styled Excel or PDF output</text>
+  <line x1="609" y1="110" x2="1175" y2="110" stroke="#e7e7ee" stroke-width="1"/>
+  <rect x="622" y="120" width="64" height="17" rx="8" fill="#F0FDF4" stroke="#86EFAC" stroke-width="1"/>
+  <text x="654" y="131" font-size="10" font-weight="500" fill="#166534" text-anchor="middle">Insights</text>
+  <text x="714" y="132" font-size="12" font-weight="600" fill="#181d27">Financial Metrics</text>
+  <text x="714" y="146" font-size="11" fill="#757582">Appends ratios inline — margins, liquidity, covenant, working capital</text>
+  <line x1="609" y1="162" x2="1175" y2="162" stroke="#e7e7ee" stroke-width="1"/>
+  <rect x="622" y="172" width="72" height="17" rx="8" fill="#FFF7ED" stroke="#FDBA74" stroke-width="1"/>
+  <text x="658" y="183" font-size="10" font-weight="500" fill="#C2410C" text-anchor="middle">Workflows</text>
+  <text x="714" y="184" font-size="12" font-weight="600" fill="#181d27">Report + Transaction Detail</text>
+  <text x="714" y="198" font-size="11" fill="#757582">Financial statement with full GL transaction backup, two-tab Excel</text>
+  <line x1="609" y1="214" x2="1175" y2="214" stroke="#e7e7ee" stroke-width="1"/>
+  <rect x="622" y="224" width="72" height="17" rx="8" fill="#FFF7ED" stroke="#FDBA74" stroke-width="1"/>
+  <text x="658" y="235" font-size="10" font-weight="500" fill="#C2410C" text-anchor="middle">Workflows</text>
+  <text x="714" y="236" font-size="12" font-weight="600" fill="#181d27">Clean Report Export</text>
+  <text x="714" y="250" font-size="11" fill="#757582">Strips formatting artifacts; outputs CSV/TSV ready for analysis tools</text>
+  <line x1="609" y1="266" x2="1175" y2="266" stroke="#e7e7ee" stroke-width="1"/>
+  <rect x="622" y="276" width="72" height="17" rx="8" fill="#FFF7ED" stroke="#FDBA74" stroke-width="1"/>
+  <text x="658" y="287" font-size="10" font-weight="500" fill="#C2410C" text-anchor="middle">Workflows</text>
+  <text x="714" y="288" font-size="12" font-weight="600" fill="#181d27">AR / AP Aging</text>
+  <text x="714" y="302" font-size="11" fill="#757582">FIFO-matched aging schedule bucketed by 30/60/90+ days</text>
+  <rect x="608" y="330" width="568" height="86" rx="6" fill="#ffffff" stroke="#e0e0e5" stroke-width="1"/>
+  <rect x="608" y="330" width="568" height="34" rx="6" fill="#f3f3f8"/>
+  <rect x="608" y="358" width="568" height="6" fill="#f3f3f8"/>
+  <rect x="608" y="364" width="568" height="1" fill="#e0e0e5"/>
+  <rect x="608" y="330" width="3" height="34" fill="#3e3a7a"/>
+  <rect x="608" y="358" width="3" height="6" fill="#3e3a7a"/>
+  <text x="624" y="352" font-size="12" font-weight="600" fill="#181d27">Reconciliation</text>
+  <rect x="622" y="374" width="72" height="17" rx="8" fill="#FFF7ED" stroke="#FDBA74" stroke-width="1"/>
+  <text x="658" y="385" font-size="10" font-weight="500" fill="#C2410C" text-anchor="middle">Workflows</text>
+  <text x="714" y="386" font-size="12" font-weight="600" fill="#181d27">Numeric Rec Workbook</text>
+  <text x="714" y="400" font-size="11" fill="#757582">Leadsheet with prior period balances and rollforward tab from live data</text>
+  <rect x="608" y="428" width="568" height="86" rx="6" fill="#ffffff" stroke="#e0e0e5" stroke-width="1"/>
+  <rect x="608" y="428" width="568" height="34" rx="6" fill="#f3f3f8"/>
+  <rect x="608" y="456" width="568" height="6" fill="#f3f3f8"/>
+  <rect x="608" y="462" width="568" height="1" fill="#e0e0e5"/>
+  <rect x="608" y="428" width="3" height="34" fill="#3e3a7a"/>
+  <rect x="608" y="456" width="3" height="6" fill="#3e3a7a"/>
+  <text x="624" y="450" font-size="12" font-weight="600" fill="#181d27">Audit &amp; Compliance</text>
+  <rect x="622" y="472" width="72" height="17" rx="8" fill="#FFF7ED" stroke="#FDBA74" stroke-width="1"/>
+  <text x="658" y="483" font-size="10" font-weight="500" fill="#C2410C" text-anchor="middle">Workflows</text>
+  <text x="714" y="484" font-size="12" font-weight="600" fill="#181d27">Audit Evidence Export</text>
+  <text x="714" y="498" font-size="11" fill="#757582">Full close-period activity history formatted for external audit evidence</text>
+</svg>
