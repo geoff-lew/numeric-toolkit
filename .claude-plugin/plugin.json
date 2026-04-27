@@ -1,5 +1,5 @@
 {
-  "name": "numeric",
+  "name": "numeric-mcp-toolkit",
   "version": "0.5.0",
   "description": "18 AI skills for the Numeric MCP — close pulse, close retro, flux drafting, accruals, journal entries, rec workbooks, rec-assignment imports, department anomaly scanning, cross-workspace dashboards, audit evidence exports, consolidated flux, financial metrics, clean report exports, executive reports, AR/AP aging, and more.",
   "author": {
