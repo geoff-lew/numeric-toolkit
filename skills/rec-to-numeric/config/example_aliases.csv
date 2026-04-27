@@ -1,0 +1,16 @@
+old_desc,new_desc
+Receivables Billed,Customer AR
+Un-billed AR,Un-Billed AR
+Reserve for Doubtful Accounts,Bad Debt Provision
+Goodwill,Goodwill Gross
+Sales Tax Payable,Sales Taxes Payable US
+Customer Refund Liability,Refunds Payable
+Intercompany Receivable - Due from MMIT,Intercompany AR
+Intercompany Receivable - Due from Dedham,Intercompany AR
+Intercompany Receivable - Due from Evaluate Limited,Intercompany AR
+Intercompany Payable - Due to MMIT,Intercompany AP
+Intercompany Payable - Due to Caerus US1,Intercompany AP
+Trade Names - MMIT,Tradename
+Trade Names - Dedham,Tradename
+Investment in Boston Health Economics LLC (Panalgo),Investment in Subsidiary
+Investment in The Dedham Group LLC,Investment in Subsidiary
