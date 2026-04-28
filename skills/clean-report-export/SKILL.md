@@ -1,5 +1,6 @@
 ---
 name: clean-report-export
+user-invocable: true
 description: >
   Generate a clean, analysis-ready financial statement export from Numeric with zero manual cleanup.
   Strips summary rows, fixes formatting, and outputs CSV/TSV ready for Excel, pandas, or BI tools.

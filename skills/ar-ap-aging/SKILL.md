@@ -1,5 +1,6 @@
 ---
 name: ar-ap-aging
+user-invocable: true
 description: Build an AR (Accounts Receivable) or AP (Accounts Payable) aging from a Numeric workspace. Pulls transaction lines, classifies trade vs journal, FIFO-matches reductions against oldest open items, buckets open balances (Current/1-30/31-60/61-90/90+), and produces a 2-sheet Excel workbook with a GL reconciliation row. Use whenever the user says "AR aging", "AP aging", "aged receivables", "aged payables", "collections report", "who owes us money", "who do we owe", "vendor aging", "customer aging", "age the AR", "age the AP", "bills past due", or any request for an aging schedule out of Numeric.
 ---
 

@@ -1,5 +1,6 @@
 ---
 name: overdue-task-nudge
+user-invocable: true
 description: >
   Sends Slack reminders for overdue or upcoming-due Numeric tasks. Reads preferences from each task's own description (## Reminder preferences section), falls back to defaults if not found, and writes them back after each run. Determines recipients from task descriptions and assignees. Logs each reminder as a task comment to prevent duplicate nudges. Trigger when the user says: remind assignees, send task nudges, chase outstanding recs, ping people on overdue tasks, send close reminders, nudge people on late tasks, remind everyone about their tasks, send overdue nudges, who hasn't finished their tasks, or run a reminder sweep in Numeric.
 ---

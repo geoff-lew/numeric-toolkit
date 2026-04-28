@@ -1,5 +1,6 @@
 ---
 name: financial-metrics
+user-invocable: true
 description: >
   Compute and append standard financial ratios and analytic metrics to any Numeric report output.
   Three categories: profitability/margin analysis, covenant/liquidity/solvency, and operational/working

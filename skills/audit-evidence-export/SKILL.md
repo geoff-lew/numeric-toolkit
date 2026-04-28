@@ -1,5 +1,6 @@
 ---
 name: audit-evidence-export
+user-invocable: true
 description: >
   Extract a complete activity history from a Numeric workspace for a selected close period and produce
   a formatted Excel workbook suitable for external audit evidence. Trigger this skill whenever the user

@@ -1,5 +1,6 @@
 ---
 name: checklist-to-numeric
+user-invocable: true
 description: Convert any close-checklist spreadsheet (FloQast, BlackLine, Trintech, Workiva, or a custom xlsx/csv) into a Numeric-ready import workbook. Trigger whenever the user wants to migrate a close checklist into Numeric, says anything like "convert FloQast to Numeric", "migrate BlackLine checklist", "import my close checklist into Numeric", "turn this spreadsheet into Numeric tasks", "map my checklist to Numeric", or uploads any xlsx/csv that looks like a close checklist (rows are tasks; columns include some form of task name, frequency, preparer, deadline). Also triggers for FloQast exports specifically (FloQast_Checklist_Template_*.xlsx). The script auto-detects column mappings from a synonym table and accepts explicit --map overrides when headers are unusual.
 ---
 

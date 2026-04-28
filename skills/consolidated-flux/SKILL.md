@@ -1,5 +1,6 @@
 ---
 name: consolidated-flux
+user-invocable: true
 description: >
   Consolidate flux variance commentary across entities, reports, accounts, and periods into a single
   unified view. Rolls up child-level explanations into group narratives and stitches trend commentary

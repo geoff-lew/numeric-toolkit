@@ -1,5 +1,6 @@
 ---
 name: rec-to-numeric
+user-invocable: true
 description: Convert a customer's existing Balance Sheet Reconciliation assignments file into a Numeric Rec Assignment import xlsx. Pulls the chart of accounts from Numeric via list_financial_accounts, joins to a customer-supplied entity-ID file, optionally swaps old account numbers from a prior general-ledger system, maps preparer/reviewer names to emails, and emits a 3-tab xlsx that matches Numeric's Recon assignment template. Trigger when the user uploads a structured BS-Rec assignments workbook + entity-ID file and says things like "build rec import", "convert BS rec assignments", "import balance sheet recs into Numeric", or "turn this into a Numeric rec import".
 ---
 

@@ -1,5 +1,6 @@
 ---
 name: report-txn-detail
+user-invocable: true
 description: >
   Pull any Numeric report (IS, BS, or saved config) and produce an Excel workbook with two tabs:
   the full report and a flat table of every GL transaction line. Trigger for: "report with

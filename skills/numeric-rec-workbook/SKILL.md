@@ -1,5 +1,6 @@
 ---
 name: numeric-rec-workbook
+user-invocable: true
 description: >
   Generates a Numeric Rec workbook (.xlsx) from live Numeric data for any GL account.
   Builds a clean leadsheet with one row per account and entity — date headers fill in

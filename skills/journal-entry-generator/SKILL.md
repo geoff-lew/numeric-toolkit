@@ -1,5 +1,6 @@
 ---
 name: journal-entry
+user-invocable: true
 description: >
   Generates and posts NetSuite journal entries from source documents, platform
   exports, GL dumps, and allocation workbooks. Pulls pending JE tasks from

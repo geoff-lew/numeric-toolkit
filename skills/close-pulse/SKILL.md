@@ -1,5 +1,6 @@
 ---
 name: close-pulse
+user-invocable: true
 description: >
   Manager dashboard for close status across checklist, recon, and flux modules. Five lenses: materiality, urgency, progress, pace, and dependencies. Use when the user asks for "close status", "what needs attention", "close dashboard", "how's the close going", "what's overdue", "who's behind", "close progress", "show me what's open", "are we on track", "close pulse", "daily close digest", "close completion rate", "pace of close", "materiality flags", "what accounts are over threshold", "close management summary", or any request about close status, progress, bottlenecks, or task urgency.
 ---

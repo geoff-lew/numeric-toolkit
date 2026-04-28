@@ -1,5 +1,6 @@
 ---
 name: automatically-draft-flux-explanations
+user-invocable: true
 description: >
   Drafts flux explanations for all GL accounts assigned to the current user in Numeric
   where a flux explanation has been requested. Loops through each in-scope task, pulls

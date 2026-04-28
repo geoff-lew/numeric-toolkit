@@ -1,5 +1,6 @@
 ---
 name: executive-report
+user-invocable: true
 description: >
   Generates a board-ready or CFO-ready financial statement from Numeric data. Collapses child
   account detail into executive summary groups, rolls up flux commentary into one-line narratives

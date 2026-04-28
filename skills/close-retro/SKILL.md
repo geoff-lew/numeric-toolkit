@@ -1,5 +1,6 @@
 ---
 name: close-retro
+user-invocable: true
 description: >
   Close retrospective — analyzes how a close period went using task completion data, event timelines, review cycles, and assignee workload from Numeric. Produces a plain-language Slack digest organized around diagnostic questions (pace, review quality, workload balance, setup gaps). Optionally produces an HTML dashboard. Works on closed or in-progress periods. Trigger when the user says: close retro, close retrospective, how did the close go, close debrief, post-close review, close analysis, what went well this close, close performance, close review, close recap, month-end retro, how's the close tracking, close cycle time, who was late, what took longest, close bottlenecks, pace of close review, or any request to evaluate or reflect on a close period's performance.
 ---

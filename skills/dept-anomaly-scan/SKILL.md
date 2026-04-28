@@ -1,5 +1,6 @@
 ---
 name: dept-anomaly-scan
+user-invocable: true
 description: >
   Scan a Numeric workspace for GL-to-department coding anomalies and generate a
   NetSuite CSV journal entry import to reclass them. Trigger this skill whenever

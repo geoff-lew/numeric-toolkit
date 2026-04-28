@@ -1,5 +1,6 @@
 ---
 name: cross-workspace-dashboard
+user-invocable: true
 description: >
   Cross-workspace executive close dashboard — rolls up multiple Numeric workspaces (entities) into a single portfolio-level HTML dashboard with companion Excel workbook. Use only when the user explicitly needs a multi-entity or portfolio view. Trigger for: "cross-workspace close dashboard", "portfolio close", "multi-entity close", "multi-workspace close", "close across all entities", "close status across entities", "which entities are behind", "who's overloaded across the portfolio", "executive close view", "CFO dashboard across entities", "controller dashboard", "portfolio close status", "compare entities", "which workspaces are behind", "show me all entities". Do NOT trigger for single-workspace close questions — use close-pulse for those. This skill is for users managing multiple entities who need a comparative, rolled-up view.
 ---

@@ -1,5 +1,6 @@
 ---
 name: complete-accruals-task
+user-invocable: true
 description: >
   Completes an accrual task in Numeric end-to-end: analyzes vendor spend history,
   identifies accrual candidates using configurable triggers, generates an Excel
