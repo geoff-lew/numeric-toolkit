@@ -6,7 +6,7 @@
   },
   "metadata": {
     "description": "18 AI skills for the Numeric MCP — purpose-built workflows for accounting teams using the Numeric financial close platform.",
-    "version": "0.6.0"
+    "version": "1.0.0"
   },
   "plugins": [
     {
@@ -16,7 +16,7 @@
         "repo": "geoff-lew/numeric-toolkit"
       },
       "description": "18 AI skills for the Numeric MCP — close pulse, close retro, flux drafting, accruals, journal entries, rec workbooks, rec-assignment imports, department anomaly scanning, cross-workspace dashboards, audit evidence exports, consolidated flux, financial metrics, clean report exports, executive reports, AR/AP aging, and more.",
-      "version": "0.6.0",
+      "version": "1.0.0",
       "author": {
         "name": "Geoff",
         "email": "geoff@numeric.io"

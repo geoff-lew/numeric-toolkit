@@ -18,7 +18,7 @@ description: >
 1. **Workspace:** If the user specifies a workspace, use it. If not, ask.
 2. **Flux report:** If the user specifies a report, use it. If not, `list_reports()` and ask which flux report to use.
 3. `set_workspace` → `get_workspace_context` → note open period, current user, period_id
-4. `list_tasks(period_id, assignee_id, task_type="flux", include_description=true)` → filter to PENDING tasks where current user is preparer
+4. `list_tasks(period_id, assignee_id, task_type="flux", include_description=true)` → filter to in-scope tasks where current user is preparer. **In-scope = `prep_status` is `PENDING` OR empty.** Empty `prep_status` typically means the task was generated for the period but no preparer has touched it yet — those should be drafted. If the user wants strictly PENDING-marked tasks, ask them; otherwise treat both as in-scope.
 
 ## Loop over each PENDING task (IS first, then BS)
 

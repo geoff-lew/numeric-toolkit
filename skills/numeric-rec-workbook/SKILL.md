@@ -298,3 +298,13 @@ Examples: `Numeric_Leadsheet_1405_Supernova_Mar2025.xlsx`
 
 The workbook must be manually uploaded in Numeric's UI to the subledger field of the
 reconciliation task. The **Numeric** tab is what Numeric reads for the balance tie-out.
+
+## Note: recalc.py requires LibreOffice
+
+`scripts/recalc.py` requires the `office.soffice` Python module + LibreOffice in PATH. On macOS:
+
+```bash
+brew install libreoffice
+```
+
+Without LibreOffice, formulas in the saved workbook will not pre-compute when the script is run. Opening the file in Excel will recalculate them on first open. Skip the recalc step if LibreOffice is not installed; the workbook still works.

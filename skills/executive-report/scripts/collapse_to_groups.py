@@ -117,7 +117,46 @@ def main():
     p.add_argument("--statement", choices=["is", "bs"], required=True)
     p.add_argument("--out", required=True)
     p.add_argument("--mapping", help="Custom mapping JSON")
+    p.add_argument("--report-config", help="Path to the report config JSON from list_reports — "
+                   "used to detect non-account-pivoted reports and prevent silent wrong totals")
+    p.add_argument("--allow-non-account-pivot", action="store_true",
+                   help="Override the safety check and run anyway. Use only when the user has "
+                   "confirmed the leaf pivot is acceptable for executive-group rollup.")
     args = p.parse_args()
+
+    # Safety check: refuse to run on reports whose deepest pivot is not account.external_id.
+    # On those, leaf row IDs encode counterparty/customer/department — looking them up in the
+    # COA produces silent wrong totals. See severity-1 issue in toolkit changelog.
+    if args.report_config:
+        try:
+            cfg_raw = json.loads(Path(args.report_config).read_text())
+            cfg = cfg_raw[0] if isinstance(cfg_raw, list) and cfg_raw else cfg_raw
+            rc = cfg.get("reportConfig", cfg)
+            pivots = rc.get("pivots", []) or []
+            visible = [p for p in pivots if not p.get("hidden", False)]
+            if visible:
+                rightmost = visible[-1]
+                pivot_type = rightmost.get("type", "")
+                if pivot_type != "account.external_id":
+                    if not args.allow_non_account_pivot:
+                        print(
+                            f"ERROR: report has a non-account leaf pivot "
+                            f"(rightmost visible pivot: {pivot_type}). Running collapse_to_groups "
+                            f"on this report would silently produce wrong totals because leaf "
+                            f"row IDs are not account external_ids. Either:\n"
+                            f"  1. Use a different saved report whose leaf pivot is account.external_id.\n"
+                            f"  2. Use the report's own filterGroups for grouping (skip this script).\n"
+                            f"  3. Pass --allow-non-account-pivot if the leaf pivot's IDs are "
+                            f"semantically interchangeable with account external_ids in the COA "
+                            f"(rare; user must confirm).",
+                            file=sys.stderr,
+                        )
+                        sys.exit(3)
+                    print(f"WARNING: running on non-account leaf pivot ({pivot_type}). "
+                          f"Output may be wrong.", file=sys.stderr)
+        except (json.JSONDecodeError, OSError, KeyError) as e:
+            print(f"WARNING: could not parse --report-config ({e}); proceeding without "
+                  f"pivot-shape safety check.", file=sys.stderr)
 
     if args.mapping:
         mapping = json.loads(Path(args.mapping).read_text())

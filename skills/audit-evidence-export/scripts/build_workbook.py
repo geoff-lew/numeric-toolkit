@@ -389,16 +389,37 @@ def main():
     parser.add_argument("--output", required=True, help="Output .xlsx path")
     args = parser.parse_args()
 
-    with open(args.rec_tasks) as f:
-        rec_tasks = json.load(f)
-    with open(args.checklist_tasks) as f:
-        checklist_tasks = json.load(f)
-    with open(args.events) as f:
-        events = json.load(f)
-    with open(args.comments) as f:
-        comments = json.load(f)
-    with open(args.users) as f:
-        user_map = json.load(f)
+    def _load_tasks(path):
+        """Accept either flat list or {tasks: [...]} wrapper from parse_tasks.py."""
+        with open(path) as f:
+            data = json.load(f)
+        if isinstance(data, dict) and "tasks" in data:
+            return data["tasks"]
+        return data
+
+    def _load_user_map(path):
+        """Accept flat {uid: name} or nested {uid: {name, active}} from parse_context.py."""
+        with open(path) as f:
+            raw = json.load(f)
+        if raw and isinstance(next(iter(raw.values()), None), dict):
+            return {uid: entry.get("name", uid) for uid, entry in raw.items()}
+        return raw
+
+    def _load_list(path):
+        """Accept flat list or wrapped JSON for events/comments."""
+        with open(path) as f:
+            data = json.load(f)
+        if isinstance(data, dict):
+            for key in ("events", "comments", "items", "data"):
+                if key in data and isinstance(data[key], list):
+                    return data[key]
+        return data
+
+    rec_tasks = _load_tasks(args.rec_tasks)
+    checklist_tasks = _load_tasks(args.checklist_tasks)
+    events = _load_list(args.events)
+    comments = _load_list(args.comments)
+    user_map = _load_user_map(args.users)
 
     now = datetime.now().strftime("%B %d, %Y")
     ws_name = args.workspace_name

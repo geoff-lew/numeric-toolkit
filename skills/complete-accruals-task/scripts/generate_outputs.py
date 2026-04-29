@@ -14,14 +14,14 @@ Usage:
         --accrued-exp-acct-code <2300> \
         --entity-id <1>
 
-confirmed_vendors.json format:
+confirmed_vendors.json format (ALL 5 fields are required per entry — no optional):
     [
         {
-            "vendor": "Vendor Name",
-            "method": "6-mo avg",
-            "method_detail": "6-month avg of (Sep $X + Oct $Y + ...)",
-            "proposed_amount": 1234.56,
-            "trigger": "$0 in Mar, $5,000 in Feb"
+            "vendor": "Vendor Name",                                       # required
+            "method": "6-mo avg",                                          # required
+            "method_detail": "6-month avg of (Sep $X + Oct $Y + ...)",     # required
+            "proposed_amount": 1234.56,                                    # required (number)
+            "trigger": "$0 in Mar, $5,000 in Feb"                          # required
         }
     ]
 
