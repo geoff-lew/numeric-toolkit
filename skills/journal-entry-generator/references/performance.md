@@ -84,3 +84,6 @@ Subagents must NOT read or display the TSV/JSON content of any tool-result file 
 ### Streaming progress — per subagent return, not fixed cadence
 
 Emit one line per subagent return: `Drilled <name> (<n>/<N>)`. Do not wait for fixed batches of N — subagents finish out of order, so cadence-based emits arrive in clumps. Per-return updates keep the user informed in real time.
+### Cap parallel API calls at 3
+
+Empirical finding from perf testing: when 5+ heavy MCP calls (`query_transaction_lines`, `get_task_events`, etc.) are in flight simultaneously, three of them stall at near-identical 244–253s — suggesting rate-limit or queue contention at the MCP server. Cap simultaneous calls at 3. When fanning out N>3 units, batch by 3: dispatch 3 subagents per Agent message, await, dispatch the next 3.

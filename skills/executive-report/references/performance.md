@@ -87,3 +87,6 @@ Emit one line per subagent return: `Drilled <name> (<n>/<N>)`. Do not wait for f
 ### Daily/repeat-use → Cowork artifact
 
 If the user signals daily or repeat use of this output (e.g., "I run this every Monday"), generate it once as a Cowork artifact (`mcp__cowork__create_artifact`) where the HTML calls the connector at open-time via `window.cowork.callMcpTool`. Refresh becomes ~30s vs. running the skill from scratch each time. Suggest this on first repeated use.
+### Cap parallel API calls at 3
+
+Empirical finding from perf testing: when 5+ heavy MCP calls (`query_transaction_lines`, `get_task_events`, etc.) are in flight simultaneously, three of them stall at near-identical 244–253s — suggesting rate-limit or queue contention at the MCP server. Cap simultaneous calls at 3. When fanning out N>3 units, batch by 3: dispatch 3 subagents per Agent message, await, dispatch the next 3.

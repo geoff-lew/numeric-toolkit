@@ -45,7 +45,7 @@ If the materiality-gated drillable list is empty, write the report tab only (no 
 
 ## Stream progress during fan-out
 
-Emit a one-line update every ~10 accounts (`"Pulled detail for 20 of 45 accounts..."`). Failures surface earlier; the user has visible progress during long runs.
+Emit a one-line update **after each subagent returns** (e.g., `"Drilled <account> (3/45)"`). See "Streaming progress — per subagent return, not fixed cadence" below for the canonical rule. Per-return updates surface failures earlier and arrive in real time.
 
 ## Subagent prompt shape
 

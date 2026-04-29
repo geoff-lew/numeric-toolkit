@@ -323,6 +323,19 @@ Keep the summary to 3–5 lines. The document is the deliverable.
 
 Fan out per entity in the multi-entity branch, run `scripts/collapse_to_groups.py` inside each subagent, confirm comparison period upfront, and checkpoint per entity. See `references/performance.md` for the full pattern.
 
+**Always pass `--report-config` to `collapse_to_groups.py`.** Save the relevant entry from `list_reports` to a JSON file and pass its path. The script uses it to detect non-account-pivoted reports (e.g., expense-by-vendor IS) and refuse to run with exit code 3 — preventing silent wrong totals from leaf-id collisions in the COA. Example invocation:
+
+```bash
+python3 scripts/collapse_to_groups.py \
+  --report report_data.tsv \
+  --coa coa.json \
+  --statement is \
+  --report-config report_config.json \
+  --out collapsed.json
+```
+
+If the script exits with code 3, surface the message to the user, ask them to pick a different saved report whose deepest pivot is `account.external_id`, and re-run. Only pass `--allow-non-account-pivot` after the user confirms the leaf pivot's IDs are interchangeable with account external_ids in the COA (rare).
+
 ## Edge cases
 
 - **No flux commentary available**: skip the narrative rows entirely — don't generate

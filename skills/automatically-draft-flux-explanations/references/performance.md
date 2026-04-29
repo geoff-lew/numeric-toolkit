@@ -44,7 +44,7 @@ If 0 tasks remain after the materiality gate, tell the user no flux tasks crosse
 
 ## Stream progress during fan-out
 
-Emit a one-line update every ~5 tasks (`"Drafted 10 of 23 tasks..."`).
+Emit a one-line update **after each subagent returns** (e.g., `"Drafted <account> (5/23)"`). See "Streaming progress — per subagent return, not fixed cadence" below for the canonical rule.
 
 ## Subagent prompt shape
 
@@ -91,3 +91,14 @@ Emit one line per subagent return: `Drilled <name> (<n>/<N>)`. Do not wait for f
 ### Filter at the API surface
 
 Before calling `list_tasks`, push every filterable field server-side: `status`, `task_type`, `assignee_id`, `report_ids`, `name_contains`. The MCP applies these at the source and returns a smaller payload. Filter in-script only what the API can't handle. Reference: `automatically-draft-flux-explanations` already filters by `assignee_id` + `task_type=flux` server-side — apply the same rigor here.
+### Cap parallel API calls at 3
+
+Empirical finding from perf testing: when 5+ heavy MCP calls (`query_transaction_lines`, `get_task_events`, etc.) are in flight simultaneously, three of them stall at near-identical 244–253s — suggesting rate-limit or queue contention at the MCP server. Cap simultaneous calls at 3. When fanning out N>3 units, batch by 3: dispatch 3 subagents per Agent message, await, dispatch the next 3.
+### Materiality threshold by workspace tier
+
+Tier-based defaults; surface the in-scope count to the user before fan-out and let them override:
+
+- Small workspace (<5 entities): default threshold per the skill's primary materiality rule
+- Medium (5–10 entities): 5× the small default
+- Large (>10 entities): 10× the small default
+- If post-gate count >100 units, suggest a higher threshold to the user before proceeding.
