@@ -47,9 +47,9 @@ replace driver bullets with Opening → +/- activity by vendor/customer → Endi
 
 **Where data supports it**, also include: YoY comparison, run-rate implication, % of revenue for variable costs.
 
-## Parallelization
+## Performance
 
-When drafting more than one account, fan out one agent per account after completing setup. Each agent receives: report_id, period_id, row key, report row data (prior/current/variance), and the draft format rules. Each agent independently pulls 6 months of transaction lines, analyzes, and returns the draft text. Collect all drafts, show to user, then post in parallel.
+Fan out per pending task, run `scripts/aggregate_txn_by_dimension.py` on the 6-month TSV inside each subagent, apply the materiality gate, and checkpoint per task. See `references/performance.md` for the full pattern.
 
 ## Rules
 

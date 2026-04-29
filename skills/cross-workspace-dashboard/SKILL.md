@@ -253,7 +253,7 @@ appropriate (dark backgrounds look good in Excel too).
 4. Entity Status — All workspaces with task counts and status
 5. One tab per active workspace — Assignee breakdown and task type mix
 
-After building, recalculate with `scripts/recalc.py` if formulas are used.
+After building, recalculate with `${CLAUDE_PLUGIN_ROOT}/skills/numeric-rec-workbook/scripts/recalc.py` if formulas are used.
 
 ### Step 7: Deliver
 
@@ -287,3 +287,7 @@ specific, actionable, and tied to a named person. Generic advice like
 
 Always include the math: "61 recs, 13 days left = 5/day needed" is much more
 useful than "reconciliations are behind."
+
+## Performance
+
+Fan out per workspace, run `scripts/aggregate_workspace.py` inside each subagent, skip empty workspaces, confirm period scope, and checkpoint per workspace. For daily users, suggest a Cowork artifact instead of regenerating each morning. See `references/performance.md` for the full pattern.

@@ -21,7 +21,7 @@ If the source uses an unusual header (e.g. `Activity` instead of `Description`),
 
 ## Workflow
 
-1. **Peek at the headers.** Before running the script, run it with `--list-headers` (or `--dry-run`) so you can see both the source headers and the auto-detected mapping. This is important because the user's source file may have unexpected columns and it's much cheaper to confirm the mapping upfront than to discover a mismapping after the fact.
+1. **Peek at the headers.** Before running the script, run it with `--list-headers` (or `--dry-run`) to surface both the source headers and the auto-detected mapping. The user's source file may have unexpected columns; confirming the mapping upfront is cheaper than discovering a mismapping afterward.
 
 2. **Confirm the mapping with the user if anything is ambiguous.** In particular:
    - If any *required* field (`category`, `task_name`, `frequency`) wasn't detected, ask the user which column to use.

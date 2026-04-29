@@ -46,7 +46,15 @@ Users often have separate flux reports (MoM IS, QoQ IS, MoM BS, QoQ BS). Combine
 
 Take child-account-level flux explanations and summarize into group-level narratives.
 
-1. Pull the report data via `get_report_data` or `build_report` to get the account hierarchy
+1. Pull the report data to get the account hierarchy. GL data routing — do not skip steps;
+   `build_report` is unreliable and is treated as a last resort:
+   - **Call `list_reports` first** and find the relevant flux/IS/BS config.
+   - **Use `get_report_data(configuration_id, period_id)`** on a matching saved report.
+   - **Only fall back to `build_report`** if no saved config can serve the need. Tell the user.
+   - **Validate the `build_report` response.** If it returns no data rows, or rows where every
+     balance is zero/null, stop. Do not roll up commentary on top of empty data.
+   - **On `build_report` failure, ask the user** which saved config to use instead, or for
+     explicit instruction (different period, different entity, manually-specified report ID, abort).
 2. Pull flux explanations via `get_flux_explanations` for the report
 3. Group child accounts by their parent/section (use `list_financial_accounts` category codes if needed)
 4. For each group, synthesize child explanations into a single narrative:
@@ -77,3 +85,7 @@ Default output: structured summary table with these columns:
 Write as a formatted file — use the xlsx skill for Excel output with proper formatting, or output as markdown table for quick in-chat review if the user just wants a summary.
 
 File name: `Consolidated_Flux_{Period}.xlsx`
+
+## Performance
+
+Fan out per dimension unit (entity, report, period), run `scripts/merge_flux.py` on the per-unit JSONs to produce the unified table, apply the materiality rollup, and checkpoint per unit. See `references/performance.md` for the full pattern.

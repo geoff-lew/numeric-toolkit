@@ -36,15 +36,13 @@ Controllers and accountants frequently need to see both the high-level report an
 
 This skill works with any Numeric report — income statement, balance sheet, or any saved custom report configuration.
 
-**Saved report path** (user names a specific report, or says "use my saved report"):
-1. Call `list_reports` to get all saved configurations
-2. Match the user's intent to the closest config by name and statement type
-3. If ambiguous, show the top 2-3 matches and let them pick
-4. Call `get_report_data(configuration_id, period_id)` — returns TSV
+GL data must be pulled through this ordering. Do not skip steps. `build_report` is unreliable and is treated as a last resort.
 
-**Ad-hoc build path** (user asks for a generic IS or BS):
-1. Determine `statement_type`: `income_statement` or `balance_sheet`
-2. Pick `comparison` type (default `single_month` unless user specifies):
+1. **Call `list_reports` first.** Inspect saved configurations for matches by `statement_type`, comparison, and name.
+2. **Use `get_report_data(configuration_id, period_id)` for any matching saved report.** If multiple plausibly match, show the user the top 2–3 and let them pick — do not silently pick. This returns TSV.
+3. **Only fall back to `build_report` when no saved config can serve the need.** State the fallback explicitly to the user. Determine `statement_type` (`income_statement` / `balance_sheet`), pick `comparison` from the table below (default `single_month` unless the user specified), and call `build_report(statement_type, gl_connection_id, as_of_year, as_of_month, comparison)`.
+4. **Validate the `build_report` response.** If it returns no data rows, or rows where every balance is zero/null, stop. Do not produce a partial or empty workbook.
+5. **On `build_report` failure, ask the user.** Show them the saved configs from step 1 and ask which one to use instead, or ask for explicit instruction (different period, different entity, manually-specified report ID, abort).
 
 | User says | comparison value |
 |---|---|
@@ -55,14 +53,12 @@ This skill works with any Numeric report — income statement, balance sheet, or
 | "last 12 months", "full year", "MoM 12" | `month_over_month_12` |
 | "quarter to date", "QTD" | `quarter_to_date` |
 
-3. Call `build_report(statement_type, gl_connection_id, as_of_year, as_of_month, comparison)`
-
 ### Step 3: Parse the Report Response
 
 The report comes back as TSV. Parse it to extract:
 
 - **Every row as-is** for the report tab (preserve the full report structure including group headers, subtotals, computed rows, margins — everything)
-- **Row keys**: each row has a `key` object with `id` and `type` fields — you need these for transaction queries
+- **Row keys**: each row has a `key` object with `id` and `type` fields — needed for transaction queries
 - **Row types**: identify which rows are drillable accounts (`financial_account`, `external_account_id`, `path`) vs. summary/group rows (`computed_row`, `custom_group`). Only drillable rows get transaction line queries.
 - **Group membership**: track which report section/group each drillable account belongs to (e.g., "Revenue", "Cost of Revenue", "Operating Expenses", "Assets", "Liabilities"). This becomes the "Report Group" column on the Transaction Lines tab.
 
@@ -82,7 +78,7 @@ Use Python's `calendar.monthrange()` for end-of-month dates.
 
 For every drillable row from Step 3:
 1. Call `query_transaction_lines(report_id, key, window_start, window_end)`
-   - `report_id`: the report configuration ID (from `list_reports` → `reportConfig.id`, or from the `build_report` response metadata)
+   - `report_id`: the saved report's `reportConfig.id` from `list_reports` (preferred). Use the `build_report` response's report ID only when the saved-report path was not viable.
    - `key`: the row's key object `{id, type}`
    - `window_start` / `window_end`: date objects `{year, month, day}`
 2. The response is TSV with transaction-level columns (date, posting date, transaction type, name, memo, amount, counterparty, department, organization, currency, URL, etc.)
@@ -148,7 +144,7 @@ This flat structure is intentional — it lets users pivot, filter, and sort fre
 1. Save the workbook
 2. Run the xlsx recalc script if any formulas were used:
    ```bash
-   python /sessions/optimistic-amazing-bohr/mnt/.claude/skills/xlsx/scripts/recalc.py <output_file>
+   python "${CLAUDE_PLUGIN_ROOT}/skills/numeric-rec-workbook/scripts/recalc.py" <output_file>
    ```
 3. Copy to the output directory and provide the download link
 
@@ -158,6 +154,10 @@ Examples:
 - `Acme_Corp_Balance_Sheet_Dec2025.xlsx`
 - `Acme_Corp_YTD_Income_Statement_Jun2026.xlsx`
 
+## Performance
+
+This skill runs long. Before drilling, fan out per account, apply a materiality gate, default to a single-month window, and checkpoint each subagent's output. See `references/performance.md` for the full pattern and parameters. Use `scripts/parse_report.py` (in this skill's `scripts/` folder) to parse the report TSV instead of doing it inline.
+
 ## Edge Cases
 
 - **Report has no data rows**: Tell the user the report is empty for that period. Don't create a file.
@@ -165,6 +165,7 @@ Examples:
 - **Multiple entities**: If the user asks for all entities, create one workbook per entity. Name files distinctly.
 - **Comparison reports (MoM, YTD)**: The report tab includes all comparison columns. The Transaction Lines tab queries transactions for the full comparison window (Step 4 handles this). If the window is very wide (12 months), warn the user it may take a while and produce a large file.
 - **Saved report with custom groupings**: Some saved reports use custom account groupings or pivot by department/class. The Report Group column should reflect whatever grouping structure the saved report uses.
-- **`build_report` response includes a report ID**: Use this as the `report_id` for `query_transaction_lines`. For saved reports via `get_report_data`, use the `reportConfig.id` from `list_reports`.
+- **report_id source**: Default to `reportConfig.id` from `list_reports`. Only use the `build_report` response's report ID if the saved-report path wasn't viable and `build_report` actually returned populated rows.
+- **`build_report` returned empty / all-zero rows**: Halt. Do not produce a workbook. Show the user the saved configs from `list_reports` and ask which one to use instead, or ask for further instruction.
 - **Balance sheet reports**: The Report Group column maps to sections like "Assets", "Liabilities", "Equity". The transaction window covers the as-of month's activity.
 - **Accounts with no transactions**: Skip them on the Transaction Lines tab — no empty placeholder rows.

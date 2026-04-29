@@ -26,7 +26,7 @@ The task name or description is: $ARGUMENTS
 ## Step 0: Load workspace + context
 
 **0a. ToolSearch — batch upfront**
-Before any API calls, load all tool schemas you will need in a single ToolSearch call:
+Before any API calls, load all tool schemas needed in a single ToolSearch call:
 `list_workspaces, set_workspace, get_workspace_context, list_tasks, list_financial_accounts, query_transaction_lines, submit_task, add_task_comment, edit_task`
 
 **0b. Workspace check**
@@ -152,7 +152,7 @@ This gives 6 completed months of history plus the open period for current spend.
 python3 <skill_path>/scripts/parse_txn_lines.py <tool_results_file> <working_dir>/vendor_spend_matrix.json --entity-org-id <org_id>
 ```
 
-The script handles the JSON-wrapped TSV format, filters by entity, groups by counterparty × posting month, and outputs a clean JSON matrix. If the result fits in context, you can still use the script or parse inline — but the script is faster and avoids re-deriving the column names and date parsing logic.
+The script handles the JSON-wrapped TSV format, filters by entity, groups by counterparty × posting month, and outputs a clean JSON matrix. The script can also be used when the result fits in context — it is faster than inline parsing and avoids re-deriving the column names and date parsing logic.
 
 The output `vendor_spend_matrix.json` has this structure:
 ```json
@@ -185,11 +185,11 @@ If prior-period preferences included vendor exclusions, pass them as a comma-sep
 
 The script applies the default triggers from step 0.5, identifies candidates and Section B observations, and outputs:
 - `accrual_candidates.json` — candidates, observations, and a pre-formatted markdown table
-- **stdout** — the markdown table, ready to paste into your response
+- **stdout** — the markdown table, ready to paste into the response
 
 **Manual vendors from step 1.5b**: If the user provided manual vendors, append them to the candidates list in `accrual_candidates.json` before presenting, with trigger = "Manual — unbilled purchase / expected prior-month invoice" and the user-provided amount as the proposed accrual.
 
-**Present to the user**: Show the markdown table directly in your message — no file, no link. The table has numbered rows so the user can reply with just the numbers. Follow it with:
+**Present to the user**: Show the markdown table directly in the message — no file, no link. The table has numbered rows so the user can reply with just the numbers. Follow it with:
 
 "Which vendors should I accrue for? Reply with the numbers, or adjust any amounts/methods."
 
@@ -332,3 +332,7 @@ Last run: {YYYY-MM period slug}
 Only include subsections that have content. If there are no vendor overrides, omit that subsection entirely. The goal is a clean, human-readable block that a reviewer can scan and that the next run can parse.
 
 Tell the user: "Preferences saved to the task description. Next month, overrides and exclusions will carry forward automatically from this period's task."
+
+## Performance
+
+Confirm the 7-month window upfront. Checkpoint the candidate list before user confirmation so re-runs after a step-away resume from cache. See `references/performance.md` for the full pattern.

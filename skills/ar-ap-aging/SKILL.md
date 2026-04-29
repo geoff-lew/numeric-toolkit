@@ -138,6 +138,10 @@ Give the user a `computer://` link to the workbook and a 3-line read:
 
 That's it. If the user asks for per-item detail, a non-trade tab, or early-pay discount analysis, add them — but don't ship them by default.
 
+## Performance
+
+In the high-volume regime, fan out monthly pulls in parallel and checkpoint each month's TSV. Keep aggregation in `scripts/build.py`. Default to a 12-month lookback; do not silently widen past it. See `references/performance.md` for the full pattern.
+
 ## Note on aging basis
 
 This skill ages by **transaction date** (`as_of_date − transaction_date`), matching how Numeric's data is structured. For AP specifically, aging by **due date** would be more accurate since bills have explicit payment terms (Net 30, Net 60, etc.). If Numeric ever exposes `due_date` in the transaction lines output, update the script to use `as_of_date − due_date` for AP. Until then, document the basis in the workbook.

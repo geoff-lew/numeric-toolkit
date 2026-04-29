@@ -41,20 +41,36 @@ vs. prior month, Excel output. Confirm the defaults before proceeding.
 
 ## Step 1: Pull source data
 
+GL data must be pulled through this ordering. Do not skip steps. `build_report` is unreliable
+and is treated as a last resort.
+
+1. **Call `list_reports` first.** Find IS and BS configs (and any consolidated or per-entity variants).
+2. **Use `get_report_data(configuration_id, period_id)` for each matching saved report.** If multiple
+   plausibly match, show the user the top 2–3 and let them pick — do not silently pick.
+3. **Only fall back to `build_report` when no saved config can serve the need.** Tell the user you
+   are doing so and why.
+4. **Validate the `build_report` response.** If it returns no data rows, or rows where every balance
+   is zero/null, stop. Do not produce a partial executive report.
+5. **On `build_report` failure, ask the user.** Show them the saved configs from step 1 and ask which
+   to use instead, or ask for explicit instruction (different period, different entity,
+   manually-specified report ID, abort).
+
+Other calls used in this step:
+
 ```
 get_workspace_context       → entity list, period IDs, gl_connection_id
-list_reports                → find IS and BS report configs
-get_report_data             → IS data for target period (+ comparison period if requested)
-get_report_data             → BS data for target period
 list_financial_accounts     → chart of accounts for group mapping
 list_tasks(period_id, task_type="flux")  → flux tasks for commentary rollup
 ```
 
 For multi-period comparisons, pull each period's report data separately.
 
-For multi-entity (consolidated): pull `build_report` per entity with `pivots: ["account", "org"]`
-then aggregate. Flag to the user if intercompany elimination is needed — do not silently net
-intercompany unless the user confirms it.
+For multi-entity (consolidated): try `list_reports` first for a consolidated saved config or for
+per-entity IS/BS saved configs to aggregate. Only fall back to `build_report` per entity
+with `pivots: ["account", "org"]` if no saved configs cover the entities. Flag to the user if
+intercompany elimination is needed — do not silently net intercompany unless the user confirms it.
+If `build_report` returns empty for any entity, halt the consolidation and ask the user how to
+proceed (pick a saved config instead, drop that entity, or abort).
 
 ---
 
@@ -302,6 +318,10 @@ Provide a brief inline summary alongside the file link:
 Keep the summary to 3–5 lines. The document is the deliverable.
 
 ---
+
+## Performance
+
+Fan out per entity in the multi-entity branch, run `scripts/collapse_to_groups.py` inside each subagent, confirm comparison period upfront, and checkpoint per entity. See `references/performance.md` for the full pattern.
 
 ## Edge cases
 

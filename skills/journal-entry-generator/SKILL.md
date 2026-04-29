@@ -79,7 +79,7 @@ One task at a time. Wait for their answer.
 Read the task description and comments via `get_task_comments`. The description
 and prior comments may contain instructions from previous runs (subsidiary,
 account preferences, classification notes, External ID pattern, etc.). Use
-these as your starting context.
+these as the starting context.
 
 Ask:
 - "Upload the supporting file for this task."
@@ -306,3 +306,7 @@ IC clearing account: 2199
 
 Preserve everything else in the task description. Only touch the
 `## JE Instructions` block.
+
+## Performance
+
+Use the bundled scripts (`build_workpaper.py`, `validate_je.py`). When batching multiple JE tasks, fan out one subagent per task. Checkpoint the workpaper after Phase 2 so a posting failure does not require re-parsing the source. Cache `get_workspace_context` and `list_financial_accounts` across the session. See `references/performance.md` for the full pattern.

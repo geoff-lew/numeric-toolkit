@@ -58,3 +58,7 @@ Always confirm before taking action on tasks — this is a read-first, act-secon
 ## Output Guidelines
 
 Present the data for each lens directly — do not append a "Summary" or "Recommended Actions" section at the end. The lens outputs themselves are the deliverable. Let the user decide what to act on rather than prescribing next steps.
+
+## Performance
+
+Cache cold-start calls within the session. Fan out lens computations when all five are requested. For daily users, suggest a Cowork artifact instead of regenerating each morning. See `references/performance.md` for the full pattern.

@@ -70,7 +70,7 @@ Parse the TSV into structured data. **Every row must be captured** — do not sa
 truncate. The results may be very large (400+ tasks per type, 600+ for flux) and the MCP
 tool may save them to result files on disk rather than returning them inline. When that
 happens, read the saved file path from the API response and parse the full file with Python
-(e.g., `csv.reader` with tab delimiter). Always verify your parsed row count matches the
+(e.g., `csv.reader` with tab delimiter). Always verify the parsed row count matches the
 expected total from the API response metadata.
 
 Also extract the user ID → name mapping from the workspace context (`users` array) so
@@ -255,6 +255,10 @@ entry has these fields:
 The `author` field should already be resolved to a display name (not a user ID). The
 `task_type` field should be one of: "Reconciliation", "Checklist", "Flux Analysis", or
 "Journal Entry".
+
+## Performance
+
+Fan out per task (batches of ~50), use the bundled parser scripts, and checkpoint per task. Materiality is auditor-driven, not skill-driven. See `references/performance.md` for the full pattern.
 
 ## Edge Cases
 

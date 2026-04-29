@@ -25,14 +25,24 @@ financial statement. Operates in two modes depending on what the user is working
 
 ## Step 1: Pull Source Data
 
-Most ratios require both IS and BS data:
+Most ratios require both IS and BS data. GL data must be pulled through this ordering. Do not skip
+steps. `build_report` is unreliable and is treated as a last resort.
 
-1. Call `get_workspace_context` to get entity, period, and gl_connection_id
-2. Determine the target period and entity
-3. Pull IS data: `build_report` with `statement_type: "income_statement"` or `get_report_data` from a saved IS config
-4. Pull BS data: `build_report` with `statement_type: "balance_sheet"` or `get_report_data` from a saved BS config
-5. For trend ratios (comparing across periods), use `month_over_month_3` or `month_over_month_6` comparison
-6. Call `list_financial_accounts` to get the chart of accounts for account mapping
+1. Call `get_workspace_context` to get entity, period, and `gl_connection_id`. Determine the target
+   period and entity.
+2. **Call `list_reports` first.** Inspect saved configurations for IS and BS matches by
+   `statement_type`, comparison, and name.
+3. **Use `get_report_data(configuration_id, period_id)` for any matching saved report.** If multiple
+   plausibly match, show the user the top 2–3 and let them pick — do not silently pick.
+4. **Only fall back to `build_report` when no saved config can serve the need.** Tell the user you
+   are doing so. For trend ratios (comparing across periods), use the `month_over_month_3` or
+   `month_over_month_6` comparison.
+5. **Validate the `build_report` response.** If it returns no data rows, or rows where every balance
+   is zero/null, stop. Do not compute ratios on empty data.
+6. **On `build_report` failure, ask the user.** Show them the saved configs from step 2 and ask
+   which to use instead, or ask for explicit instruction (different period, different entity,
+   manually-specified report ID, abort).
+7. Call `list_financial_accounts` to get the chart of accounts for account mapping.
 
 ## Step 2: Detect Mode
 

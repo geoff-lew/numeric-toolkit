@@ -153,21 +153,9 @@ Keep the style clean — light background, muted colors (blues for progress, amb
 
 ---
 
-## Performance notes
+## Performance
 
-These learnings come from real usage and save significant time:
-
-1. **Always parse MCP results with the bundled scripts.** The raw MCP responses are 50–300K characters. Trying to process them in-context is slow and error-prone. The scripts extract exactly what's needed.
-
-2. **Extract the user map early.** Event data contains user IDs, not names. Parse the workspace context first so you have the ID→name mapping before processing events.
-
-3. **Batch events by task_keys, ~15 per batch.** The events API returns 500 on unfiltered calls. Batching by 15 task keys keeps response sizes manageable (70–190K per batch).
-
-4. **Batch events proportionally.** For workspaces with many tasks, you don't need events for every single task. 6–10 batches of 15 keys each (90–150 tasks) gives reliable medians and distributions. Scale up for smaller workspaces where full coverage is quick.
-
-5. **Event batches are the bottleneck.** Each batch takes a few seconds to return and the responses are large (70–190K). Plan the number of batches based on total task count — don't over-fetch for small periods or under-fetch for large ones.
-
-6. **Don't build the HTML dashboard by default.** The Slack digest is what people actually use. The dashboard is nice for presentations but isn't worth the extra build time unless requested.
+Use the bundled parsers (`scripts/parse_tasks.py`, `parse_events.py`, `parse_context.py`). Fan out event batches in parallel (~15 task keys per batch), apply a materiality gate above 100 tasks, and checkpoint per batch. Skip the HTML dashboard unless requested. See `references/performance.md` for the full pattern.
 
 ---
 

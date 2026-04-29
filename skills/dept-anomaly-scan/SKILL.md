@@ -50,17 +50,17 @@ Pull these two things in parallel:
 - `get_workspace_context` — entities (GL connection IDs), periods, users
 - `list_reports` — all report configurations
 
-The results will often be large. Use `jq` or Python to extract what you need:
+The results will often be large. Use `jq` or Python to extract what's needed:
 
 - **Entities**: note the `id` field — the prefix before the `/` is the `gl_connection_id`
   needed for `build_report` (only required if the user selects the ad-hoc option in Step 3)
 - **Periods**: sort by end date descending; identify the most recent closed period
-  (this will be your primary analysis month)
+  (the primary analysis month)
 - **Reports**: extract all income statement reports that are not deleted — present
   the full list to the user in Step 3
 
 Only call `list_financial_accounts` if the user selects the ad-hoc report option
-in Step 3 and you need to understand the GL structure to configure the pivots.
+in Step 3 and the GL structure is needed to configure the pivots.
 
 ## Step 3: Scan for anomalies
 
@@ -71,7 +71,9 @@ deleted. Present them to the user as a simple numbered list in the chat — all 
 them, not just the ones with department pivots configured. The user knows their
 workspace and which report contains department data; let them choose.
 
-Always include "Build ad-hoc report" as the final option.
+Always include "Build ad-hoc report" as the final option, and label it as a last resort
+(`build_report` is unreliable and frequently returns empty data — prefer any saved report
+where department data exists, even if its name isn't a perfect fit).
 
 Ask the user to pick one before proceeding.
 
@@ -89,18 +91,25 @@ you'll need a report with department as a dimension. Want to pick a different on
 
 Do not proceed with the anomaly analysis on a report without department data.
 
-### Building an ad-hoc report
+### Building an ad-hoc report (last resort)
 
-If the user selects the ad-hoc option (or no income statement reports exist at all),
-use `build_report` with:
+`build_report` is unreliable and is treated as a last resort. Only use it if every saved
+income statement report has been ruled out (none have department data, or none exist).
+State the fallback explicitly to the user.
+
+Call `build_report` with:
 - `statement_type`: `income_statement`
 - `pivots`: `["Department", "account"]` (or `["Department", "Vendor"]` for
   vendor-level analysis)
 - `comparison`: `month_over_month_6` gives you a 6-month window to spot patterns
 
-Note: `build_report` has been observed to return empty rows for some workspaces
-even when data exists. If it returns headers with no data rows, fall back to
-`get_report_data` on an existing report and let the user know.
+**Validate the response.** If `build_report` returns no data rows, or rows where every
+balance is zero/null, stop. Do not proceed with the anomaly analysis or generate any
+reclass entries.
+
+**On `build_report` failure, ask the user.** Re-show the saved IS reports from Step 3 and
+ask which one to use instead, or ask for explicit instruction (different period, different
+entity, manually-specified report ID, abort). Do not silently fall back or fabricate data.
 
 ### What to flag
 
@@ -194,6 +203,10 @@ Save the CSV to the outputs folder. Present the user with:
 2. The verification results
 3. Notes on any entries flagged for management review
 4. A link to the CSV file
+
+## Performance
+
+This skill runs long. Before drilling, fan out per anomaly, apply a materiality gate, default to a 6-month report window with tight drill windows, and checkpoint per anomaly. See `references/performance.md` for the full pattern. Use `scripts/aggregate_anomalies.py` to produce the flagged anomaly list instead of pivoting inline.
 
 ## Adapting to different companies
 

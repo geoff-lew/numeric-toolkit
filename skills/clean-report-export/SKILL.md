@@ -16,24 +16,21 @@ description: >
 
 Generate analysis-ready financial data from Numeric reports. Every row is a pure data record — no merged cells, no summary artifacts, no formatting noise.
 
-## Routing: Saved Report vs. Ad-Hoc Build
+## Report data routing
 
-Ask the user (or infer from context) whether they want a saved report or an ad-hoc build:
+GL data must be pulled through this ordering. Do not skip steps. `build_report` is unreliable and is treated as a last resort.
 
-**Saved report path:**
-1. Call `list_reports` to get all saved configurations
-2. Match the user's intent to the closest config by name and statement type (e.g., "income statement" → look for IS configs, "balance sheet" → BS configs)
-3. If ambiguous, show the user the top 2-3 matches and let them pick
-4. Call `get_report_data` with the matched `configuration_id` and the target `period_id`
+1. **Call `list_reports` first.** Inspect saved configurations for matches by `statement_type`, comparison, and name.
+2. **Use `get_report_data(configuration_id, period_id)` for any matching saved report.** If multiple saved reports plausibly match, show the user the top 2–3 and let them pick — do not silently pick.
+3. **Only fall back to `build_report` when no saved config can serve the need.** State the fallback explicitly to the user, and why.
+4. **Validate the `build_report` response.** If it returns no data rows, or rows where every balance is zero/null, stop. Do not produce a partial or empty output.
+5. **On `build_report` failure, ask the user.** Show them the saved configs from step 1 and ask which one to use instead, or ask for explicit instruction (different period, different entity, manually-specified report ID, abort).
 
-**Ad-hoc build path:**
-1. Call `get_workspace_context` to get entity list and `gl_connection_id` values
-2. If multiple entities, ask which one (or loop through all if bulk requested)
-3. Call `build_report` with the right `statement_type`, `gl_connection_id`, `as_of_year`, `as_of_month`
+When step 3 is reached, also call `get_workspace_context` to get the entity list and `gl_connection_id` values, and supply `statement_type`, `as_of_year`, and `as_of_month` to `build_report`.
 
 ## Selecting the Right Comparison Type
 
-Match the user's request to the `comparison` parameter on `build_report`:
+Match the user's request to the `comparison` parameter (used either to pick the right saved report or, as a last resort, to pass to `build_report`):
 
 | User says | comparison value |
 |---|---|
@@ -83,6 +80,7 @@ If the user requests multiple reports (e.g., "export all my income statements" o
 
 ## Edge Cases
 
-- If `list_reports` returns no matching config, tell the user what configs exist and offer to `build_report` ad-hoc instead
+- If `list_reports` returns no matching config, tell the user what configs do exist and ask whether to fall back to `build_report` or to pick one of the existing configs anyway
+- If `build_report` returns empty or all-zero data, do not write a file — show the user the saved configs from `list_reports` and ask which one to use instead, or ask for further instruction
 - If the report data is empty for the requested period, say so clearly rather than outputting an empty file
 - If the user asks for a period that doesn't exist in `get_workspace_context`, flag it and suggest the closest available period
