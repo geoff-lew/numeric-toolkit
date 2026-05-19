@@ -183,9 +183,76 @@ select:focus { outline: none; border-color: var(--ink); }
 .stack-figure { margin: 14px 0 4px; padding: 0; text-align: center; }
 .stack-figure img { max-width: 100%; height: auto; border: 1px solid var(--line); border-radius: 8px; display: block; margin: 0 auto; }
 
+/* HOW IT WORKS — modal */
+.how-modal { max-width: 960px !important; background: var(--bg) !important; }
+.how-modal .modal-head { padding: 28px 36px 8px; border-bottom: none; align-items: center; background: var(--bg); }
+.how-modal .modal-title { font-size: 32px; font-weight: 500; letter-spacing: -0.02em; line-height: 1.1; }
+.how-modal .modal-title em { font-style: italic; font-weight: 400; color: var(--accent); }
+.how-modal .modal-eyebrow { font-size: 10px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-3); display: block; margin-bottom: 10px; }
+.how-modal .modal-body { padding: 4px 36px 28px; max-height: calc(100vh - 220px) !important; background: var(--bg); }
+.how-modal .modal-sub { font-size: 14.5px; color: var(--ink-2); line-height: 1.55; margin: 0 0 8px; max-width: 720px; }
+.how-modal .modal-actions { background: var(--bg); border-top: 1px solid var(--line); }
+
+.how-flow-v { display: flex; flex-direction: column; }
+.how-step { display: grid; grid-template-columns: 88px 1fr; gap: 24px; padding: 26px 0 28px; border-top: 1px solid var(--line); position: relative; background: transparent; }
+.how-step:last-of-type { padding-bottom: 6px; }
+.how-step-rail { position: relative; padding-top: 4px; display: flex; flex-direction: column; gap: 6px; }
+.how-step-num { font-family: ui-serif, Georgia, "Times New Roman", serif; font-style: italic; font-size: 28px; font-weight: 400; color: var(--ink); letter-spacing: -0.01em; line-height: 1; }
+.how-step.loop .how-step-num { font-style: normal; font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif; font-size: 26px; color: var(--accent); }
+.how-step-body { min-width: 0; }
+.how-row1 { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; flex-wrap: wrap; }
+.how-chip { display: inline-flex; align-items: center; padding: 4px 11px; border-radius: 5px; background: #F1ECDF; border: 1px solid var(--line-2); font-family: "SF Mono", Menlo, monospace; font-size: 11px; font-weight: 500; color: var(--ink); letter-spacing: 0.02em; }
+.how-step.refine .how-chip { background: var(--accent-soft); border-color: #CDC3F0; color: var(--accent-deep); }
+.how-step.loop .how-chip { background: var(--accent-soft); border-color: #CDC3F0; color: var(--accent-deep); }
+.how-headline { font-size: 19px; font-weight: 600; color: var(--ink); margin: 0; line-height: 1.3; letter-spacing: -0.01em; }
+.how-desc { margin: 10px 0 0; font-size: 13.5px; color: var(--ink-2); line-height: 1.65; }
+.how-desc strong { color: var(--ink); font-weight: 600; }
+.how-desc em { font-style: italic; color: var(--ink); font-family: ui-serif, Georgia, "Times New Roman", serif; font-size: 14px; }
+.how-desc code { font-family: "SF Mono", Menlo, monospace; font-size: 12px; background: rgba(20,19,15,0.06); color: var(--ink); padding: 1px 5px; border-radius: 3px; }
+.how-quote { margin: 14px 0 0; padding: 4px 0 4px 16px; border-left: 2px solid var(--accent); font-family: ui-serif, Georgia, "Times New Roman", serif; font-style: italic; font-size: 15px; color: var(--ink); line-height: 1.55; background: transparent; border-radius: 0; }
+.how-meta-row { display: flex; gap: 8px; margin-top: 14px; flex-wrap: wrap; }
+.how-tag { display: inline-flex; align-items: center; gap: 6px; padding: 4px 11px; border-radius: 999px; background: transparent; border: 1px solid var(--line-2); font-size: 11px; color: var(--ink-2); font-weight: 500; }
+.how-tag::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--ink-3); }
+.how-tag.accent::before { background: var(--accent); }
+.how-tag.green::before { background: #6B8E5A; }
+.how-tag.amber::before { background: #C99449; }
+
+.how-foot { margin-top: 8px; padding: 22px 0 4px; border-top: 1px solid var(--line); }
+.how-foot-text { font-size: 13px; color: var(--ink-2); line-height: 1.6; max-width: 720px; }
+.how-foot-text strong { color: var(--ink); font-weight: 600; }
+.how-foot-text a { color: var(--accent-deep); font-weight: 500; text-decoration: none; }
+.how-foot-text a:hover { text-decoration: underline; }
+
+/* Section headers (Gallery + Library) */
+.sec-head { margin: 0 0 14px; padding-top: 22px; border-top: 1px solid var(--line); }
+.sec-head-first { padding-top: 0; border-top: none; }
+.sec-eyebrow { font-size: 10px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-3); display: block; margin: 0 0 6px; }
+.sec-title { font-size: 24px; font-weight: 500; color: var(--ink); margin: 0; letter-spacing: -0.015em; line-height: 1.2; }
+
+/* Gallery — main page carousel */
+.gallery { margin: 4px 0 28px; }
+.gallery-wrap { position: relative; }
+.gallery-track { display: flex; gap: 14px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; padding: 4px 4px 4px 0; -ms-overflow-style: none; scrollbar-width: none; }
+.gallery-track::-webkit-scrollbar { display: none; }
+.gallery-frame { flex: 0 0 320px; scroll-snap-align: start; display: flex; align-items: center; justify-content: center; padding: 4px; background: var(--bg); border: 1px solid var(--line); border-radius: 10px; transition: all 0.18s ease; cursor: zoom-in; aspect-ratio: 4 / 3; overflow: hidden; }
+.gallery-frame:hover { border-color: var(--ink-2); transform: translateY(-1px); box-shadow: var(--shadow); }
+.gallery-frame img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.gallery-arrow { position: absolute; top: 50%; transform: translateY(-50%); width: 34px; height: 34px; border-radius: 50%; background: var(--surface); border: 1px solid var(--line-2); cursor: pointer; z-index: 3; display: flex; align-items: center; justify-content: center; font-size: 18px; color: var(--ink-2); font-family: inherit; box-shadow: 0 2px 8px rgba(20,19,15,0.08); transition: all 0.15s ease; }
+.gallery-arrow:hover { background: var(--ink); color: #fff; border-color: var(--ink); }
+.gallery-arrow:disabled { opacity: 0.35; cursor: default; pointer-events: none; }
+.gallery-arrow-prev { left: -10px; }
+.gallery-arrow-next { right: -10px; }
+
+/* Lightbox */
+.lightbox { position: fixed; inset: 0; background: rgba(20,19,15,0.85); display: none; align-items: center; justify-content: center; padding: 40px; z-index: 200; cursor: zoom-out; }
+.lightbox.open { display: flex; }
+.lightbox img { max-width: 100%; max-height: 100%; width: auto; height: auto; border-radius: 6px; box-shadow: 0 24px 64px rgba(0,0,0,0.4); background: var(--bg); padding: 24px; }
+.lightbox-close { position: absolute; top: 20px; right: 24px; background: none; border: none; color: rgba(255,255,255,0.8); font-size: 28px; cursor: pointer; line-height: 1; padding: 4px 10px; }
+.lightbox-close:hover { color: #fff; }
+
 @media (max-width: 1100px) { .grid { grid-template-columns: repeat(3, 1fr); } }
-@media (max-width: 880px) { .grid { grid-template-columns: repeat(2, 1fr); } .filters { grid-template-columns: 1fr 1fr; } .stat-meta { display: none; } .hero { flex-direction: column; align-items: flex-start; gap: 18px; } .hero-right { align-items: flex-start; text-align: left; } }
-@media (max-width: 560px) { .grid { grid-template-columns: 1fr; } .hero-title { font-size: 36px; } .stat { padding: 0 16px; min-width: 90px; } .stat:first-child { padding-left: 0; } }
+@media (max-width: 880px) { .grid { grid-template-columns: repeat(2, 1fr); } .filters { grid-template-columns: 1fr 1fr; } .stat-meta { display: none; } .hero { flex-direction: column; align-items: flex-start; gap: 18px; } .hero-right { align-items: flex-start; text-align: left; } .how-modal .modal-title { font-size: 26px; } .how-modal .modal-head { padding: 22px 24px 8px; } .how-modal .modal-body { padding: 4px 24px 24px; } .how-step { grid-template-columns: 64px 1fr; gap: 16px; padding: 22px 0 24px; } .how-step-num { font-size: 24px; } .gallery-frame { flex-basis: 280px; } }
+@media (max-width: 560px) { .grid { grid-template-columns: 1fr; } .hero-title { font-size: 36px; } .stat { padding: 0 16px; min-width: 90px; } .stat:first-child { padding-left: 0; } .how-modal .modal-title { font-size: 22px; } .how-step { grid-template-columns: 1fr; gap: 4px; padding: 20px 0 22px; } .how-step-num { font-size: 22px; } .gallery-frame { flex-basis: 240px; } }
 </style>
 </head>
 <body>
@@ -209,7 +276,7 @@ select:focus { outline: none; border-color: var(--ink); }
       </span>
       <div>
         <h1 class="hero-title">Community <em>Skills Library</em></h1>
-        <p class="hero-subtitle">Purpose-built AI skills for accounting teams on Numeric. Each skill is a pre-built workflow your AI assistant can run on top of the <a href="https://help.numeric.io/articles/7292808089-numeric-mcp-server" target="_blank" rel="noopener" style="color:var(--accent-deep)">Numeric MCP</a> — close, flux, JE, recon, audit.</p>
+        <p class="hero-subtitle">Purpose-built AI skills for accounting teams on Numeric. Each skill is a pre-built workflow your AI assistant can run on top of the Numeric MCP — close, flux, JE, recon, audit.</p>
         <p class="hero-subtitle hero-subtitle-2"><strong>Starting points, not endpoints.</strong> Every skill here is battle-tested and gets you most of the way there. Customize them to your team's process by asking Claude in any conversation — your modified version becomes the default.</p>
         <p class="hero-subtitle hero-subtitle-3"><a href="#" onclick="openAbout();return false">How to think about these skills →</a></p>
       </div>
@@ -227,6 +294,39 @@ select:focus { outline: none; border-color: var(--ink); }
     <div class="stat"><span class="stat-num" id="stat-types">3</span><span class="stat-label">Types</span></div>
     <div class="stat"><span class="stat-num" id="stat-showing">18</span><span class="stat-label">Showing</span></div>
     <div class="stat-meta">All skills connect to Numeric via the Numeric MCP. <a href="https://help.numeric.io/articles/7292808089-numeric-mcp-server" target="_blank" rel="noopener" style="color:var(--accent-deep)">Connect your workspace →</a></div>
+  </div>
+
+  <section class="gallery">
+    <div class="sec-head sec-head-first">
+      <div class="sec-eyebrow">Gallery</div>
+      <h2 class="sec-title">Examples from the wild</h2>
+    </div>
+    <div class="gallery-wrap">
+      <button class="gallery-arrow gallery-arrow-prev" type="button" onclick="galleryScroll(-1)" aria-label="Previous">‹</button>
+      <div class="gallery-track" id="gallery-track">
+        <a class="gallery-frame" href="assets/mcp-overview.png" onclick="openLightbox(this.href, '');return false">
+          <img src="assets/mcp-overview.png" alt="" loading="lazy" />
+        </a>
+        <a class="gallery-frame" href="assets/mcp-architecture.png" onclick="openLightbox(this.href, '');return false">
+          <img src="assets/mcp-architecture.png" alt="" loading="lazy" />
+        </a>
+        <a class="gallery-frame" href="assets/service-leave-accrual.png" onclick="openLightbox(this.href, '');return false">
+          <img src="assets/service-leave-accrual.png" alt="" loading="lazy" />
+        </a>
+        <a class="gallery-frame" href="assets/close-dashboard.png" onclick="openLightbox(this.href, '');return false">
+          <img src="assets/close-dashboard.png" alt="" loading="lazy" />
+        </a>
+        <a class="gallery-frame" href="assets/fsli-breakdown.png" onclick="openLightbox(this.href, '');return false">
+          <img src="assets/fsli-breakdown.png" alt="" loading="lazy" />
+        </a>
+      </div>
+      <button class="gallery-arrow gallery-arrow-next" type="button" onclick="galleryScroll(1)" aria-label="Next">›</button>
+    </div>
+  </section>
+
+  <div class="sec-head">
+    <div class="sec-eyebrow">Skills</div>
+    <h2 class="sec-title">Browse the library</h2>
   </div>
 
   <div class="filters">
@@ -258,45 +358,87 @@ select:focus { outline: none; border-color: var(--ink); }
 </div>
 
 
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close">✕</button>
+  <img id="lightbox-img" src="" alt="" />
+</div>
+
 <div class="modal-overlay" id="about-overlay" onclick="if(event.target===this) closeAbout()">
-  <div class="modal" style="max-width:780px">
+  <div class="modal how-modal">
     <div class="modal-head">
-      <h2 class="modal-title">About the Community Skills Library</h2>
+      <div>
+        <span class="modal-eyebrow">How it works</span>
+        <h2 class="modal-title">Skills are templates. <em>Make them yours.</em></h2>
+      </div>
       <button class="modal-close" onclick="closeAbout()">✕</button>
     </div>
-    <div class="modal-body about-body">
-      <section>
-        <h3>What is a skill?</h3>
-        <p>Skills are pre-built AI playbooks for automating specific accounting workflows. Each skill knows exactly what to ask, what data to pull from Numeric, how to process it, and what to produce — so you don't have to figure it out each time.</p>
-        <p>Instead of describing a multi-step workflow from scratch, you describe what you need in plain language and the right skill activates automatically. Think of them as the difference between having an AI assistant and having an AI assistant that already knows how to do your job.</p>
-      </section>
+    <div class="modal-body">
+      <p class="modal-sub">Each skill in this library is a working recipe — battle-tested defaults baked in by the community. Run it, tell Claude what to change, and your version becomes the team default. The library is the starting point; what you ship is yours.</p>
 
-      <section>
-        <h3>How to think about them</h3>
-        <p><strong>Numeric is the operating system for your accounting team.</strong> It manages state — who owns what, what's been done, what the rules are, what happened last period. Your processes are encoded in it. Your institutional knowledge accumulates inside it.</p>
-        <p><strong>The Numeric MCP is what lets your AI run on that operating system.</strong> It exposes Numeric's full state to Claude — live tasks, financial data, team structure, history, commentary — and it's bidirectional. The AI doesn't just read; it writes results back, updates tasks, posts comments, and keeps the record current.</p>
-        <p><strong>Skills are the workflows that run on top.</strong> They chain MCP tools together with accounting judgment — orchestrating multi-step work that would otherwise need a separate script or tool outside Numeric.</p>
-        <figure class="stack-figure">
-          <img src="https://cdn.jsdelivr.net/gh/geoff-lew/numeric-toolkit@main/assets/Numeric%20MCP%20stack.png" alt="Numeric MCP Stack diagram" loading="lazy" onerror="this.parentElement.style.display='none'" />
-        </figure>
-      </section>
+      <div class="how-flow-v">
 
-      <section>
-        <h3>From starter to production</h3>
-        <p>Three patterns teams use to take a starter skill from "useful" to "indispensable" — plus a customization example:</p>
-        <blockquote>"Update the close-pulse skill so it always groups overdue tasks by assignee first, skips tasks tagged 'on hold', and posts the summary to #accounting-close in Slack instead of responding in chat."</blockquote>
-        <p>Claude modifies the skill in place. Three operating patterns that stack on top:</p>
-        <ul>
-          <li><strong>Use task descriptions as memory.</strong> Drop a <code>## Skill preferences</code> block into a task description (output formats, file paths, reviewer tags, cooldown windows) and the skill reads it every run. Settings carry forward automatically.</li>
-          <li><strong>Let skills self-track via comments.</strong> Skills can automatically log a comment on the Numeric task after they run — recording what was done, when, and the outcome. This creates a native audit trail and lets skills make smart decisions on subsequent runs (e.g., don't re-nudge someone nudged in the last 48 hours).</li>
-          <li><strong>Chain skills via the close checklist.</strong> Your checklist is the control plane. Create an "Accruals" task with a day-3 due date — the accrual skill reads the checklist, knows it's expected, runs the workflow, posts the JE, and marks the task complete. One instruction, full chain.</li>
-        </ul>
-      </section>
+        <div class="how-step">
+          <div class="how-step-rail"><span class="how-step-num">01</span></div>
+          <div class="how-step-body">
+            <div class="how-row1"><span class="how-chip">install</span></div>
+            <h3 class="how-headline">Start from a template.</h3>
+            <p class="how-desc">A skill is a folder: a <code>SKILL.md</code> file that tells Claude what to do, plus the scripts and prompts that do it. Download one from the library and drop it into Claude — no setup, no config screens. It activates automatically the next time you ask for something the skill knows how to handle.</p>
+            <p class="how-desc">Every skill here ships with sensible defaults written for a standard close. The community has already done the hard part of picking the right Numeric MCP calls, the right thresholds, the right output format.</p>
+          </div>
+        </div>
 
-      <section>
-        <h3>Contributing</h3>
-        <p>These skills are built and maintained by the Numeric community. The easiest way to add one: build the workflow in Claude, then ask <em>"bundle this into a skill"</em>. Claude packages it. Send the file to <a href="mailto:support@numeric.io">support@numeric.io</a> and we'll add it to the toolkit.</p>
-      </section>
+        <div class="how-step">
+          <div class="how-step-rail"><span class="how-step-num">02</span></div>
+          <div class="how-step-body">
+            <div class="how-row1"><span class="how-chip">invoke</span></div>
+            <h3 class="how-headline">Ask Claude in plain language.</h3>
+            <p class="how-desc">You don't pick a skill from a menu. You describe what you need — <em>"run the accruals for April"</em>, <em>"send overdue nudges for the close"</em>, <em>"build me the rec workbook for prepaid"</em> — and the right skill activates. Claude pulls the period and workspace context from Numeric, finds the matching task, and starts work.</p>
+            <p class="how-desc">Each run reads context from two places: the Numeric task description (period-specific notes from the preparer or reviewer) and the skill itself (your team's standing methodology). Together they give Claude the full picture before any work begins.</p>
+          </div>
+        </div>
+
+        <div class="how-step refine">
+          <div class="how-step-rail"><span class="how-step-num">03</span></div>
+          <div class="how-step-body">
+            <div class="how-row1"><span class="how-chip">refine</span></div>
+            <h3 class="how-headline">Tell Claude what to change.</h3>
+            <p class="how-desc">A starter skill won't match your process out of the box. That's the point. When something is off — wrong format, wrong threshold, wrong channel — you say so in chat. Claude rewrites the skill in place.</p>
+            <p class="how-quote">"Update close-pulse to group overdue tasks by assignee, skip anything tagged 'on hold', and post the summary to #accounting-close in Slack instead of responding here."</p>
+            <p class="how-desc">Refinements can live in three places, depending on scope: <strong>the skill file</strong> for team-wide rules, <strong>the Numeric task description</strong> for period-specific notes (<em>"exclude vendor AG Grid — bundled with the parent agreement"</em>), or <strong>the close checklist</strong> for process-wide chaining. Claude picks the right place automatically.</p>
+          </div>
+        </div>
+
+        <div class="how-step">
+          <div class="how-step-rail"><span class="how-step-num">04</span></div>
+          <div class="how-step-body">
+            <div class="how-row1"><span class="how-chip">ship</span></div>
+            <h3 class="how-headline">Your version is now the default.</h3>
+            <p class="how-desc">The refined skill is just a file. Anyone on your team running the same skill picks up your rules automatically — no separate config, no shared spreadsheet, no tribal knowledge. Share it by dropping the <code>.skill</code> file into a teammate's chat, or commit it to git if you want full version history.</p>
+            <p class="how-desc">Skills can also self-track: after each run they log a comment back to the Numeric task — what was done, when, and the outcome. That creates a native audit trail and lets skills make smarter decisions next time (don't re-nudge someone nudged in the last 48 hours, don't re-post a JE that already cleared).</p>
+          </div>
+        </div>
+
+        <div class="how-step loop">
+          <div class="how-step-rail"><span class="how-step-num">↻</span></div>
+          <div class="how-step-body">
+            <div class="how-row1"><span class="how-chip">evolve</span></div>
+            <h3 class="how-headline">Refine again, any time.</h3>
+            <p class="how-desc">New entity, new approver, new materiality threshold, new reviewer DM channel — your process changes constantly. Tell Claude. The skill keeps up. That's the difference between a skill and a static script: skills compound. Each round makes them more yours.</p>
+            <div class="how-meta-row">
+              <span class="how-tag accent">Skills are folders, not scripts</span>
+              <span class="how-tag green">Preferences persist across periods</span>
+              <span class="how-tag amber">Shareable across your team</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="how-foot">
+        <div class="how-foot-text">
+          <strong>Contributing.</strong> These skills are built by the Numeric community. Built something useful? Ask Claude to <em>"bundle this into a skill"</em>, then send the file to <a href="mailto:support@numeric.io">support@numeric.io</a> and we'll add it to the toolkit.
+        </div>
+      </div>
     </div>
     <div class="modal-actions">
       <button onclick="closeAbout()">Close</button>
@@ -634,6 +776,34 @@ function renderMarkdown(src) {
 function openAbout() { document.getElementById('about-overlay').classList.add('open'); }
 function closeAbout() { document.getElementById('about-overlay').classList.remove('open'); }
 
+function openLightbox(src, alt) {
+  const img = document.getElementById('lightbox-img');
+  img.src = src;
+  img.alt = alt || '';
+  document.getElementById('lightbox').classList.add('open');
+}
+function closeLightbox() { document.getElementById('lightbox').classList.remove('open'); }
+
+function galleryScroll(dir) {
+  const track = document.getElementById('gallery-track');
+  if (!track) return;
+  const card = track.querySelector('.gallery-frame');
+  if (!card) return;
+  const step = card.offsetWidth + 14;
+  track.scrollBy({ left: dir * step, behavior: 'smooth' });
+}
+function updateGalleryArrows() {
+  const track = document.getElementById('gallery-track');
+  if (!track) return;
+  const prev = document.querySelector('.gallery-arrow-prev');
+  const next = document.querySelector('.gallery-arrow-next');
+  if (!prev || !next) return;
+  const atStart = track.scrollLeft <= 2;
+  const atEnd = track.scrollLeft + track.clientWidth >= track.scrollWidth - 2;
+  prev.disabled = atStart;
+  next.disabled = atEnd;
+}
+
 // init
 (function init() {
   const cats = Object.keys(CATS);
@@ -650,8 +820,14 @@ function closeAbout() { document.getElementById('about-overlay').classList.remov
   typeSel.addEventListener('change', render);
   roleSel.addEventListener('change', render);
   document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') { closeModal(); closeAbout(); }
+    if (e.key === 'Escape') { closeLightbox(); closeModal(); closeAbout(); }
   });
+  const gtrack = document.getElementById('gallery-track');
+  if (gtrack) {
+    gtrack.addEventListener('scroll', updateGalleryArrows, { passive: true });
+    window.addEventListener('resize', updateGalleryArrows);
+    updateGalleryArrows();
+  }
   render();
 })();
 </script>
