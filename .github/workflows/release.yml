@@ -18,13 +18,15 @@ jobs:
         run: |
           cd $GITHUB_WORKSPACE
 
-          # Build .plugin (full bundle)
-          zip -r numeric-toolkit.zip . \
+          # Build .plugin (full bundle) — Claude plugin file is a zip with .plugin extension
+          zip -r numeric-mcp-toolkit.plugin . \
             -x "*.git*" \
             -x "*.DS_Store" \
             -x ".github/*" \
-            -x "*.zip"
-          echo "Built: $(du -sh numeric-toolkit.zip)"
+            -x "*.zip" \
+            -x "*.plugin" \
+            -x "*.skill"
+          echo "Built: $(du -sh numeric-mcp-toolkit.plugin)"
 
           # Build one .skill zip per skill directory
           mkdir -p dist
@@ -38,14 +40,14 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           files: |
-            numeric-toolkit.zip
+            numeric-mcp-toolkit.plugin
             dist/*.skill
           generate_release_notes: true
           body: |
             ## Install
 
             **As a plugin (recommended)**
-            Download `numeric-toolkit.zip` below and open it in Cowork or Claude Code.
+            Download `numeric-mcp-toolkit.plugin` below and open it in Cowork or Claude Code.
 
             **Via Claude Code CLI**
             ```

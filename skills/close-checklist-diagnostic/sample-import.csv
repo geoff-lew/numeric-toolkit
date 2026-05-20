@@ -1,0 +1,4 @@
+Category,Task Name*,Frequency*,Type,Description,Preparer,Preparer Due,Reviewer,Reviewer Due,Parent Task
+EXAMPLE — DO NOT IMPORT,Save all bank statements,Monthly,Task,Replace this row with your real tasks. The header row above shows the expected columns.,preparer.email@your-company.com,3,reviewer.email@your-company.com,5,
+EXAMPLE — DO NOT IMPORT,Stripe Account,Quarterly,Journal Entry,Replace this row before importing into Numeric.,preparer.email@your-company.com,3,reviewer.email@your-company.com,5,Save all bank statements
+EXAMPLE — DO NOT IMPORT,Close AP in GL,Annually,Task,Replace this row before importing into Numeric.,preparer.email@your-company.com,3,reviewer.email@your-company.com,5,
