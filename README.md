@@ -12,16 +12,16 @@
 
 <br />
 
-<a href="https://github.com/geoff-lew/numeric-toolkit/releases/latest/download/numeric-mcp-toolkit.zip">
-  <img src="https://img.shields.io/badge/⬇%20Download%20Full%20Plugin-numeric--mcp--toolkit.zip-3E3A7A?style=for-the-badge&logoColor=white" alt="Download Full Plugin" />
+<a href="https://github.com/geoff-lew/numeric-toolkit/releases/latest/download/numeric-mcp-toolkit.plugin">
+  <img src="https://img.shields.io/badge/⬇%20Download%20Full%20Plugin-numeric--mcp--toolkit.plugin-3E3A7A?style=for-the-badge&logoColor=white" alt="Download Full Plugin" />
+</a>
+&nbsp;
+<a href="https://geoff-lew.github.io/numeric-toolkit/">
+  <img src="https://img.shields.io/badge/Browse%20Skills%20Library-→-1F0045?style=for-the-badge" alt="Browse the live skills library" />
 </a>
 &nbsp;
 <a href="https://github.com/geoff-lew/numeric-toolkit/releases/latest">
   <img src="https://img.shields.io/badge/View%20Releases-363644?style=for-the-badge" alt="View Releases" />
-</a>
-&nbsp;
-<a href="#-community-skills">
-  <img src="https://img.shields.io/badge/Browse%20Skills-↓-1F0045?style=for-the-badge" alt="Browse Individual Skills" />
 </a>
 
 <br />
@@ -91,321 +91,21 @@ Skills in this toolkit are built on that model.
 
 ---
 
-## Community Skills
+## Browse the Skills Library
 
-### What are skills?
+The full catalog lives at **[geoff-lew.github.io/numeric-toolkit](https://geoff-lew.github.io/numeric-toolkit/)** — search, filter by role or type, and download individual skills.
 
-Skills are pre-built AI playbooks for automating specific accounting workflows. Each skill knows exactly what to ask, what data to pull from Numeric, how to process it, and what to produce — so you don't have to figure it out each time.
+Skills are grouped into seven categories:
 
-Instead of describing a multi-step workflow from scratch, you just describe what you need in plain language and the right skill activates automatically. Think of them as the difference between having an AI assistant and having an AI assistant that already knows how to do your job.
+- **Setup & Migration** — checklist and rec-assignment imports, skill-building
+- **Journals & Transactions** — accruals, journal entry posting, department-anomaly scans
+- **Close Management** — close pulse, retro, overdue nudges, cross-workspace dashboard, checklist diagnostic
+- **Flux & Variance** — auto-drafted flux explanations, consolidated commentary rollup
+- **Reporting & Analysis** — board-ready statements, transaction-detail reports, clean exports, financial ratios, AR/AP aging
+- **Reconciliation** — leadsheet workbook builder
+- **Audit & Compliance** — close-period activity export
 
-Skills in this toolkit span six workflow areas — journals and transactions, close management, flux and variance, reporting and analysis, reconciliation, and audit. Each one is available individually as a `.skill` file or bundled together in the full plugin.
-
-<br/>
-
-<div align="center">
-
-![Skill Map](assets/Tools.png)
-
-</div>
-
-<br/>
-
----
-
-### Setup & Migration
-
-<details>
-<summary>&nbsp;<img src="https://img.shields.io/badge/Workflows-F79009?style=flat&logoColor=white" alt="Workflows" />&nbsp;<strong>Checklist Importer — Spreadsheet to Numeric</strong></summary>
-<br/>
-
-Converts any close checklist spreadsheet into a Numeric-ready import workbook. Auto-detects column mappings from any xlsx or csv format. Clean, validated tasks land on the import tab; anything that needs review is flagged separately with the issue called out.
-
-[⬇ Download checklist-to-numeric.skill](https://github.com/geoff-lew/numeric-toolkit/releases/latest/download/checklist-to-numeric.skill)
-
-**Ask things like:** *"Import my close checklist into Numeric" · "Convert this spreadsheet into Numeric tasks" · "Migrate my checklist to Numeric"*
-
-</details>
-
-<br/>
-
-<details>
-<summary>&nbsp;<img src="https://img.shields.io/badge/Workflows-F79009?style=flat&logoColor=white" alt="Workflows" />&nbsp;<strong>Rec Assignment Importer — Spreadsheet to Numeric</strong></summary>
-<br/>
-
-Converts an existing balance sheet reconciliation assignments workbook into a Numeric-ready import file. Pulls the live chart of accounts from Numeric, maps preparers and reviewers to emails, handles entity ID lookups and legacy account name aliases, and outputs a clean 3-tab Excel workbook — ready to upload directly to Numeric's Recon assignment template. Accounts that can't be matched to the current COA are flagged on a separate tab for review before import.
-
-[⬇ Download rec-to-numeric.skill](https://github.com/geoff-lew/numeric-toolkit/releases/latest/download/rec-to-numeric.skill)
-
-**Ask things like:** *"Build the rec import file" · "Convert our BS rec assignments to Numeric" · "Import balance sheet recs into Numeric" · "Turn this spreadsheet into a Numeric rec import"*
-
-</details>
-
----
-
-### Journals & Transactions
-
-<details open>
-<summary>&nbsp;<img src="https://img.shields.io/badge/Automation-6B5DC6?style=flat&logoColor=white" alt="Automation" />&nbsp;<strong>Accrual Identification & Journal Entry — Close-Driven Accruals</strong></summary>
-<br/>
-
-Pulls accrual-related tasks from your Numeric close checklist, analyzes the underlying GL data to identify potential accruals that need to be booked, and builds the full supporting workbook as evidence — then generates the corresponding journal entries ready for NetSuite posting. The entire accrual workflow in one conversation: identify, document, and post.
-
-[⬇ Download complete-accruals-task.skill](https://github.com/geoff-lew/numeric-toolkit/releases/latest/download/complete-accruals-task.skill)
-
-[→ Full documentation](https://app.usepylon.com/kb/aed64866-e399-42dc-be2c-29bd99d1dcb2/articles/470f997f-2571-489f-8345-535bef9274dd)
-
-**Ask things like:** *"Run the accruals for this period" · "What accruals do we need to book?" · "Identify and create the month-end accrual entries"*
-
-</details>
-
-<br/>
-
-<details>
-<summary>&nbsp;<img src="https://img.shields.io/badge/Automation-6B5DC6?style=flat&logoColor=white" alt="Automation" />&nbsp;<strong>Journal Entry Posting — Support-to-NetSuite</strong></summary>
-<br/>
-
-Pulls outstanding journal entry tasks from your Numeric close checklist, reads the supporting workbook or documentation provided, generates the balanced journal entries, marks the task complete in Numeric, and posts directly to NetSuite via the NetSuite MCP. From checklist task to posted entry — no manual steps in between.
-
-[⬇ Download journal-entry-generator.zip](https://github.com/geoff-lew/numeric-toolkit/releases/latest/download/journal-entry-generator.zip)
-
-[→ Full documentation](https://app.usepylon.com/kb/aed64866-e399-42dc-be2c-29bd99d1dcb2/articles/d10a0880-4a75-4e7c-bc6f-e0c579cd1032)
-
-**Ask things like:** *"Post the outstanding journal entries" · "Process the JE tasks from the checklist" · "Complete and post the JEs with this support"*
-
-</details>
-
-<br/>
-
-<details>
-<summary>&nbsp;<img src="https://img.shields.io/badge/Insights-17B26A?style=flat&logoColor=white" alt="Insights" />&nbsp;<strong>Department Anomaly Scan — GL Miscoding Cleanup</strong></summary>
-<br/>
-
-Scans your workspace for GL-to-department coding anomalies — expenses hitting the wrong cost center, vendors consistently miscoded, accounts landing in unexpected departments. Surfaces patterns and generates the NetSuite reclass journal entry CSV to fix them.
-
-[⬇ Download dept-anomaly-scan.skill](https://github.com/geoff-lew/numeric-toolkit/releases/latest/download/dept-anomaly-scan.skill)
-
-[→ Full documentation](https://app.usepylon.com/kb/aed64866-e399-42dc-be2c-29bd99d1dcb2/articles/6ebebb87-836e-4678-943f-3839a5f87210)
-
-**Ask things like:** *"Scan for department anomalies" · "Find GL miscodings" · "Anything miscoded this period?"*
-
-</details>
-
----
-
-### Close Management
-
-<details open>
-<summary>&nbsp;<img src="https://img.shields.io/badge/Insights-17B26A?style=flat&logoColor=white" alt="Insights" />&nbsp;<strong>Close Pulse — Live Close Dashboard</strong></summary>
-<br/>
-
-You shouldn't have to open Numeric to know where your close stands. Close Pulse pulls task completion rates, surfaces overdue items flagged by materiality, maps blocking dependencies, and tells you whether you're ahead or behind pace — all in a single conversation. Built for controllers and close managers who need a fast, honest read on close health.
-
-[⬇ Download close-pulse.skill](https://github.com/geoff-lew/numeric-toolkit/releases/latest/download/close-pulse.skill)
-
-[→ Full documentation](https://app.usepylon.com/kb/aed64866-e399-42dc-be2c-29bd99d1dcb2/articles/4a87d25e-f5bc-4157-a858-2130afdd5135)
-
-**Ask things like:** *"How's the close going?" · "What's overdue?" · "Are we on track?" · "Who's behind?"*
-
-</details>
-
-<br/>
-
-<details>
-<summary>&nbsp;<img src="https://img.shields.io/badge/Insights-17B26A?style=flat&logoColor=white" alt="Insights" />&nbsp;<strong>Close Retrospective — Post-Close Analysis</strong></summary>
-<br/>
-
-Every close has a story. Close Retro reads it for you. After each period, it analyzes task completion timelines, review cycle counts, late submissions, assignee workload, and pace versus prior periods — then surfaces the patterns that matter. Which tasks consistently run late? Which reviewers are bottlenecks? Outputs as a Slack digest or structured summary.
-
-[⬇ Download close-retro.zip](https://github.com/geoff-lew/numeric-toolkit/releases/latest/download/close-retro.skill)
-
-[→ Full documentation](https://app.usepylon.com/kb/aed64866-e399-42dc-be2c-29bd99d1dcb2/articles/5613d9ac-6172-40c4-acd0-8b110bde36c6)
-
-**Ask things like:** *"How did the close go?" · "What took longest?" · "Compare this close to last quarter"*
-
-</details>
-
-<br/>
-
-<details>
-<summary>&nbsp;<img src="https://img.shields.io/badge/Automation-6B5DC6?style=flat&logoColor=white" alt="Automation" />&nbsp;<strong>Overdue Task Nudges — Automated Assignee Reminders</strong></summary>
-<br/>
-
-Chasing people down during close is a full-time job. This skill handles it. It identifies tasks that are overdue or due soon and sends targeted Slack DMs to assignees with contextual messages — not generic notifications. Reads reminder preferences from each task, logs every nudge as a comment to prevent duplicates, and can run on a daily schedule during close week.
-
-[⬇ Download overdue-task-nudge.skill](https://github.com/geoff-lew/numeric-toolkit/releases/latest/download/overdue-task-nudge.skill)
-
-[→ Full documentation](https://app.usepylon.com/kb/aed64866-e399-42dc-be2c-29bd99d1dcb2/articles/6d73c457-d714-462a-a5a1-fa1abe4ff826)
-
-**Ask things like:** *"Remind assignees about overdue tasks" · "Send close reminders" · "Nudge people on late recs"*
-
-</details>
-
-<br/>
-
-<details>
-<summary>&nbsp;<img src="https://img.shields.io/badge/Insights-17B26A?style=flat&logoColor=white" alt="Insights" />&nbsp;<strong>Cross-Workspace Dashboard — Portfolio Close View</strong></summary>
-<br/>
-
-Managing multiple workspaces? This skill rolls up close progress across all your Numeric workspaces into a single portfolio-level view — completion rates, overdue counts, pace comparisons, and workload distribution side by side. Outputs as an HTML dashboard and companion Excel workbook.
-
-[⬇ Download cross-workspace-dashboard.skill](https://github.com/geoff-lew/numeric-toolkit/releases/latest/download/cross-workspace-dashboard.skill)
-
-[→ Full documentation](https://app.usepylon.com/kb/aed64866-e399-42dc-be2c-29bd99d1dcb2/articles/a300b889-3fd4-4718-a0d3-495b8c720bc4)
-
-**Ask things like:** *"Close status across all entities" · "Which workspaces are behind?" · "Portfolio close view"*
-
-</details>
-
----
-
-### Flux & Variance
-
-<details open>
-<summary>&nbsp;<img src="https://img.shields.io/badge/Automation-6B5DC6?style=flat&logoColor=white" alt="Automation" />&nbsp;<strong>Auto-Draft Flux Explanations — Batch Variance Drafting</strong></summary>
-<br/>
-
-Loops through every flux task assigned to the current user in Numeric where an explanation has been requested, pulls six months of transaction line history per account, and posts concise first-pass drafts directly back to Numeric — ready for the preparer to review and submit. Appends below any existing content rather than overwriting. Run it once at the start of close and your flux queue is handled.
-
-[⬇ Download automatically-draft-flux-explanations.skill](https://github.com/geoff-lew/numeric-toolkit/releases/latest/download/automatically-draft-flux-explanations.skill)
-
-[→ Full documentation](https://app.usepylon.com/kb/aed64866-e399-42dc-be2c-29bd99d1dcb2/articles/c0a4483e-a8ca-4e23-98f7-169ded458820)
-
-**Ask things like:** *"Write my flux explanations" · "Draft all my fluxes for this month" · "Run the flux analysis for close"*
-
-</details>
-
-<br/>
-
-<details>
-<summary>&nbsp;<img src="https://img.shields.io/badge/Workflows-F79009?style=flat&logoColor=white" alt="Workflows" />&nbsp;<strong>Consolidated Flux — Variance Commentary Rollup</strong></summary>
-<br/>
-
-Pulls flux commentary from across entities, reports, and periods and stitches it into a single unified narrative — rolling child account explanations up to group level, trending commentary across months. Essential for multi-entity teams who need one coherent story across the books.
-
-[⬇ Download consolidated-flux.skill](https://github.com/geoff-lew/numeric-toolkit/releases/latest/download/consolidated-flux.skill)
-
-[→ Full documentation](https://app.usepylon.com/kb/aed64866-e399-42dc-be2c-29bd99d1dcb2/articles/8d0defb5-24f6-41c3-be2d-58215545dc31)
-
-**Ask things like:** *"Consolidate flux across entities" · "Roll up variance commentary" · "Unified variance view"*
-
-</details>
-
----
-
-### Reporting & Analysis
-
-<details open>
-<summary>&nbsp;<img src="https://img.shields.io/badge/Workflows-F79009?style=flat&logoColor=white" alt="Workflows" />&nbsp;<strong>Executive Report — Board-Ready Financial Statements</strong></summary>
-<br/>
-
-Takes your Numeric report and produces a polished, presentation-ready financial statement — collapsing child account detail into executive summary groups, rolling up flux commentary into one-line narratives, and applying professional formatting. Output as a styled Excel workbook or PDF. Built for CFO decks, board packages, and investor reporting.
-
-[⬇ Download executive-report.skill](https://github.com/geoff-lew/numeric-toolkit/releases/latest/download/executive-report.skill)
-
-[→ Full documentation](https://app.usepylon.com/kb/aed64866-e399-42dc-be2c-29bd99d1dcb2/articles/bc930ef4-d582-4db0-aeb0-49f2241d3390)
-
-**Ask things like:** *"Build the board report" · "CFO-ready income statement" · "Collapse the P&L into summary groups"*
-
-</details>
-
-<br/>
-
-<details>
-<summary>&nbsp;<img src="https://img.shields.io/badge/Insights-17B26A?style=flat&logoColor=white" alt="Insights" />&nbsp;<strong>Financial Metrics — Ratios & Analytics Inline</strong></summary>
-<br/>
-
-Standard financial ratios computed directly onto your Numeric report. Covers profitability, liquidity, solvency, and working capital metrics — placed inline on both income statements and balance sheets. Useful for covenant reporting, investor updates, and management analysis.
-
-[⬇ Download financial-metrics.skill](https://github.com/geoff-lew/numeric-toolkit/releases/latest/download/financial-metrics.skill)
-
-[→ Full documentation](https://app.usepylon.com/kb/aed64866-e399-42dc-be2c-29bd99d1dcb2/articles/4321c0cc-c506-4902-b8f5-9ffe4bdb691a)
-
-**Ask things like:** *"Add financial ratios to this report" · "What's our gross margin?" · "Check covenant compliance"*
-
-</details>
-
-<br/>
-
-<details>
-<summary>&nbsp;<img src="https://img.shields.io/badge/Workflows-F79009?style=flat&logoColor=white" alt="Workflows" />&nbsp;<strong>Report + Transaction Detail — Financials with Full GL Backup</strong></summary>
-<br/>
-
-Pulls any Numeric report alongside every underlying GL transaction line — in a single Excel workbook with two tabs. The financial statement on one side, every journal entry behind each number on the other. Built for controllers who need to explain variances or provide detail to auditors without a separate export.
-
-[⬇ Download report-txn-detail.skill](https://github.com/geoff-lew/numeric-toolkit/releases/latest/download/report-txn-detail.skill)
-
-[→ Full documentation](https://app.usepylon.com/kb/aed64866-e399-42dc-be2c-29bd99d1dcb2/articles/b5b8158c-da47-4454-a1af-623174a3c94d)
-
-**Ask things like:** *"Report with transaction detail" · "Income statement with journal entries" · "Show me what makes up each line"*
-
-</details>
-
-<br/>
-
-<details>
-<summary>&nbsp;<img src="https://img.shields.io/badge/Workflows-F79009?style=flat&logoColor=white" alt="Workflows" />&nbsp;<strong>Clean Report Export — Analysis-Ready Data Extract</strong></summary>
-<br/>
-
-Exports any Numeric financial statement as a clean CSV or TSV — no summary rows, no formatting artifacts, no manual cleanup. Drop it straight into Excel, pandas, or any BI tool. Supports multiple reports in a single run.
-
-[⬇ Download clean-report-export.skill](https://github.com/geoff-lew/numeric-toolkit/releases/latest/download/clean-report-export.skill)
-
-[→ Full documentation](https://app.usepylon.com/kb/aed64866-e399-42dc-be2c-29bd99d1dcb2/articles/ed50e59a-b142-451c-a308-2a5b913aad12)
-
-**Ask things like:** *"Export the income statement" · "Get me a clean CSV" · "Pull the report data for analysis"*
-
-</details>
-
-<br/>
-
-<details>
-<summary>&nbsp;<img src="https://img.shields.io/badge/Workflows-F79009?style=flat&logoColor=white" alt="Workflows" />&nbsp;<strong>AR / AP Aging — Aging Schedule from Numeric</strong></summary>
-<br/>
-
-Pulls transaction lines from Numeric, FIFO-matches reductions against open items, buckets balances into Current / 1–30 / 31–60 / 61–90 / 90+ day bands, and produces a two-sheet Excel workbook with a GL reconciliation row. Works for both AR and AP in the same skill.
-
-[⬇ Download ar-ap-aging.skill](https://github.com/geoff-lew/numeric-toolkit/releases/latest/download/ar-ap-aging.skill)
-
-**Ask things like:** *"Build me an AR aging" · "AP aging as of March 31" · "Who owes us money?" · "What vendors are past due?"*
-
-</details>
-
----
-
-### Reconciliation
-
-<details>
-<summary>&nbsp;<img src="https://img.shields.io/badge/Workflows-F79009?style=flat&logoColor=white" alt="Workflows" />&nbsp;<strong>Numeric Rec Workbook — Leadsheet Builder</strong></summary>
-<br/>
-
-Builds a polished Numeric Leadsheet workbook for any GL account — four periods of live balance data, EOMONTH date formulas, and a rollforward tab. One row per account × entity. Also supports adding a Numeric tab to an existing workbook without touching your other sheets.
-
-[⬇ Download numeric-rec-workbook.skill](https://github.com/geoff-lew/numeric-toolkit/releases/latest/download/numeric-rec-workbook.skill)
-
-[→ Full documentation](https://app.usepylon.com/kb/aed64866-e399-42dc-be2c-29bd99d1dcb2/articles/23cbbfc8-89e8-4ea8-8c46-bf8c833663de)
-
-**Ask things like:** *"Build rec support for Prepaid" · "Make me the leadsheet for this account"*
-
-</details>
-
----
-
-### Audit & Compliance
-
-<details>
-<summary>&nbsp;<img src="https://img.shields.io/badge/Workflows-F79009?style=flat&logoColor=white" alt="Workflows" />&nbsp;<strong>Audit Evidence Export — Close Activity Workbook</strong></summary>
-<br/>
-
-Packages the complete activity history of any Numeric close period into a structured five-sheet Excel workbook — reconciliation submissions and approvals, checklist completions, review notes, and a full timeline of who did what and when. Hand it to your auditors and move on.
-
-[⬇ Download audit-evidence-export.skill](https://github.com/geoff-lew/numeric-toolkit/releases/latest/download/audit-evidence-export.skill)
-
-[→ Full documentation](https://app.usepylon.com/kb/aed64866-e399-42dc-be2c-29bd99d1dcb2/articles/d323cc8f-9f19-4195-8a33-7d01f65756fb)
-
-**Ask things like:** *"Audit evidence for December close" · "SOX evidence package" · "Reconciliation sign-off history"*
-
-</details>
+All skills connect to Numeric via the Numeric MCP. Each is fully self-contained — download the `.skill` file, drop it into Cowork or Claude Code, done.
 
 ---
 
@@ -465,7 +165,7 @@ See the [Numeric MCP setup guide](https://help.numeric.io/articles/7292808089-nu
 
 **Full plugin** — all skills at once
 
-Download [`numeric-mcp-toolkit.zip`](https://github.com/geoff-lew/numeric-toolkit/releases/latest/download/numeric-mcp-toolkit.zip) and open it in Cowork or Claude Code.
+Download [`numeric-mcp-toolkit.plugin`](https://github.com/geoff-lew/numeric-toolkit/releases/latest/download/numeric-mcp-toolkit.plugin) and open it in Cowork or Claude Code.
 
 Or via CLI — run these as separate commands:
 ```
@@ -480,7 +180,7 @@ Or via CLI — run these as separate commands:
 
 **Individual skill** — just what you need
 
-Download any `.skill` file from the [Releases tab](https://github.com/geoff-lew/numeric-toolkit/releases/latest) and open it in Cowork or Claude Code.
+Browse the [skills library](https://geoff-lew.github.io/numeric-toolkit/) or grab any `.skill` file from the [Releases tab](https://github.com/geoff-lew/numeric-toolkit/releases/latest) and open it in Cowork or Claude Code.
 
 Each `.skill` file is fully self-contained — no extra setup.
 
