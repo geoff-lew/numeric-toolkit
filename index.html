@@ -518,6 +518,10 @@ const SKILLS = [
     title: "Cross-Workspace Dashboard — Portfolio View",
     desc: "Managing multiple workspaces? This skill rolls up close progress across all your Numeric workspaces into a single portfolio-level view — completion rates, overdue counts, pace comparisons, and workload distribution side by side. Outputs as an HTML dashboard and companion Excel workbook.",
     asks: ["Close status across all entities", "Which workspaces are behind?", "Portfolio close view"] },
+  { name: "close-checklist-diagnostic", type: "Insights", category: "Close Management", roles: ["Controller", "Close Manager", "Implementation"],
+    title: "Close Checklist Diagnostic — Score & Coach Your Process",
+    desc: "Reads your full close checklist and scores it across accountability, controls, completeness, structure, hygiene, and dependencies — then coaches you through fixes one mode at a time. Output is a controller-safe HTML scorecard suitable for sharing with a CFO or audit committee, plus an interactive Q&A that names specific tasks, suggests reassignments, and drafts missing descriptions. Read-only — never modifies your workspace.",
+    asks: ["Diagnose my close checklist", "Score my close process", "Where are the gaps in my close?", "Coach me through improving my close"] },
 
   // Flux & Variance
   { name: "automatically-draft-flux-explanations", type: "Automation", category: "Flux & Variance", roles: ["Staff Accountant", "Senior Accountant"],
@@ -672,7 +676,8 @@ const SKILL_ASSET = {
   "overdue-task-nudge": "overdue-task-nudge.skill",
   "rec-to-numeric": "rec-to-numeric.skill",
   "report-txn-detail": "report-txn-detail.skill",
-  "accounting-skill-builder": "accounting-skill-builder.skill"
+  "accounting-skill-builder": "accounting-skill-builder.skill",
+  "close-checklist-diagnostic": "close-checklist-diagnostic.skill"
 };
 
 // Slug → folder name in repo for raw.githubusercontent.com fetches
