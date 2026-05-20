@@ -64,7 +64,7 @@ html, body { margin: 0; padding: 0; background: var(--bg); color: var(--ink); fo
 .stat-meta { margin-left: auto; font-size: 12px; color: var(--ink-2); max-width: 320px; line-height: 1.4; text-align: right; }
 
 /* FILTERS */
-.filters { display: grid; grid-template-columns: 2fr 1fr 1fr auto; gap: 12px; margin-bottom: 24px; align-items: center; }
+.filters { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr auto; gap: 12px; margin-bottom: 24px; align-items: center; }
 .search { position: relative; }
 .search input { width: 100%; padding: 10px 14px 10px 38px; border: 1px solid var(--line-2); border-radius: 8px; background: var(--surface); font-size: 14px; color: var(--ink); font-family: inherit; }
 .search input:focus { outline: none; border-color: var(--ink); }
@@ -256,7 +256,7 @@ select:focus { outline: none; border-color: var(--ink); }
 .lightbox-next { right: 24px; }
 
 @media (max-width: 1100px) { .grid { grid-template-columns: repeat(3, 1fr); } }
-@media (max-width: 880px) { .grid { grid-template-columns: repeat(2, 1fr); } .filters { grid-template-columns: 1fr 1fr; } .stat-meta { display: none; } .hero { flex-direction: column; align-items: flex-start; gap: 18px; } .hero-right { align-items: flex-start; text-align: left; } .how-modal .modal-title { font-size: 26px; } .how-modal .modal-head { padding: 22px 24px 8px; } .how-modal .modal-body { padding: 4px 24px 24px; } .how-step { grid-template-columns: 64px 1fr; gap: 16px; padding: 22px 0 24px; } .how-step-num { font-size: 24px; } .gallery-frame { flex-basis: 280px; } }
+@media (max-width: 880px) { .grid { grid-template-columns: repeat(2, 1fr); } .filters { grid-template-columns: 1fr 1fr; grid-auto-flow: row; } .stat-meta { display: none; } .hero { flex-direction: column; align-items: flex-start; gap: 18px; } .hero-right { align-items: flex-start; text-align: left; } .how-modal .modal-title { font-size: 26px; } .how-modal .modal-head { padding: 22px 24px 8px; } .how-modal .modal-body { padding: 4px 24px 24px; } .how-step { grid-template-columns: 64px 1fr; gap: 16px; padding: 22px 0 24px; } .how-step-num { font-size: 24px; } .gallery-frame { flex-basis: 280px; } }
 @media (max-width: 560px) { .grid { grid-template-columns: 1fr; } .hero-title { font-size: 36px; } .stat { padding: 0 16px; min-width: 90px; } .stat:first-child { padding-left: 0; } .how-modal .modal-title { font-size: 22px; } .how-step { grid-template-columns: 1fr; gap: 4px; padding: 20px 0 22px; } .how-step-num { font-size: 22px; } .gallery-frame { flex-basis: 240px; } }
 </style>
 </head>
@@ -339,6 +339,7 @@ select:focus { outline: none; border-color: var(--ink); }
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
       <input id="search" type="text" placeholder="Search title, role, type, or description" />
     </div>
+    <select id="filter-cat"><option value="">All Categories</option></select>
     <select id="filter-type"><option value="">All Types</option></select>
     <select id="filter-role"><option value="">All Roles</option></select>
     <button class="clear-btn" onclick="clearFilters()">Clear</button>
@@ -570,10 +571,12 @@ function escapeHtml(s) { return s.replace(/[&<>"']/g, c => ({ '&':'&amp;','<':'&
 
 function render() {
   const q = document.getElementById('search').value.trim().toLowerCase();
+  const cat = document.getElementById('filter-cat').value;
   const type = document.getElementById('filter-type').value;
   const role = document.getElementById('filter-role').value;
 
   const filtered = SKILLS.filter(s => {
+    if (cat && s.category !== cat) return false;
     if (type && s.type !== type) return false;
     if (role && !s.roles.includes(role)) return false;
     if (q) {
@@ -696,6 +699,7 @@ function downloadToolkit() {
 
 function clearFilters() {
   document.getElementById('search').value = '';
+  document.getElementById('filter-cat').value = '';
   document.getElementById('filter-type').value = '';
   document.getElementById('filter-role').value = '';
   render();
@@ -843,11 +847,14 @@ function updateGalleryArrows() {
   document.getElementById('stat-total').textContent = SKILLS.length;
   document.getElementById('stat-cats').textContent = cats.length;
   document.getElementById('stat-types').textContent = types.length;
+  const catSel = document.getElementById('filter-cat');
+  cats.forEach(c => { const o = document.createElement('option'); o.value = c; o.textContent = c; catSel.appendChild(o); });
   const typeSel = document.getElementById('filter-type');
   types.forEach(t => { const o = document.createElement('option'); o.value = t; o.textContent = t; typeSel.appendChild(o); });
   const roleSel = document.getElementById('filter-role');
   roles.forEach(r => { const o = document.createElement('option'); o.value = r; o.textContent = r; roleSel.appendChild(o); });
   document.getElementById('search').addEventListener('input', render);
+  catSel.addEventListener('change', render);
   typeSel.addEventListener('change', render);
   roleSel.addEventListener('change', render);
   document.addEventListener('keydown', e => {
