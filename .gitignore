@@ -1,5 +1,6 @@
 .DS_Store
 *.plugin
+/numeric-mcp-toolkit.zip
 __pycache__/
 *.pyc
 .env

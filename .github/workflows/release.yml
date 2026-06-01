@@ -14,12 +14,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Build .plugin and .zip skill bundles
+      - name: Build toolkit .zip and per-skill .zip bundles
         run: |
           cd $GITHUB_WORKSPACE
 
-          # Build .plugin (full bundle) — Claude plugin file is a zip with .plugin extension
-          zip -r numeric-mcp-toolkit.plugin . \
+          # Build the full toolkit bundle (whole repo) as a .zip.
+          # Exclude *.zip so it never recurses into itself or the dist bundles.
+          zip -r numeric-mcp-toolkit.zip . \
             -x "*.git*" \
             -x "*.DS_Store" \
             -x ".github/*" \
@@ -27,7 +28,7 @@ jobs:
             -x "*.zip" \
             -x "*.plugin" \
             -x "*.skill"
-          echo "Built: $(du -sh numeric-mcp-toolkit.plugin)"
+          echo "Built: $(du -sh numeric-mcp-toolkit.zip)"
 
           # Build one .zip per skill directory.
           # IMPORTANT: cd into skills/ and zip by the bare folder name so the
@@ -45,14 +46,14 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           files: |
-            numeric-mcp-toolkit.plugin
+            numeric-mcp-toolkit.zip
             dist/*.zip
           generate_release_notes: true
           body: |
             ## Install
 
-            **As a plugin (recommended)**
-            Download `numeric-mcp-toolkit.plugin` below and open it in Cowork or Claude Code.
+            **Full toolkit (recommended)**
+            Download `numeric-mcp-toolkit.zip` below and open it in Cowork or Claude Code.
 
             **Via Claude Code CLI**
             ```
