@@ -294,10 +294,10 @@ select:focus { outline: none; border-color: var(--ink); }
   </header>
 
   <div class="stat-strip">
-    <div class="stat"><span class="stat-num" id="stat-total">19</span><span class="stat-label">Skills</span></div>
+    <div class="stat"><span class="stat-num" id="stat-total">20</span><span class="stat-label">Skills</span></div>
     <div class="stat"><span class="stat-num" id="stat-cats">7</span><span class="stat-label">Categories</span></div>
     <div class="stat"><span class="stat-num" id="stat-types">3</span><span class="stat-label">Types</span></div>
-    <div class="stat"><span class="stat-num" id="stat-showing">18</span><span class="stat-label">Showing</span></div>
+    <div class="stat"><span class="stat-num" id="stat-showing">20</span><span class="stat-label">Showing</span></div>
     <div class="stat-meta">All skills connect to Numeric via the Numeric MCP. <a href="https://help.numeric.io/articles/7292808089-numeric-mcp-server" target="_blank" rel="noopener" style="color:var(--accent-deep)">Connect your workspace →</a></div>
   </div>
 
@@ -591,6 +591,9 @@ function render() {
   });
 
   document.getElementById('stat-showing').textContent = filtered.length;
+  document.getElementById('stat-total').textContent = SKILLS.length;
+  document.getElementById('stat-cats').textContent = new Set(SKILLS.map(s => s.category)).size;
+  document.getElementById('stat-types').textContent = new Set(SKILLS.map(s => s.type)).size;
 
   const container = document.getElementById('results');
   if (filtered.length === 0) {

@@ -12,8 +12,8 @@
 
 <br />
 
-<a href="https://github.com/geoff-lew/numeric-toolkit/releases/latest/download/numeric-mcp-toolkit.plugin">
-  <img src="https://img.shields.io/badge/⬇%20Download%20Full%20Plugin-numeric--mcp--toolkit.plugin-3E3A7A?style=for-the-badge&logoColor=white" alt="Download Full Plugin" />
+<a href="https://github.com/geoff-lew/numeric-toolkit/releases/latest/download/numeric-mcp-toolkit.zip">
+  <img src="https://img.shields.io/badge/⬇%20Download%20Full%20Toolkit-numeric--mcp--toolkit.zip-3E3A7A?style=for-the-badge&logoColor=white" alt="Download Full Toolkit" />
 </a>
 &nbsp;
 <a href="https://geoff-lew.github.io/numeric-toolkit/">
@@ -105,7 +105,7 @@ Skills are grouped into seven categories:
 - **Reconciliation** — leadsheet workbook builder
 - **Audit & Compliance** — close-period activity export
 
-All skills connect to Numeric via the Numeric MCP. Each is fully self-contained — download the `.skill` file, drop it into Cowork or Claude Code, done.
+All skills connect to Numeric via the Numeric MCP. Each is fully self-contained — download the `.zip` file, drop it into Cowork or Claude Code, done.
 
 ---
 
@@ -163,9 +163,9 @@ See the [Numeric MCP setup guide](https://help.numeric.io/articles/7292808089-nu
 <tr>
 <td width="50%" valign="top">
 
-**Full plugin** — all skills at once
+**Full toolkit** — all skills at once
 
-Download [`numeric-mcp-toolkit.plugin`](https://github.com/geoff-lew/numeric-toolkit/releases/latest/download/numeric-mcp-toolkit.plugin) and open it in Cowork or Claude Code.
+Download [`numeric-mcp-toolkit.zip`](https://github.com/geoff-lew/numeric-toolkit/releases/latest/download/numeric-mcp-toolkit.zip) and open it in Cowork or Claude Code.
 
 Or via CLI — run these as separate commands:
 ```
@@ -180,9 +180,9 @@ Or via CLI — run these as separate commands:
 
 **Individual skill** — just what you need
 
-Browse the [skills library](https://geoff-lew.github.io/numeric-toolkit/) or grab any `.skill` file from the [Releases tab](https://github.com/geoff-lew/numeric-toolkit/releases/latest) and open it in Cowork or Claude Code.
+Browse the [skills library](https://geoff-lew.github.io/numeric-toolkit/) or grab any `.zip` file from the [Releases tab](https://github.com/geoff-lew/numeric-toolkit/releases/latest) and open it in Cowork or Claude Code.
 
-Each `.skill` file is fully self-contained — no extra setup.
+Each `.zip` file is fully self-contained — no extra setup.
 
 </td>
 </tr>
