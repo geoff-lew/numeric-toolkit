@@ -14,7 +14,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Build .plugin and .skill files
+      - name: Build .plugin and .zip skill bundles
         run: |
           cd $GITHUB_WORKSPACE
 
@@ -23,17 +23,22 @@ jobs:
             -x "*.git*" \
             -x "*.DS_Store" \
             -x ".github/*" \
+            -x "dist/*" \
             -x "*.zip" \
             -x "*.plugin" \
             -x "*.skill"
           echo "Built: $(du -sh numeric-mcp-toolkit.plugin)"
 
-          # Build one .skill zip per skill directory
-          mkdir -p dist
+          # Build one .zip per skill directory.
+          # IMPORTANT: cd into skills/ and zip by the bare folder name so the
+          # archive's top-level entry is "<skill>/SKILL.md" (single folder),
+          # NOT "skills/<skill>/SKILL.md". The extra nesting hides SKILL.md
+          # from Claude on install.
+          rm -rf dist && mkdir -p dist
           for skill_dir in skills/*/; do
             skill=$(basename "$skill_dir")
-            zip -r "dist/${skill}.skill" "$skill_dir" -x "*.DS_Store"
-            echo "Built: $(du -sh "dist/${skill}.skill")"
+            ( cd skills && zip -rq "../dist/${skill}.zip" "$skill" -x "*.DS_Store" )
+            echo "Built: $(du -sh "dist/${skill}.zip")"
           done
 
       - name: Create GitHub Release
@@ -41,7 +46,7 @@ jobs:
         with:
           files: |
             numeric-mcp-toolkit.plugin
-            dist/*.skill
+            dist/*.zip
           generate_release_notes: true
           body: |
             ## Install
@@ -55,4 +60,4 @@ jobs:
             ```
 
             **Individual skills**
-            Download any `.skill` file below and open it in Cowork or Claude Code.
+            Download any `.zip` file below and open it in Cowork or Claude Code.

@@ -421,7 +421,7 @@ select:focus { outline: none; border-color: var(--ink); }
           <div class="how-step-body">
             <div class="how-row1"><span class="how-chip">ship</span></div>
             <h3 class="how-headline">Your version is now the default.</h3>
-            <p class="how-desc">The refined skill is just a file. Anyone on your team running the same skill picks up your rules automatically — no separate config, no shared spreadsheet, no tribal knowledge. Share it by dropping the <code>.skill</code> file into a teammate's chat, or commit it to git if you want full version history.</p>
+            <p class="how-desc">The refined skill is just a file. Anyone on your team running the same skill picks up your rules automatically — no separate config, no shared spreadsheet, no tribal knowledge. Share it by dropping the <code>.zip</code> file into a teammate's chat, or commit it to git if you want full version history.</p>
             <p class="how-desc">Skills can also self-track: after each run they log a comment back to the Numeric task — what was done, when, and the outcome. That creates a native audit trail and lets skills make smarter decisions next time (don't re-nudge someone nudged in the last 48 hours, don't re-post a JE that already cleared).</p>
           </div>
         </div>
@@ -475,7 +475,7 @@ const SKILLS = [
   // Setup & Migration
   { name: "accounting-skill-builder", type: "Workflows", category: "Setup & Migration", roles: ["Controller", "Close Manager", "Implementation"], beta: true,
     title: "Skill Builder — Build a Skill for Your Workflow",
-    desc: "Build a production-ready skill tailored to your team's exact process. It interviews you to understand the workflow, designs the automation around your data and controls, builds it, then runs it through a review panel to pressure-test it before you ship. Start from scratch or fork one of the skills here as a base. The output is a working .skill file you can install, refine, and reuse.",
+    desc: "Build a production-ready skill tailored to your team's exact process. It interviews you to understand the workflow, designs the automation around your data and controls, builds it, then runs it through a review panel to pressure-test it before you ship. Start from scratch or fork one of the skills here as a base. The output is a working .zip skill bundle you can install, refine, and reuse.",
     asks: ["Build me a skill for our accruals process", "Help me automate my flux review", "Customize close-pulse for our team", "Design a skill to replace this spreadsheet"] },
 
   { name: "checklist-to-numeric", type: "Workflows", category: "Setup & Migration", roles: ["Implementation", "Close Manager"],
@@ -652,40 +652,41 @@ function openModal(i) {
 function closeModal() { document.getElementById('modal').classList.remove('open'); active = null; }
 
 const REPO = "geoff-lew/numeric-toolkit";
-const REL_BASE = `https://github.com/${REPO}/releases/latest/download`;
 const RAW_BASE = `https://cdn.jsdelivr.net/gh/${REPO}@main/skills`;
+// Per-skill .zip bundles are committed to /dist and served straight from the page.
+const ZIP_BASE = "dist";
 const TOOLKIT_FILE = "numeric-mcp-toolkit.plugin";
 
-// Map skill data name → release asset filename
+// Map skill data name → committed bundle filename in /dist
 const SKILL_ASSET = {
-  "ar-ap-aging": "ar-ap-aging.skill",
-  "audit-evidence-export": "audit-evidence-export.skill",
-  "automatically-draft-flux-explanations": "automatically-draft-flux-explanations.skill",
-  "checklist-to-numeric": "checklist-to-numeric.skill",
-  "clean-report-export": "clean-report-export.skill",
-  "close-pulse": "close-pulse.skill",
-  "close-retro": "close-retro.skill",
-  "complete-accruals-task": "complete-accruals-task.skill",
-  "consolidated-flux": "consolidated-flux.skill",
-  "cross-workspace-dashboard": "cross-workspace-dashboard.skill",
-  "dept-anomaly-scan": "dept-anomaly-scan.skill",
-  "executive-report": "executive-report.skill",
-  "financial-metrics": "financial-metrics.skill",
+  "ar-ap-aging": "ar-ap-aging.zip",
+  "audit-evidence-export": "audit-evidence-export.zip",
+  "automatically-draft-flux-explanations": "automatically-draft-flux-explanations.zip",
+  "checklist-to-numeric": "checklist-to-numeric.zip",
+  "clean-report-export": "clean-report-export.zip",
+  "close-pulse": "close-pulse.zip",
+  "close-retro": "close-retro.zip",
+  "complete-accruals-task": "complete-accruals-task.zip",
+  "consolidated-flux": "consolidated-flux.zip",
+  "cross-workspace-dashboard": "cross-workspace-dashboard.zip",
+  "dept-anomaly-scan": "dept-anomaly-scan.zip",
+  "executive-report": "executive-report.zip",
+  "financial-metrics": "financial-metrics.zip",
   "journal-entry": "journal-entry-generator.zip",
-  "numeric-rec-workbook": "numeric-rec-workbook.skill",
-  "overdue-task-nudge": "overdue-task-nudge.skill",
-  "rec-to-numeric": "rec-to-numeric.skill",
-  "report-txn-detail": "report-txn-detail.skill",
-  "accounting-skill-builder": "accounting-skill-builder.skill",
-  "close-checklist-diagnostic": "close-checklist-diagnostic.skill"
+  "numeric-rec-workbook": "numeric-rec-workbook.zip",
+  "overdue-task-nudge": "overdue-task-nudge.zip",
+  "rec-to-numeric": "rec-to-numeric.zip",
+  "report-txn-detail": "report-txn-detail.zip",
+  "accounting-skill-builder": "accounting-skill-builder.zip",
+  "close-checklist-diagnostic": "close-checklist-diagnostic.zip"
 };
 
-// Slug → folder name in repo for raw.githubusercontent.com fetches
+// Slug → folder name in repo for raw SKILL.md fetches
 const SKILL_SLUG = {
   "journal-entry": "journal-entry-generator"
 };
 
-function skillAssetUrl(name) { return `${REL_BASE}/${SKILL_ASSET[name] || name + '.skill'}`; }
+function skillAssetUrl(name) { return `${ZIP_BASE}/${SKILL_ASSET[name] || name + '.zip'}`; }
 function skillRawSlug(name) { return SKILL_SLUG[name] || name; }
 
 function downloadSkill(i, btn) {
@@ -699,7 +700,7 @@ function downloadActive() {
   downloadSkill(active, document.getElementById('m-download'));
 }
 function downloadToolkit() {
-  window.open(`${REL_BASE}/${TOOLKIT_FILE}`, '_blank');
+  window.open(`https://github.com/${REPO}/releases/latest/download/${TOOLKIT_FILE}`, '_blank');
 }
 
 function clearFilters() {
